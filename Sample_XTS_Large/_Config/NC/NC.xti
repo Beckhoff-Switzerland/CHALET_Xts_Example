@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CNcSafTaskDef" SubType="0">
+	<NC>
+		<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" SafTaskInfo="256">
+			<Name>NC-Task SAF</Name>
+			<Vars VarGrpType="1" InsertType="1">
+				<Name>Inputs</Name>
+			</Vars>
+			<Vars VarGrpType="2" InsertType="1">
+				<Name>Outputs</Name>
+			</Vars>
+			<Image Id="29" AddrType="1" ImageType="1">
+				<Name>Image</Name>
+			</Image>
+		</SafTask>
+		<SvbTask Priority="8" CycleTime="100000" AmsPort="511">
+			<Name>NC-Task 1 SVB</Name>
+		</SvbTask>
+		<Axis File="Mover Axis 1.xti" Id="1"/>
+		<Axis File="Mover Axis 2.xti" Id="2"/>
+		<Axis File="Mover Axis 3.xti" Id="3"/>
+		<Axis File="Mover Axis 4.xti" Id="4"/>
+		<Axis File="Mover Axis 5.xti" Id="5"/>
+		<Axis File="Mover Axis 6.xti" Id="6"/>
+		<Axis File="Mover Axis 7.xti" Id="7"/>
+		<Axis File="Mover Axis 8.xti" Id="8"/>
+		<Axis File="Mover Axis 9.xti" Id="9"/>
+		<Axis File="Mover Axis 10.xti" Id="10"/>
+		<Axis File="Mover Axis 11.xti" Id="11"/>
+		<Axis File="Mover Axis 12.xti" Id="12"/>
+		<Axis File="Mover Axis 13.xti" Id="13"/>
+		<Axis File="Mover Axis 14.xti" Id="14"/>
+		<Axis File="Mover Axis 15.xti" Id="15"/>
+		<Axis File="Mover Axis 16.xti" Id="16"/>
+		<Axis File="Mover Axis 17.xti" Id="17"/>
+		<Axis File="Mover Axis 18.xti" Id="18"/>
+		<Axis File="Mover Axis 19.xti" Id="19"/>
+		<Axis File="Mover Axis 20.xti" Id="20"/>
+		<Axis File="Mover Axis 21.xti" Id="21"/>
+		<Axis File="Mover Axis 22.xti" Id="22"/>
+		<Axis File="Mover Axis 23.xti" Id="23"/>
+		<Axis File="Mover Axis 24.xti" Id="24"/>
+		<Axis File="Mover Axis 25.xti" Id="25"/>
+		<Axis File="Mover Axis 26.xti" Id="26"/>
+		<Axis File="Mover Axis 27.xti" Id="27"/>
+		<Axis File="Mover Axis 28.xti" Id="28"/>
+		<Axis File="Mover Axis 29.xti" Id="29"/>
+		<Axis File="Mover Axis 30.xti" Id="30"/>
+		<Axis File="Mover Axis 31.xti" Id="31"/>
+		<Axis File="Mover Axis 32.xti" Id="32"/>
+		<Axis File="Mover Axis 33.xti" Id="33"/>
+		<Axis File="Mover Axis 34.xti" Id="34"/>
+		<Axis File="Mover Axis 35.xti" Id="35"/>
+		<Axis File="Mover Axis 36.xti" Id="36"/>
+		<Axis File="Mover Axis 37.xti" Id="37"/>
+		<Axis File="Mover Axis 38.xti" Id="38"/>
+		<Axis File="Mover Axis 39.xti" Id="39"/>
+		<Axis File="Mover Axis 40.xti" Id="40"/>
+		<Axis File="Mover Axis 41.xti" Id="41"/>
+		<Axis File="Mover Axis 42.xti" Id="42"/>
+		<Axis File="Mover Axis 43.xti" Id="43"/>
+		<Axis File="Mover Axis 44.xti" Id="44"/>
+		<Axis File="Mover Axis 45.xti" Id="45"/>
+		<Axis File="Mover Axis 46.xti" Id="46"/>
+		<Axis File="Mover Axis 47.xti" Id="47"/>
+		<Axis File="Mover Axis 48.xti" Id="48"/>
+		<Axis File="Mover Axis 49.xti" Id="49"/>
+		<Axis File="Mover Axis 50.xti" Id="50"/>
+		<Axis File="Mover Axis 51.xti" Id="51"/>
+		<Axis File="Mover Axis 52.xti" Id="52"/>
+		<Axis File="Mover Axis 53.xti" Id="53"/>
+		<Axis File="Mover Axis 54.xti" Id="54"/>
+		<Axis File="Mover Axis 55.xti" Id="55"/>
+		<Axis File="Mover Axis 56.xti" Id="56"/>
+		<Axis File="Mover Axis 57.xti" Id="57"/>
+		<Axis File="Mover Axis 58.xti" Id="58"/>
+		<Axis File="Mover Axis 59.xti" Id="59"/>
+		<Axis File="Mover Axis 60.xti" Id="60"/>
+		<Axis File="Mover Axis 61.xti" Id="61"/>
+		<Axis File="Mover Axis 62.xti" Id="62"/>
+		<Axis File="Mover Axis 63.xti" Id="63"/>
+		<Axis File="Mover Axis 64.xti" Id="64"/>
+		<Axis File="Mover Axis 65.xti" Id="65"/>
+		<Axis File="Mover Axis 66.xti" Id="66"/>
+		<Axis File="Mover Axis 67.xti" Id="67"/>
+		<Axis File="Mover Axis 68.xti" Id="68"/>
+		<Axis File="Mover Axis 69.xti" Id="69"/>
+		<Axis File="Mover Axis 70.xti" Id="70"/>
+		<Axis File="Mover Axis 71.xti" Id="71"/>
+		<Axis File="Mover Axis 72.xti" Id="72"/>
+		<Axis File="Mover Axis 73.xti" Id="73"/>
+		<Axis File="Mover Axis 74.xti" Id="74"/>
+		<Axis File="Mover Axis 75.xti" Id="75"/>
+		<Axis File="Mover Axis 76.xti" Id="76"/>
+		<Axis File="Mover Axis 77.xti" Id="77"/>
+		<Axis File="Mover Axis 78.xti" Id="78"/>
+		<Axis File="Mover Axis 79.xti" Id="79"/>
+		<Axis File="Mover Axis 80.xti" Id="80"/>
+		<Axis File="Mover Axis 81.xti" Id="81"/>
+		<Axis File="Mover Axis 82.xti" Id="82"/>
+		<Axis File="Mover Axis 83.xti" Id="83"/>
+		<Axis File="Mover Axis 84.xti" Id="84"/>
+		<Axis File="Mover Axis 85.xti" Id="85"/>
+		<Axis File="Mover Axis 86.xti" Id="86"/>
+		<Axis File="Mover Axis 87.xti" Id="87"/>
+		<Axis File="Mover Axis 88.xti" Id="88"/>
+		<Axis File="Mover Axis 89.xti" Id="89"/>
+		<Axis File="Mover Axis 90.xti" Id="90"/>
+		<Axis File="Mover Axis 91.xti" Id="91"/>
+		<Axis File="Mover Axis 92.xti" Id="92"/>
+		<Axis File="Mover Axis 93.xti" Id="93"/>
+		<Axis File="Mover Axis 94.xti" Id="94"/>
+		<Axis File="Mover Axis 95.xti" Id="95"/>
+		<Axis File="Mover Axis 96.xti" Id="96"/>
+		<Axis File="Mover Axis 97.xti" Id="97"/>
+		<Axis File="Mover Axis 98.xti" Id="98"/>
+		<Axis File="Mover Axis 99.xti" Id="99"/>
+		<Axis File="Mover Axis 100.xti" Id="100"/>
+		<Modules>
+			<Module File="Group1 (CA Group).xti"/>
+			<Parameters>
+				<Parameter>
+					<PTCID>#x300a11b</PTCID>
+					<Data>02010070</Data>
+				</Parameter>
+			</Parameters>
+		</Modules>
+	</NC>
+</TcSmItem>

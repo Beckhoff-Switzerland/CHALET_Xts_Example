@@ -1,0 +1,1758 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CTComObjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{57C38B95-AD5B-4900-BD22-01ECB373E734}" Namespace="XTS">IXtsModule</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>GetPositionIndex</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pPositionIndex</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetPositionResolverObject</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ppPositionResolver</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}" PointerTo="1">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetMotorDriver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ppMotorDriver</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}" PointerTo="1">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Update</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{297A4AFB-B932-4944-BE9C-477386DF1995}" Namespace="XTS">ModuleType</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Unknown]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2000_0250]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2001_0250]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2050_0500]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2050_0501]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2020_0250]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2025_0250]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2040_0250]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2021_0250]]></Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2026_0250]]></Text>
+				<Enum>10</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2041_0250]]></Text>
+				<Enum>11</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2000_0233]]></Text>
+				<Enum>12</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2002_0249]]></Text>
+				<Enum>13</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2002_0250]]></Text>
+				<Enum>14</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ATH2000_0250]]></Text>
+				<Enum>257</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ATH2050_0500]]></Text>
+				<Enum>258</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ATH2050_0501]]></Text>
+				<Enum>259</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ATH2040_0250]]></Text>
+				<Enum>260</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AT2200_0750]]></Text>
+				<Enum>513</Enum>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{1EC63745-8DEE-41E3-A93D-CE6D14350001}" Namespace="XTS">ProductIdentity</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>vendor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>code</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>revision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>serial</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Unknown]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[FaultReactionActive]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Fault]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[NotReadyToSwitchOn]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchOnDisabled]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ReadyToSwitchOn]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchedOn]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[OperationEnabled]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"/>
+			</Hides>
+			<Relations>
+				<Relation>
+					<Type GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"></Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
+			<Name GUID="{98563F8A-C834-4A94-8B53-8134EF6BB588}" Namespace="XTS" HideSubItems="true">Btn</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%c%c%c%c%c%c%c%c</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+				<Parameter>[6]</Parameter>
+				<Parameter>[7]</Parameter>
+			</Format>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424d360300000000000036000000280000001000000010000000010018000000000000030000232e0000232e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a29c9c9c9797979191918c8c8c8787878181817c7c7c7777777171716b6b6b6666666161615c5c5c000000000000abababa6a6a6a0a0a09b9b9b9696968f8f8f8b8b8b8585858080807b7b7b7474747070706a6a6a646464000000000000b4b4b4afafafaaaaaaa4a4a49e9e9e9999999494948e8e8e8888888383837e7e7e7878787373736d6d6d000000000000bdbdbdb8b8b8b2b2b2adadada8a8a8a2a2a29c9c9c9898989292928d8d8d8787878282827c7c7c777777000000000000c6c6c6c1c1c1000000000000000000000000000000000000000000000000000000000000000000808080000000000000cfcfcfcacaca000000828282828282828282828282828282828282828282828282828282000000898989000000000000d9d9d9d4d4d4000000828282101010828282101010828282101010828282101010828282000000929292000000000000e2e2e2dcdcdc0000008282820000008282820000008282820000008282820000008282820000009c9c9c000000000000ebebebe6e6e6000000828282000000828282000000828282000000828282000000828282000000a4a4a4000000000000f5f5f5efefef000000828282000000828282000000828282000000828282000000828282000000aeaeae000000000000fbfbfbf8f8f8000000828282828282828282828282828282818181828282828282828282000000b6b6b6000000000000fbfbfbfbfbfb000000000000000000000000000000000000000000000000000000000000000000c0c0c0000000000000fbfbfbfbfbfbfbfbfbfbfbfbfafafaf4f4f4f0f0f0eaeaeae4e4e4dfdfdfdadadad4d4d4cececec9c9c9000000000000fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbf8f8f8f3f3f3eeeeeee8e8e8e3e3e3ddddddd8d8d8d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+	</ImageDatas>
+	<Module Id="#x010107d0" KeepUnrestoredLinks="2">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<TmcDesc GUID="{1FB78BB1-856A-49A6-9BA7-47AE9370A2D0}">
+			<Name>AT2000_0250</Name>
+			<CLSID ClassFactory="TcIoXts">{1FB78BB1-856A-49A6-9BA7-47AE9370A2D0}</CLSID>
+			<InitSequence>PSO</InitSequence>
+			<Contexts>
+				<Context>
+					<Id>1</Id>
+					<ManualConfig>
+						<OTCID>#x02010020</OTCID>
+					</ManualConfig>
+					<Priority>1</Priority>
+					<CycleTime>250000</CycleTime>
+				</Context>
+			</Contexts>
+			<Interfaces>
+				<Interface>
+					<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+				</Interface>
+				<Interface>
+					<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+				</Interface>
+				<Interface>
+					<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+				</Interface>
+				<Interface>
+					<Type GUID="{57C38B95-AD5B-4900-BD22-01ECB373E734}" Namespace="XTS">IXtsModule</Type>
+				</Interface>
+			</Interfaces>
+			<Parameters>
+				<Group><![CDATA[General]]></Group>
+				<Group><![CDATA[Info]]></Group>
+				<Group><![CDATA[Drive Info]]></Group>
+				<Group><![CDATA[Encoder Info]]></Group>
+				<Group><![CDATA[Drive CoE - General]]></Group>
+				<Group><![CDATA[Drive CoE - Amplifier Settings]]></Group>
+				<Group><![CDATA[Drive CoE - Info Data]]></Group>
+				<Group><![CDATA[Drive CoE - I2T Diag Data]]></Group>
+				<Group><![CDATA[Drive CoE - Vendor Data]]></Group>
+				<Parameter Group="General">
+					<Name>AdsPort</Name>
+					<Comment><![CDATA[Gets/sets the ads port. The port should be used to read/write parameters via ADS.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+					<PTCID>#x03002090</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>TaskOID</Name>
+					<Comment><![CDATA[Gets/Sets the object id of the XTS Task that is used for calculations for the module.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x03002060</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>MotorTerminalOID</Name>
+					<Comment><![CDATA[Set the object ID of the corresponding motor terminal.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x00000009</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>SensorTerminalOID</Name>
+					<Comment><![CDATA[Set the object ID of the corresponding sensor terminal.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x0000000a</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>PositionIndex</Name>
+					<Comment><![CDATA[The index defines the position of the module in the XTS system. It ranges from zero to the count of modules minus one.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x00000006</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>Gap</Name>
+					<Comment><![CDATA[Defines the gap between the previous module and this module.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[mm]]></Unit>
+					<PTCID>#x0308028b</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>Offset</Name>
+					<Comment><![CDATA[Define an offset for the module to compensate mechanical tolerances.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[mm]]></Unit>
+					<PTCID>#x00000007</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>ScalingFactor</Name>
+					<Comment><![CDATA[Define a ScalingFactor for the module to compensate mechanical tolerances.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Default>
+						<Min>0.99</Min>
+						<Max>1.01</Max>
+						<Value>1.0</Value>
+					</Default>
+					<PTCID>#x00000008</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Angle</Name>
+					<Comment><![CDATA[Returns the angle of the module in deg.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[deg]]></Unit>
+					<PTCID>#x00000083</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>GlobalNumber</Name>
+					<Comment><![CDATA[The global number is used to distinguish all modules which are manged by one XPU.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x03080227</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Length</Name>
+					<Comment><![CDATA[Returns the length of the module in mm. The length is measured along the center of the coils.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[mm]]></Unit>
+					<PTCID>#x00000082</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>MasterNetId</Name>
+					<Comment><![CDATA[Returns the NetId of the EtherCAT master to which the terminals belong to.]]></Comment>
+					<BitSize>48</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</BaseType>
+					<PTCID>#x00000086</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>ModuleType</Name>
+					<Comment><![CDATA[Returns type of module]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{297A4AFB-B932-4944-BE9C-477386DF1995}" Namespace="XTS">ModuleType</BaseType>
+					<PTCID>#x03080308</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>IsInfeed</Name>
+					<Comment><![CDATA[Returns whether a module is an infeed module]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x0308033b</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveAddress</Name>
+					<Comment><![CDATA[Returns the address of the drive (motor) terminal.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x00000084</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveConfigIdentity</Name>
+					<Comment><![CDATA[Gets a structure of the configured Drive identity containing the vendor id, the code, the revision and the serial number.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{1EC63745-8DEE-41E3-A93D-CE6D14350001}" Namespace="XTS">ProductIdentity</BaseType>
+					<PTCID>#x00000062</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveControlValue</Name>
+					<Comment><![CDATA[Gets the control value of the drive.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x03080331</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveOnlineIdentity</Name>
+					<Comment><![CDATA[Gets a structure of the online Drive identity containing the vendor id, the code, the revision and the serial number.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{1EC63745-8DEE-41E3-A93D-CE6D14350001}" Namespace="XTS">ProductIdentity</BaseType>
+					<PTCID>#x00000063</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveState</Name>
+					<Comment><![CDATA[Gets the state of the drive system.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</BaseType>
+					<PTCID>#x000000a0</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
+					<Name>DriveStatusValue</Name>
+					<Comment><![CDATA[Gets the status value of the drive.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x03080332</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Encoder Info">
+					<Name>EncoderAddress</Name>
+					<Comment><![CDATA[Returns the address of the encoder (sensor) terminal.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x00000085</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Encoder Info">
+					<Name>EncoderConfigIdentity</Name>
+					<Comment><![CDATA[Gets a structure of the configured Encoder identity containing the vendor id, the code, the revision and the serial number.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{1EC63745-8DEE-41E3-A93D-CE6D14350001}" Namespace="XTS">ProductIdentity</BaseType>
+					<PTCID>#x00000064</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Encoder Info">
+					<Name>EncoderOnlineIdentity</Name>
+					<Comment><![CDATA[Gets a structure of the online Encoder identity containing the vendor id, the code, the revision and the serial number.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{1EC63745-8DEE-41E3-A93D-CE6D14350001}" Namespace="XTS">ProductIdentity</BaseType>
+					<PTCID>#x00000065</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Encoder Info">
+					<Name>EncoderSensorValues</Name>
+					<Comment><![CDATA[Gets the array of the module's encoder sensor values]]></Comment>
+					<BitSize>2048</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements>32</Elements>
+					</ArrayInfo>
+					<PTCID>#x00000093</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - General">
+					<Name>DriveDeviceType</Name>
+					<Comment><![CDATA[Returns the type of the corresponding module.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x030802a0</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - General">
+					<Name>DriveDeviceName</Name>
+					<Comment><![CDATA[Returns the type name of the corresponding module.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000000F}">STRING(15)</BaseType>
+					<PTCID>#x030802a1</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - General">
+					<Name>DriveHardwareVersion</Name>
+					<Comment><![CDATA[Returns the hardware version of the module.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000000F}">STRING(15)</BaseType>
+					<PTCID>#x030802a2</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - General">
+					<Name>DriveSoftwareVersion</Name>
+					<Comment><![CDATA[Returns the software version of the module.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000000F}">STRING(15)</BaseType>
+					<PTCID>#x030802a3</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - General">
+					<Name>DriveBtn</Name>
+					<Comment><![CDATA[Returns the BTN of the module.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{98563F8A-C834-4A94-8B53-8134EF6BB588}" Namespace="XTS">Btn</BaseType>
+					<PTCID>#x030802af</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>MinDcLinkVoltage</Name>
+					<Comment><![CDATA[Returns the minimal DC link voltage which should be considered valid.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802c3</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>MaxDcLinkVoltage</Name>
+					<Comment><![CDATA[Returns the maximal DC link voltage which should be considered valid.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802c4</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>I2TWarnLevel</Name>
+					<Comment><![CDATA[Returns the I2T level which results in a warning if the current value exceeds this level.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+					<Unit><![CDATA[%]]></Unit>
+					<PTCID>#x030802c5</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>I2TErrorLevel</Name>
+					<Comment><![CDATA[Returns the I2T level which results in an error if the current value exceeds this level.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+					<Unit><![CDATA[%]]></Unit>
+					<PTCID>#x030802c6</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>TemperatureWarnLevel</Name>
+					<Comment><![CDATA[Returns the temperature level which results in a warning if the current value exceeds this level.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[°C]]></Unit>
+					<PTCID>#x030802c7</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>TemperatureErrorLevel</Name>
+					<Comment><![CDATA[Returns the temperature level which results in an error if the current value exceeds this level.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[°C]]></Unit>
+					<PTCID>#x030802c8</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>EnableBrakeChopper</Name>
+					<Comment><![CDATA[Returns true if the break chopper is enabled.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x030802c9</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Amplifier Settings">
+					<Name>BreakAfterBridgeDisable</Name>
+					<Comment><![CDATA[Returns true if the break mode is enabled which is activated after the bridge is disabled.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x030802ca</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Auxiliary Voltage 5V</Name>
+					<Comment><![CDATA[Returns the current value of the 5 V auxiliary voltage.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802b8</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Auxiliary Voltage 10V</Name>
+					<Comment><![CDATA[Returns the current value of the 10 V auxiliary voltage.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802b9</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Auxiliary Voltage 24V</Name>
+					<Comment><![CDATA[Returns the current value of the 24 V auxiliary voltage.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802ba</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>DC Link Voltage</Name>
+					<Comment><![CDATA[Returns the current DC link voltage.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802bb</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Current Scaling</Name>
+					<Comment><![CDATA[Returns the current scaling.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<PTCID>#x030802bc</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Device Info</Name>
+					<Comment><![CDATA[Returns the device info value.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x030802bd</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>PCB Temperatures</Name>
+					<Comment><![CDATA[Returns the PCB temperatures.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements Min="1" Max="8">1</Elements>
+					</ArrayInfo>
+					<Unit><![CDATA[°C]]></Unit>
+					<PTCID>#x030802be</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Overall Current</Name>
+					<Comment><![CDATA[Returns the overall current value.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802bf</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Max DC link voltage - last 500 ms</Name>
+					<Comment><![CDATA[Returns the maximum value of the DC link voltage in the last 500 ms.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[V]]></Unit>
+					<PTCID>#x030802c0</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Max overall current - last 500 ms</Name>
+					<Comment><![CDATA[Returns the maximum value of the overall current in the last 500 ms.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802c1</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Info Data">
+					<Name>Chip ID</Name>
+					<Comment><![CDATA[Returns the chip ID.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</BaseType>
+					<PTCID>#x030802c2</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - I2T Diag Data">
+					<Name>Amplifier I2T Temperatures</Name>
+					<Comment><![CDATA[Returns the I2T values for each coil.]]></Comment>
+					<BitSize>120</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements Min="15" Max="45">15</Elements>
+					</ArrayInfo>
+					<Unit><![CDATA[%]]></Unit>
+					<PTCID>#x030802cc</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>CoilPeakCurrent</Name>
+					<Comment><![CDATA[Returns the coil peak current.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802cd</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>CoilRatedCurrent</Name>
+					<Comment><![CDATA[Returns the coil rated current.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802ce</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>CoilThermalTimeConstant</Name>
+					<Comment><![CDATA[Returns the thermal time constant for the coil.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[s]]></Unit>
+					<PTCID>#x030802cf</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>CoilOvercurrentThreshold</Name>
+					<Comment><![CDATA[Returns the threshold which identifies an overcurrent per coil.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802d0</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>Polarity</Name>
+					<Comment><![CDATA[Returns the polarity value where each bit is associated with one coil and if set the polarity for the coil is inverted (0 - bit -> 1. coil).]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x030802d1</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>OverallCurrentOffset</Name>
+					<Comment><![CDATA[Returns the overall used current offset.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802d2</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>OverallOvercurrentThreshold</Name>
+					<Comment><![CDATA[Returns the overall used overcurrent threshold.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+					<Unit><![CDATA[A]]></Unit>
+					<PTCID>#x030802d3</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>OverallCurrentFilter</Name>
+					<Comment><![CDATA[Returns the overall current filter value.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x030802d4</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>OverallCurrentGain</Name>
+					<Comment><![CDATA[Returns the overall current gain value.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x030802d5</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>EnableOverallCurrentPeakDetection</Name>
+					<Comment><![CDATA[Returns true if the overall current peak detection is enabled.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x030802d6</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>EnableOverallNegativeCurrentChangeError</Name>
+					<Comment><![CDATA[Returns true if the overall negative current change error detection is enabled.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x030802d7</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>EnableOverallNegativePowerError</Name>
+					<Comment><![CDATA[Returns true if the overall negative power error detection is enabled.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<PTCID>#x030802d8</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive CoE - Vendor Data">
+					<Name>Code</Name>
+					<Comment><![CDATA[Returns the current code value.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</BaseType>
+					<PTCID>#x030802d9</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+			</Parameters>
+			<DataPointers>
+				<DataPointer DisableCodeGeneration="true">
+					<PTCID>#x00000005</PTCID>
+					<Name>Control</Name>
+					<Type>UINT</Type>
+					<ContextId>1</ContextId>
+				</DataPointer>
+				<DataPointer DisableCodeGeneration="true">
+					<PTCID>#x00000002</PTCID>
+					<Name>CurrentSetpointValues</Name>
+					<Type>INT</Type>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements>15</Elements>
+					</ArrayInfo>
+					<ContextId>1</ContextId>
+				</DataPointer>
+				<DataPointer DisableCodeGeneration="true">
+					<PTCID>#x00000004</PTCID>
+					<Name>Status</Name>
+					<Type>UINT</Type>
+					<ContextId>1</ContextId>
+				</DataPointer>
+				<DataPointer DisableCodeGeneration="true">
+					<PTCID>#x00000001</PTCID>
+					<Name>CurrentActualValues</Name>
+					<Type>INT</Type>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements>15</Elements>
+					</ArrayInfo>
+					<ContextId>1</ContextId>
+				</DataPointer>
+				<DataPointer>
+					<PTCID>#x3f000101</PTCID>
+					<Name>RawPositionValues</Name>
+					<Type>INT</Type>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements>32</Elements>
+					</ArrayInfo>
+					<ContextId>1</ContextId>
+				</DataPointer>
+			</DataPointers>
+			<EventMessages>
+				<EventMessage>
+					<Id>9029</Id>
+					<Message><![CDATA[Could not register by {0}.]]></Message>
+				</EventMessage>
+			</EventMessages>
+			<ParentOTCID>#x01010670</ParentOTCID>
+			<ParameterValues>
+				<Value>
+					<Name>AdsPort</Name>
+					<Value>350</Value>
+				</Value>
+				<Value>
+					<Name>TaskOID</Name>
+					<Value>33620000</Value>
+				</Value>
+				<Value>
+					<Name>MotorTerminalOID</Name>
+					<Value>50462847</Value>
+				</Value>
+				<Value>
+					<Name>SensorTerminalOID</Name>
+					<Value>50462848</Value>
+				</Value>
+				<Value>
+					<Name>PositionIndex</Name>
+					<Value>62</Value>
+				</Value>
+				<Value>
+					<Name>Gap</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Offset</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>ScalingFactor</Name>
+					<Value>1</Value>
+				</Value>
+				<Value>
+					<Name>Angle</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>GlobalNumber</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Length</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>MasterNetId</Name>
+					<Data>000000000000</Data>
+				</Value>
+				<Value>
+					<Name>ModuleType</Name>
+					<EnumText>Unknown</EnumText>
+				</Value>
+				<Value>
+					<Name>IsInfeed</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>DriveAddress</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveConfigIdentity.vendor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveConfigIdentity.code</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveConfigIdentity.revision</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveConfigIdentity.serial</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveControlValue</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveOnlineIdentity.vendor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveOnlineIdentity.code</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveOnlineIdentity.revision</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveOnlineIdentity.serial</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveState</Name>
+					<EnumText>Unknown</EnumText>
+				</Value>
+				<Value>
+					<Name>DriveStatusValue</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderAddress</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderConfigIdentity.vendor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderConfigIdentity.code</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderConfigIdentity.revision</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderConfigIdentity.serial</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderOnlineIdentity.vendor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderOnlineIdentity.code</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderOnlineIdentity.revision</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderOnlineIdentity.serial</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[0]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[1]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[2]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[3]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[4]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[5]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[6]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[7]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[8]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[9]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[10]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[11]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[12]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[13]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[14]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[15]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[16]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[17]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[18]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[19]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[20]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[21]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[22]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[23]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[24]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[25]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[26]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[27]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[28]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[29]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[30]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EncoderSensorValues[31]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveDeviceType</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveDeviceName</Name>
+					<String></String>
+				</Value>
+				<Value>
+					<Name>DriveHardwareVersion</Name>
+					<String></String>
+				</Value>
+				<Value>
+					<Name>DriveSoftwareVersion</Name>
+					<String></String>
+				</Value>
+				<Value>
+					<Name>DriveBtn</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>MinDcLinkVoltage</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>MaxDcLinkVoltage</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>I2TWarnLevel</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>I2TErrorLevel</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>TemperatureWarnLevel</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>TemperatureErrorLevel</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EnableBrakeChopper</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>BreakAfterBridgeDisable</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>Auxiliary Voltage 5V</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Auxiliary Voltage 10V</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Auxiliary Voltage 24V</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DC Link Voltage</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Current Scaling</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Device Info</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>PCB Temperatures[0]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Overall Current</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Max DC link voltage - last 500 ms</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Max overall current - last 500 ms</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Chip ID</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[0]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[1]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[2]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[3]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[4]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[5]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[6]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[7]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[8]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[9]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[10]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[11]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[12]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[13]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Amplifier I2T Temperatures[14]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>CoilPeakCurrent</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>CoilRatedCurrent</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>CoilThermalTimeConstant</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>CoilOvercurrentThreshold</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Polarity</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OverallCurrentOffset</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OverallOvercurrentThreshold</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OverallCurrentFilter</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OverallCurrentGain</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>EnableOverallCurrentPeakDetection</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>EnableOverallNegativeCurrentChangeError</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>EnableOverallNegativePowerError</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
+					<Name>Code</Name>
+					<Value>0</Value>
+				</Value>
+			</ParameterValues>
+			<DataPointerValues>
+				<Value>
+					<Name>Control</Name>
+					<OTCID>#x03040150</OTCID>
+					<AreaNo>1</AreaNo>
+					<ByteOffs>0</ByteOffs>
+					<ByteSize>2</ByteSize>
+				</Value>
+				<Value>
+					<Name>CurrentSetpointValues</Name>
+					<Data ArrayIndex="0">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="1">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="2">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="3">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="4">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="5">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="6">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="7">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="8">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="9">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="10">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="11">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="12">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="13">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="14">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>1</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+				</Value>
+				<Value>
+					<Name>Status</Name>
+					<OTCID>#x03040150</OTCID>
+					<AreaNo>0</AreaNo>
+					<ByteOffs>0</ByteOffs>
+					<ByteSize>2</ByteSize>
+				</Value>
+				<Value>
+					<Name>CurrentActualValues</Name>
+					<Data ArrayIndex="0">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="1">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="2">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="3">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="4">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="5">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="6">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="7">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="8">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="9">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="10">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="11">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="12">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="13">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="14">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+				</Value>
+				<Value>
+					<Name>RawPositionValues</Name>
+					<Data ArrayIndex="0">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="1">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="2">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="3">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="4">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="5">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="6">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="7">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="8">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="9">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="10">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="11">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="12">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="13">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="14">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="15">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="16">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="17">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="18">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="19">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="20">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="21">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="22">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="23">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="24">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="25">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="26">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="27">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="28">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="29">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="30">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+					<Data ArrayIndex="31">
+						<OTCID>#x03040150</OTCID>
+						<AreaNo>0</AreaNo>
+						<ByteOffs>0</ByteOffs>
+						<ByteSize>2</ByteSize>
+					</Data>
+				</Value>
+			</DataPointerValues>
+		</TmcDesc>
+	</Module>
+</TcSmItem>

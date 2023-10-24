@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53">
+	<Project ProjectGUID="{CFB6F335-E378-4716-8867-9BFDABFF1D80}" TargetNetId="192.168.1.20.1.1" Target64Bit="true" ShowHideConfigurations="#x346">
+		<System>
+			<Settings MaxCpus="4" NonWinCpus="2" RouterMemory="52428800">
+				<Cpu CpuId="3" BaseTime="2500"/>
+				<IoIdleTask CycleTime="20000"/>
+			</Settings>
+			<Tasks>
+				<Task Id="2" Priority="1" CycleTime="2500" AmsPort="350" AdtTasks="true">
+					<Name>XTS Task 1</Name>
+				</Task>
+				<Task Id="6" Priority="20" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="7" Priority="32" AdtTasks="true" JobTask="true">
+					<Name>Job Task</Name>
+					<ImageId>327</ImageId>
+				</Task>
+			</Tasks>
+			<Modules>
+				<Module File="XtsProcessingUnit 1.xti"/>
+				<Module File="XtsInfoServer.xti"/>
+			</Modules>
+		</System>
+		<Motion>
+			<NC File="NC.xti"/>
+		</Motion>
+		<Plc>
+			<Project File="PLC1.xti"/>
+		</Plc>
+		<Io>
+			<Device File="Device 1.xti" Id="1"/>
+			<Device File="Device 2.xti" Id="2"/>
+			<Device File="Device 3.xti" Id="3"/>
+			<Device File="Device 4.xti" Id="4"/>
+			<Device File="Device 5.xti" Id="5"/>
+			<Device File="Device 6.xti" Id="6"/>
+			<Device File="Device 7.xti" Id="7"/>
+			<Device File="Device 8.xti" Id="8"/>
+			<Device File="Device 9.xti" Id="9"/>
+			<Device File="Device 10.xti" Id="10"/>
+			<Device File="Device 11.xti" Id="11"/>
+			<Device File="Device 12.xti" Id="12"/>
+			<Device File="Device 13.xti" Id="13"/>
+			<Device File="Device 14.xti" Id="14"/>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{05000010-2001-0850-1000-120500205008}" Id="#x02030020" Watchdog="14000000040000000400000004000000"/>
+		<MappingInfo Identifier="{05000010-2001-0850-D001-040300205008}" Id="#x02030010" Watchdog="14000000040000000400000004000000"/>
+	</Mappings>
+</TcSmProject>

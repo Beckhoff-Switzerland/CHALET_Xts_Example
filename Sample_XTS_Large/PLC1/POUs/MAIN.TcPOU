@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{936719f5-137b-4475-a74b-81455f5c55bd}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bInitDone,bDisable : BOOL;
+	bEnable : BOOL := TRUE;
+	bStart : BOOL := TRUE;
+	bPreventMoversFromEntering: BOOL;
+
+	
+	nLoopIndex : UDINT;
+	nIdxParentStation, nIdxTargedStation : UINT;
+	
+	bStandard, bRestart, bFast : BOOL;
+	bStartSimulation, bStopSimulation : BOOL ;
+	
+	fbSystem		: CHALET_Xts.FB_XTS_System;
+	XtsSystem 		: I_XTS_System_PLC := fbSystem;
+	
+	fbEnvironment	: CHALET_Xts.FB_XTS_Environment(ipXtsSystem := fbSystem);
+	fbGroup			: CHALET_Xts.FB_XTS_Group(ipXtsSystem := fbSystem);
+	
+	
+	aMovers		: ARRAY[1..cNrOfMovers] OF CHALET_Xts.FB_XTS_Mover(ipXtsSystem := fbSystem);
+	aStations 	: ARRAY[1..cNrOfStations] OF CHALET_Xts.FB_XTS_Station[		
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 800,
+												sStationID			:= 'StationA_Waiting',
+												nMoverQueueSize		:= 6,
+												fMoverGapAtExit		:= 80,
+												fMoverVelocityAtExit := 2000),
+										
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 1000,
+												sStationID			:= 'StationA',
+												nMoverQueueSize		:= 1,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 2000),
+																							
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 1500,
+												sStationID			:= 'StationB_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 2000,
+												sStationID			:= 'StationB',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																								
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 2500,
+												sStationID			:= 'StationC_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																								
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 3000,
+												sStationID			:= 'StationC',
+												nMoverQueueSize		:= 3,
+												fMoverGapAtExit		:= 60,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 3500,
+												sStationID			:= 'StationD_Waiting',
+												nMoverQueueSize		:= 5,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 4000,
+												sStationID			:= 'StationD',
+												nMoverQueueSize		:= 4,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 4500,
+												sStationID			:= 'StationE_Waiting',
+												nMoverQueueSize		:= 5,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 5000,
+												sStationID			:= 'StationE',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 5500,
+												sStationID			:= 'StationF_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 6000,
+												sStationID			:= 'StationF',
+												nMoverQueueSize		:= 4,
+												fMoverGapAtExit		:= 80,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 6500,
+												sStationID			:= 'StationG_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 7000,
+												sStationID			:= 'StationG',
+												nMoverQueueSize		:= 5,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																																		
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 7500,
+												sStationID			:= 'StationH_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+														
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 8000,
+												sStationID			:= 'StationH',
+												nMoverQueueSize		:= 3,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 8500,
+												sStationID			:= 'StationI_Waiting',
+												nMoverQueueSize		:= 5,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 2000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 9000,
+												sStationID			:= 'StationI',
+												nMoverQueueSize		:= 1,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 2000),
+																																			
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 9500,
+												sStationID			:= 'StationJ_Waiting',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1000),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 10000,
+												sStationID			:= 'StationJ',
+												nMoverQueueSize		:= 2,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 500),
+													
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 10500,
+												sStationID			:= 'StationCurv1Out',
+												nMoverQueueSize		:= 0,
+												fMoverGapAtExit		:= 70,
+												fMoverVelocityAtExit := 2000),
+												
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 20000,
+												sStationID			:= 'StationZ_Waiting',
+												nMoverQueueSize		:= 100,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1500),
+												
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 20500,
+												sStationID			:= 'StationCurv2In',
+												nMoverQueueSize		:= 0,
+												fMoverGapAtExit		:= 80,
+												fMoverVelocityAtExit := 250),
+												
+												(ipXtsSystem 		:= fbSystem,
+												fPositionOnTrack	:= 0,
+												sStationID			:= 'StationCurv2Out',
+												nMoverQueueSize		:= 0,
+												fMoverGapAtExit		:= 100,
+												fMoverVelocityAtExit := 1500)  
+												];															
+END_VAR
+VAR CONSTANT
+	cNrOfMovers : USINT := 100;
+	cNrOfStations : USINT := 24;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[/// Todo in a new Tc project:
+/// - Add CA-Groupe + link to PLC (in MOTION\NC-Task-SAF\Objects)
+/// - Set raillength in CA-Groupe
+/// - Add XtsInfoServer in TcCOM. Add as many XtsStationInfos as required. Increase StopPositions to Array of size 25.
+/// - Info Server: Stations link ObjectId in PLC1 Instance. 
+/// -
+
+// As long as the initialization is not completed, skip the rest of the program.
+IF NOT bInitDone THEN
+	fbSystem.Initialize();
+	bInitDone := fbSystem.Initialized;
+	RETURN;
+END_IF
+
+// "Start up": add the mover to the CA group, search Mover1, enable Groupe, enable Mover. No Movement
+IF bEnable AND XtsSystem.Initialized AND XtsSystem.Disabled THEN
+	bEnable := FALSE;	
+	XtsSystem.Enable();
+END_IF
+
+// "Shutdown": Halt Mover, disable Mover, disable Groupe, reset Groupe, reset Mover, remove Mover from Groupe
+IF bDisable THEN
+	bDisable := FALSE;
+	XtsSystem.Disable();
+END_IF
+
+// First Startup strategy: 
+// Send all movers to the "Unload" station.
+IF bStart AND XtsSystem.Enabled THEN
+	bStart := FALSE;
+	XtsSystem.SuppressAllDynamicsChanges := TRUE;	
+	
+	// Delete all Queues
+	FOR nLoopIndex := 1 TO cNrOfStations DO
+		aStations[nLoopIndex].DeleteMoversQueue();
+	END_FOR	
+	
+	// Move + add all mover in parent station 1 (StationA_Waiting). Set as targed station 2 (StationA)
+	//(the parent station is not necessarily the target station. But the station that is responsible for sending the mover forward if necessary)
+	nIdxTargedStation  := 2;	
+	nIdxParentStation := 1;
+	FOR nLoopIndex := 1 TO cNrOfMovers DO
+		aMovers[nLoopIndex].TargedStation := aStations[nIdxTargedStation].LUID;
+		aMovers[nLoopIndex].MoveAbsCA(	fPosition	:=aStations[nIdxParentStation].PositionOnTrack, 
+										fVelocity 	:= 4000, 
+										fGap 		:= aStations[nIdxParentStation].StationBehinde.MoverGapAtExit, 
+										eDirection 	:= Tc3_Mc3Definitions.MC_DIRECTION.mcDirectionPositive);
+		aStations[nIdxParentStation].AddMoverToQueue(aMovers[nLoopIndex]);
+	END_FOR
+END_IF
+
+// Restart strategy: 
+// Send all movers to the last known parent station.
+//(the parent station is not necessarily the target station. But the station that is responsible for sending the mover forward if necessary)
+IF bRestart AND XtsSystem.Enabled THEN
+	bRestart := FALSE;
+	FOR nLoopIndex := 1 TO cNrOfMovers DO
+		IF aMovers[nLoopIndex].ParentStation <> 0 THEN
+			aMovers[nLoopIndex].MoveAbsCA(	fPosition	:= aMovers[nLoopIndex].ParentStation.PositionOnTrack, 
+								fVelocity 	:= aMovers[nLoopIndex].LastCmdTargedVelocity,  
+								fGap 		:= aMovers[nLoopIndex].LastCmdTargedGap,  
+								eDirection 	:= Tc3_Mc3Definitions.MC_DIRECTION.mcDirectionPositive);
+		END_IF
+	END_FOR
+END_IF
+
+
+// Configure and Start Simulation
+IF bStartSimulation THEN
+	bStartSimulation := FALSE;
+	XtsSystem.SuppressAllDynamicsChanges := FALSE;	//Enable to adjust Gap + Dynamic depending on Station
+	XtsSystem.Station('StationA').SimulationMode(fProcessDuration := 0.5, sTargedStation := 'StationB');
+	XtsSystem.Station('StationB').SimulationMode(fProcessDuration := 1.0, sTargedStation := 'StationC');
+	XtsSystem.Station('StationC').SimulationMode(fProcessDuration := 1.5, sTargedStation := 'StationD');
+	XtsSystem.Station('StationD').SimulationMode(fProcessDuration := 3.0, sTargedStation := 'StationE');
+	XtsSystem.Station('StationE').SimulationMode(fProcessDuration := 1.0, sTargedStation := 'StationF');
+	XtsSystem.Station('StationF').SimulationMode(fProcessDuration := 2.0, sTargedStation := 'StationG');
+	XtsSystem.Station('StationG').SimulationMode(fProcessDuration := 2.5, sTargedStation := 'StationH');
+	XtsSystem.Station('StationH').SimulationMode(fProcessDuration := 1.8, sTargedStation := 'StationI');
+	XtsSystem.Station('StationI').SimulationMode(fProcessDuration := 0.1, sTargedStation := 'StationJ');
+	XtsSystem.Station('StationJ').SimulationMode(fProcessDuration := 0.8, sTargedStation := 'StationA');
+END_IF
+
+// Stop Simulation
+IF bStopSimulation THEN
+	bStopSimulation := FALSE;
+	FOR nLoopIndex := 1 TO cNrOfStations DO
+		aStations[nLoopIndex].SimulationMode(0,'');
+	END_FOR	
+END_IF
+
+// Prevent further movers from entering the station, 
+// e.g. to prevent a collision. All movers that are already moving to reach this station will be stopped with a stop 
+// and restarted with Ready True.
+XtsSystem.Station('StationA').ReadyToRecvMovers := NOT bPreventMoversFromEntering; //Toggle this 
+
+
+// Changing of Gap Mode for Group (including Control Direction!)
+// changes control direction to positiv and mode to fast
+IF bFast AND XtsSystem.Disabled THEN
+	bFast := FALSE;
+	fbGroup.ChangeGapMode(bFast:= TRUE);
+END_IF
+
+
+// Changes mode to standard and control direction to both
+IF bStandard AND XtsSystem.Disabled THEN
+	bStandard := FALSE;
+	fbGroup.ChangeGapMode(bFast:= FALSE);
+END_IF
+
+
+PRG_Example_ProductData();
+
+//Update system at the end
+fbSystem.Update();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

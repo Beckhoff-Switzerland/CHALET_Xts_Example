@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CTComObjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{3A8397B3-4D69-47E4-98C8-3484E09F0265}" Namespace="XTS">ModuleSide</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Back]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Feed-In is orientated to the right side when one looks at the module.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Front]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[Feed-In is orientated to the left side when one looks at the module.]]></Comment>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{E0B22A9F-54C2-4B0C-86B3-A8BB45899BF4}" Namespace="XTS">Transform2D</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>X</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Y</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Alpha</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Unknown]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[FaultReactionActive]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Fault]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[NotReadyToSwitchOn]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchOnDisabled]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ReadyToSwitchOn]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchedOn]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[OperationEnabled]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"/>
+			</Hides>
+			<Relations>
+				<Relation>
+					<Type GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"></Type>
+				</Relation>
+			</Relations>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b009595950090909000606060005d5d5d00808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000414142004141420075757500a4a4a4009e9e9e0097979700181818001717170087878700838383007e7e7e005d5d5d004141420041414200000000000000000041414200414142007a7a7a00adadad00a8a8a8009c9c9c003a3a3a00383838008d8d8d008c8c8c00878787006262620041414200414142000000000000000000c6c6c600c1c1c100bcbcbc00b6b6b600b1b1b100ababab0053535300505050009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c500bfbfbf00bababa00b4b4b400838383007f7f7f00a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900d3d3d300e1b17500f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00c8985c0098989800929292000000000000000000e2e2e200dcdcdc00e5b57900f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00cd9d6100a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000dbdbdb00d5d5d500d0d0d0009898980094949400c0c0c000bababa00b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900e4e4e400dfdfdf00d9d9d9006a6a6a0067676700c9c9c900c3c3c300bebebe00b9b9b900b3b3b300aeaeae00000000000000000041414200414142009a9a9a00ededed00e8e8e800dadada005252520050505000cbcbcb00cdcdcd00c7c7c700828282004141420041414200000000000000000041414200414142009e9e9e00f6f6f600f1f1f100e8e8e8002525250024242400d8d8d800d6d6d600d0d0d0008686860041414200414142000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00f5f5f500a7a7a700a4a4a400e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+	</ImageDatas>
+	<Module Id="#x01010670" KeepUnrestoredLinks="2">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<TmcDesc GUID="{43BE0432-F7C6-4CEA-BE37-0C69D38D97C1}">
+			<Name>XtsPart</Name>
+			<CLSID ClassFactory="TcIoXts">{4B52C4EC-39EA-4401-8F36-6D5F1E88E04E}</CLSID>
+			<InitSequence>PSO</InitSequence>
+			<Contexts>
+				<Context>
+					<Id>1</Id>
+				</Context>
+			</Contexts>
+			<Interfaces>
+				<Interface>
+					<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+				</Interface>
+				<Interface>
+					<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+				</Interface>
+			</Interfaces>
+			<Parameters>
+				<Group><![CDATA[General]]></Group>
+				<Group><![CDATA[Info]]></Group>
+				<Group Collapsed="true"><![CDATA[Structure]]></Group>
+				<Parameter Group="General">
+					<Name>TaskOID</Name>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x03002060</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>ModuleSide</Name>
+					<Comment><![CDATA[Module side of the Part shown in the Tool Window and XTS Viewer.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{3A8397B3-4D69-47E4-98C8-3484E09F0265}" Namespace="XTS">ModuleSide</BaseType>
+					<PTCID>#x03080262</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>Offset</Name>
+					<Comment><![CDATA[Configure the offset for the Part.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<PTCID>#x03080202</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>OriginTransform</Name>
+					<Comment><![CDATA[Origin transformation for the Part shown in the Tool Window and XTS Viewer.]]></Comment>
+					<BitSize>96</BitSize>
+					<BaseType GUID="{E0B22A9F-54C2-4B0C-86B3-A8BB45899BF4}" Namespace="XTS">Transform2D</BaseType>
+					<PTCID>#x03080260</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="General">
+					<Name>TriggerReset</Name>
+					<Comment><![CDATA[If downloaded then all faulty modules will be resetted.]]></Comment>
+					<BitSize>0</BitSize>
+					<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
+					<PTCID>#x030802eb</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>DriveState</Name>
+					<Comment><![CDATA[Returns the state of the drive system.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</BaseType>
+					<PTCID>#x000000a0</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>GlobalNumber</Name>
+					<Comment><![CDATA[The global number is used to distinguish all parts which are manged by one XPU.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x03080227</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Length</Name>
+					<Comment><![CDATA[Returns the length of the Part.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[mm]]></Unit>
+					<PTCID>#x03080206</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
+					<Name>AreaCount</Name>
+					<Comment><![CDATA[Returns the number of areas.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x03080234</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
+					<Name>AreaObjectIDs</Name>
+					<Comment><![CDATA[Returns an array containing the object IDs of all areas.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements Min="1" Max="100">1</Elements>
+					</ArrayInfo>
+					<PTCID>#x03080235</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
+					<Name>ModuleCount</Name>
+					<Comment><![CDATA[Returns the number of modules.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x03080207</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
+					<Name>ModuleObjectIDs</Name>
+					<Comment><![CDATA[Returns an array containing the object IDs of all modules.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<ArrayInfo>
+						<LBound>0</LBound>
+						<Elements Min="1" Max="500">1</Elements>
+					</ArrayInfo>
+					<PTCID>#x03080208</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+			</Parameters>
+			<EventMessages>
+				<EventMessage>
+					<Id>9029</Id>
+					<Message><![CDATA[Could not register by {0}.]]></Message>
+				</EventMessage>
+			</EventMessages>
+			<Properties>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsPart</Value>
+				</Property>
+			</Properties>
+			<ParentOTCID>#x01010010</ParentOTCID>
+			<ParameterValues>
+				<Value>
+					<Name>TaskOID</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>ModuleSide</Name>
+					<EnumText>Front</EnumText>
+				</Value>
+				<Value>
+					<Name>Offset</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OriginTransform.X</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OriginTransform.Y</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>OriginTransform.Alpha</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveState</Name>
+					<EnumText>Unknown</EnumText>
+				</Value>
+				<Value>
+					<Name>GlobalNumber</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Length</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>AreaCount</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>AreaObjectIDs[0]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>ModuleCount</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>ModuleObjectIDs[0]</Name>
+					<Value>0</Value>
+				</Value>
+			</ParameterValues>
+		</TmcDesc>
+		<Module File="Module 1.xti"/>
+		<Module File="Module 2.xti"/>
+		<Module File="Module 3.xti"/>
+		<Module File="Module 4.xti"/>
+		<Module File="Module 5.xti"/>
+		<Module File="Module 6.xti"/>
+		<Module File="Module 7.xti"/>
+		<Module File="Module 8.xti"/>
+		<Module File="Module 9.xti"/>
+		<Module File="Module 10.xti"/>
+		<Module File="Module 11.xti"/>
+		<Module File="Module 12.xti"/>
+		<Module File="Module 13.xti"/>
+		<Module File="Module 14.xti"/>
+		<Module File="Module 15.xti"/>
+		<Module File="Module 16.xti"/>
+		<Module File="Module 17.xti"/>
+		<Module File="Module 18.xti"/>
+		<Module File="Module 19.xti"/>
+		<Module File="Module 20.xti"/>
+		<Module File="Module 21.xti"/>
+		<Module File="Module 22.xti"/>
+		<Module File="Module 23.xti"/>
+		<Module File="Module 24.xti"/>
+		<Module File="Module 25.xti"/>
+		<Module File="Module 26.xti"/>
+		<Module File="Module 27.xti"/>
+		<Module File="Module 28.xti"/>
+		<Module File="Module 29.xti"/>
+		<Module File="Module 30.xti"/>
+		<Module File="Module 31.xti"/>
+		<Module File="Module 32.xti"/>
+		<Module File="Module 33.xti"/>
+		<Module File="Module 34.xti"/>
+		<Module File="Module 35.xti"/>
+		<Module File="Module 36.xti"/>
+		<Module File="Module 37.xti"/>
+		<Module File="Module 38.xti"/>
+		<Module File="Module 39.xti"/>
+		<Module File="Module 40.xti"/>
+		<Module File="Module 41.xti"/>
+		<Module File="Module 42.xti"/>
+		<Module File="Module 43.xti"/>
+		<Module File="Module 44.xti"/>
+		<Module File="Module 45.xti"/>
+		<Module File="Module 46.xti"/>
+		<Module File="Module 47.xti"/>
+		<Module File="Module 48.xti"/>
+		<Module File="Module 49.xti"/>
+		<Module File="Module 50.xti"/>
+		<Module File="Module 51.xti"/>
+		<Module File="Module 52.xti"/>
+		<Module File="Module 53.xti"/>
+		<Module File="Module 54.xti"/>
+		<Module File="Module 55.xti"/>
+		<Module File="Module 56.xti"/>
+		<Module File="Module 57.xti"/>
+		<Module File="Module 58.xti"/>
+		<Module File="Module 59.xti"/>
+		<Module File="Module 60.xti"/>
+		<Module File="Module 61.xti"/>
+		<Module File="Module 62.xti"/>
+		<Module File="Module 63.xti"/>
+		<Module File="Module 64.xti"/>
+		<Module File="Module 65.xti"/>
+		<Module File="Module 66.xti"/>
+		<Module File="Module 67.xti"/>
+		<Module File="Module 68.xti"/>
+		<Module File="Module 69.xti"/>
+		<Module File="Module 70.xti"/>
+		<Module File="Module 71.xti"/>
+		<Module File="Module 72.xti"/>
+		<Module File="Module 73.xti"/>
+		<Module File="Module 74.xti"/>
+		<Module File="Module 75.xti"/>
+		<Module File="Module 76.xti"/>
+		<Module File="Module 77.xti"/>
+		<Module File="Module 78.xti"/>
+		<Module File="Module 79.xti"/>
+		<Module File="Module 80.xti"/>
+		<Module File="Module 81.xti"/>
+		<Module File="Module 82.xti"/>
+		<Module File="Module 83.xti"/>
+		<Module File="Module 84.xti"/>
+	</Module>
+</TcSmItem>

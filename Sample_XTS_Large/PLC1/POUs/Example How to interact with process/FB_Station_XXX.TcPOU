@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Station_XXX" Id="{074139c9-b420-440b-8b6e-4864f8ff903a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Station_XXX
+VAR_INPUT
+	//Interface to XTS-Station and XTS-System
+	ipStation : I_XTS_Station_PLC;
+	ipXtsSystem : I_XTS_System_PLC; 
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Update" Id="{02547c76-06ad-41c8-93cc-99ea37f2570d}">
+      <Declaration><![CDATA[METHOD Update : HRESULT
+VAR_INST
+	nSeq : UINT;
+	
+END_VAR
+VAR
+	fTargedPos : LREAL;
+	sLUIDStationAhead : STRING;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF ipStation = 0  OR ipXtsSystem = 0 THEN
+	RETURN; // ERROR
+END_IF
+
+IF ipXtsSystem.Disabled THEN
+	nSeq := 0;
+END_IF
+
+CASE nSeq OF 
+
+	0: //wait for mover
+		IF ipStation.MoversInPlace THEN
+			nSeq := 1;
+		END_IF
+		
+	1: //Move backwards
+		fTargedPos := ipStation.PositionOnTrack - 120.0;
+		ipStation.MoversInQueue[0].FullAccess.MoveAbsCA(fPosition := fTargedPos, 
+														fVelocity := 500, 
+														fGap := 300, 
+														eDirection := Tc3_Mc3Definitions.MC_DIRECTION.mcDirectionShortestWay);
+		nSeq := 2;				
+
+	2: // wait until move is finish
+		IF ipStation.MoversInQueue[0].FullAccess.Feedback.Done THEN
+			nSeq := 3;	
+		END_IF
+		
+	3: //Move backwards
+		fTargedPos := ipStation.PositionOnTrack;
+		ipStation.MoversInQueue[0].FullAccess.MoveAbsCA(fPosition := fTargedPos, 
+														fVelocity := 500, 
+														fGap := 300, 
+														eDirection := Tc3_Mc3Definitions.MC_DIRECTION.mcDirectionShortestWay);
+		nSeq := 4;				
+
+	4: // wait until move is finish
+		IF ipStation.MoversInQueue[0].FullAccess.Feedback.Done THEN
+			nSeq := 5;	
+		END_IF
+		
+	5: // send movers away
+		sLUIDStationAhead := 'StationJ';
+		ipStation.SendMoversToStation(sLUIDStationAhead);
+		nSeq := 0;	
+	
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

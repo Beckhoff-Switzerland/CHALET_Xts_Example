@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="PRG_Example_ProductData" Id="{45386950-e978-4edb-a7de-82ec20958356}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM PRG_Example_ProductData
+  <POU Name="PRG_Example_ProductData_Advanced" Id="{45386950-e978-4edb-a7de-82ec20958356}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Example_ProductData_Advanced
 VAR
 	bInitDone : BOOL;
 		
@@ -19,7 +19,14 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT bInitDone THEN
+      <ST><![CDATA[(* 
+   This extended example shows how existing product data from a previous process is loaded onto the mover in StationA (e.g. robot). 
+   This information is then processed in StationB (e.g. camera). 
+   Finally, the product information is removed from the mover in StationC and transferred to the next process step outside the XTS 
+*)
+
+//Do this once during initialization
+IF NOT bInitDone THEN
 	bInitDone := TRUE;
 	
 	//Put all product informations in a list to easy access them
@@ -31,9 +38,14 @@ END_IF
 
 
 //Station A: put empty product info FB on mover
-ipStationLoad := MAIN.XtsSystem.Station('StationA');
+ipStationLoad := MAIN.ipXtsSystem.Station('StationA');
+IF ipStationLoad = 0 THEN
+	//Abort on invalide interface
+	RETURN;
+END_IF
+
 //This is executed once when the mover arrives at the station
-fbTriggerMoverInPlace1(CLK:= ipStationLoad.AreMoversInPlace);
+fbTriggerMoverInPlace1(CLK:= ipStationLoad.MoversInPlace);
 IF fbTriggerMoverInPlace1.Q THEN
 	//Do this for each mover inside the station
 	FOR nIdx := 0 TO (ipStationLoad.MoverQueueSize-1) DO
@@ -63,9 +75,13 @@ END_IF
 
 
 //Station B: read/write product info 
-ipStationModify := MAIN.XtsSystem.Station('StationB');
+ipStationModify := MAIN.ipXtsSystem.Station('StationB');
+IF ipStationModify = 0 THEN
+	//Abort on invalide interface
+	RETURN;
+END_IF
 //This is executed once when the mover arrives at the station
-fbTriggerMoverInPlace2(CLK:= ipStationModify.AreMoversInPlace);
+fbTriggerMoverInPlace2(CLK:= ipStationModify.MoversInPlace);
 IF fbTriggerMoverInPlace2.Q THEN
 	//Do this for each mover inside the station
 	FOR nIdx := 0 TO (ipStationModify.MoverQueueSize-1) DO
@@ -82,9 +98,13 @@ END_IF
 
 
 //Station C: Remove Produkt from XTS
-ipStationUnload := MAIN.XtsSystem.Station('StationC');
+ipStationUnload := MAIN.ipXtsSystem.Station('StationC');
+IF ipStationUnload = 0 THEN
+	//Abort on invalide interface
+	RETURN;
+END_IF
 //This is executed once when the mover arrives at the station
-fbTriggerMoverInPlace3(CLK:= ipStationUnload.AreMoversInPlace);
+fbTriggerMoverInPlace3(CLK:= ipStationUnload.MoversInPlace);
 IF fbTriggerMoverInPlace3.Q THEN
 	//Do this for each mover inside the station
 	FOR nIdx := 0 TO (ipStationUnload.MoverQueueSize-1) DO

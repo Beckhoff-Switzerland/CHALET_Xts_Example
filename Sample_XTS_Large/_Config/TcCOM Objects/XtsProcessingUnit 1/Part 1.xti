@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CTComObjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.55" ClassName="CTComObjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{3A8397B3-4D69-47E4-98C8-3484E09F0265}" Namespace="XTS">ModuleSide</Name>
@@ -93,9 +93,37 @@
 				</Relation>
 			</Relations>
 		</DataType>
+		<DataType>
+			<Name GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Major</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Minor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Build</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Revision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
 	</DataTypes>
 	<ImageDatas>
-		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b009595950090909000606060005d5d5d00808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000414142004141420075757500a4a4a4009e9e9e0097979700181818001717170087878700838383007e7e7e005d5d5d004141420041414200000000000000000041414200414142007a7a7a00adadad00a8a8a8009c9c9c003a3a3a00383838008d8d8d008c8c8c00878787006262620041414200414142000000000000000000c6c6c600c1c1c100bcbcbc00b6b6b600b1b1b100ababab0053535300505050009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c500bfbfbf00bababa00b4b4b400838383007f7f7f00a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900d3d3d300e1b17500f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00c8985c0098989800929292000000000000000000e2e2e200dcdcdc00e5b57900f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00cd9d6100a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000dbdbdb00d5d5d500d0d0d0009898980094949400c0c0c000bababa00b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900e4e4e400dfdfdf00d9d9d9006a6a6a0067676700c9c9c900c3c3c300bebebe00b9b9b900b3b3b300aeaeae00000000000000000041414200414142009a9a9a00ededed00e8e8e800dadada005252520050505000cbcbcb00cdcdcd00c7c7c700828282004141420041414200000000000000000041414200414142009e9e9e00f6f6f600f1f1f100e8e8e8002525250024242400d8d8d800d6d6d600d0d0d0008686860041414200414142000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00f5f5f500a7a7a700a4a4a400e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b0095959500909090008a8a8a0085858500808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000000000000000000000000000a4a4a4009e9e9e0099999900060606000606060089898900838383007e7e7e000000000000000000000000000000000000000000000000000000000000000000adadad00a8a8a800a2a2a2001212120012121200929292008c8c8c00878787000000000000000000000000000000000000000000c6c6c600c1c1c100bcbcbc00b6b6b600b1b1b100ababab0021212100202020009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c500bfbfbf00bababa00b4b4b400313131002f2f2f00a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900d3d3d300cecece00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b009d9d9d0098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00f4931b00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000dbdbdb00d5d5d500d0d0d0003939390037373700c0c0c000bababa00b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900e4e4e400dfdfdf00d9d9d9002a2a2a0029292900c9c9c900c3c3c300bebebe00b9b9b900b3b3b300aeaeae000000000000000000000000000000000000000000ededed00e8e8e800e2e2e2001a1a1a0019191900d2d2d200cdcdcd00c7c7c7000000000000000000000000000000000000000000000000000000000000000000f6f6f600f1f1f100ebebeb000909090009090900dbdbdb00d6d6d600d0d0d0000000000000000000000000000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00f5f5f500efefef00eaeaea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
 	</ImageDatas>
 	<Module Id="#x01010670" KeepUnrestoredLinks="2">
 		<Name>__FILENAME__</Name>
@@ -121,10 +149,14 @@
 				<Group><![CDATA[General]]></Group>
 				<Group><![CDATA[Info]]></Group>
 				<Group Collapsed="true"><![CDATA[Structure]]></Group>
-				<Parameter Group="General">
+				<Parameter HideParameter="true" Group="General">
 					<Name>TaskOID</Name>
+					<Comment><![CDATA[Gets/Sets the XTS Task that is used for calculations for the XtsPart.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<Default>
+						<Value>#x00000000</Value>
+					</Default>
 					<PTCID>#x03002060</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
@@ -133,6 +165,9 @@
 					<Comment><![CDATA[Module side of the Part shown in the Tool Window and XTS Viewer.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{3A8397B3-4D69-47E4-98C8-3484E09F0265}" Namespace="XTS">ModuleSide</BaseType>
+					<Default>
+						<EnumText>Front</EnumText>
+					</Default>
 					<PTCID>#x03080262</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
@@ -225,6 +260,22 @@
 					<PTCID>#x03080208</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>VersionString</Name>
+					<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+					<BitSize>384</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+					<PTCID>#x03080287</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Version</Name>
+					<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+					<PTCID>#x03080510</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
 			</Parameters>
 			<EventMessages>
 				<EventMessage>
@@ -235,7 +286,23 @@
 			<Properties>
 				<Property>
 					<Name>Category</Name>
+					<Value>XTS</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>TcIoXts</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
 					<Value>XtsPart</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsProcessingUnitChild</Value>
+				</Property>
+				<Property>
+					<Name>ChildCategory</Name>
+					<Value>XtsPartChild</Value>
 				</Property>
 			</Properties>
 			<ParentOTCID>#x01010010</ParentOTCID>
@@ -290,6 +357,26 @@
 				</Value>
 				<Value>
 					<Name>ModuleObjectIDs[0]</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>VersionString</Name>
+					<String></String>
+				</Value>
+				<Value>
+					<Name>Version.Major</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Minor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Build</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Revision</Name>
 					<Value>0</Value>
 				</Value>
 			</ParameterValues>

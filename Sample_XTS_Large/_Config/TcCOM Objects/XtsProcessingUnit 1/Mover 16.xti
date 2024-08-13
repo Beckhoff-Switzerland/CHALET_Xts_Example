@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CTComObjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.55" ClassName="CTComObjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{4BC4DABB-09B3-4A22-9E37-65ED6818A460}" Namespace="XTS">IXtsMover</Name>
@@ -37,6 +37,20 @@
 			</Method>
 		</DataType>
 		<DataType>
+			<Name GUID="{01E5C78E-D451-4377-9F02-F3812CC92C14}" Namespace="XTS">XtsMoverControllerOTCID</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+			<Properties>
+				<Property>
+					<Name>OTCID</Name>
+				</Property>
+				<Property>
+					<Name>TcCategoryOID</Name>
+					<Value>XtsMoverController</Value>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
 			<Name GUID="{D72EC4CD-3838-4FF1-8755-3F97B266CAF2}" Namespace="XTS">MoverPositionInfo</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
@@ -65,6 +79,56 @@
 			</SubItem>
 		</DataType>
 		<DataType>
+			<Name GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Unknown]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[FaultReactionActive]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Fault]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[NotReadyToSwitchOn]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchOnDisabled]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ReadyToSwitchOn]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchedOn]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[OperationEnabled]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+			<Hides>
+				<Hide GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"/>
+			</Hides>
+			<Relations>
+				<Relation>
+					<Type GUID="{3E44F19E-945D-43E7-BC3A-30F4A192CF1B}"></Type>
+				</Relation>
+			</Relations>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
 			<BitSize>48</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -81,6 +145,34 @@
 				<Parameter>[4]</Parameter>
 				<Parameter>[5]</Parameter>
 			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Major</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Minor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Build</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Revision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
 		</DataType>
 		<DataType>
 			<Name GUID="{C24B0647-3B21-49BD-B2D0-DEA43DE68F78}" Namespace="XTS">SoftDriveInput</Name>
@@ -356,7 +448,7 @@
 		</DataType>
 	</DataTypes>
 	<ImageDatas>
-		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000d70d0000d70d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b0095959500909090008a8a8a0085858500808080007a7a7a00000000006f6f6f006a6a6a00646464000000000000000000b4b4b400afafaf00a9a9a900a4a4a4009e9e9e0099999900949494008e8e8e0089898900838383000000000078787800737373006e6e6e000000000000000000bdbdbd00b8b8b800b2b2b200adadad00a8a8a800a2a2a2009d9d9d0097979700929292008c8c8c0000000000828282007c7c7c00777777000000000000000000c6c6c600c1c1c100bcbcbc00b6b6b600b1b1b100ababab00a6a6a600a0a0a0009b9b9b0096969600000000008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c50059595900bababa00b4b4b400afafaf00aaaaaa00a4a4a4009f9f9f004c4c4c00454545008e8e8e00898989000000000000000000d9d9d900d3d3d300cecece0000000000bebebe00bebebe00b8b8b800b3b3b300adadad00a8a8a8009f9f9f000000000098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700000000003f3f3f00c2c2c200c1c1c100bcbcbc00b7b7b700adadad003535350000000000a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000000000004242420056565600cbcbcb00c5c5c500c0c0c0004d4d4d003838380000000000aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e90000000000dadada00c3c3c300d4d4d400cecece00c9c9c900afafaf00bababa0000000000b3b3b300aeaeae000000000000000000fbfbfb00f8f8f800f3f3f30009090900828282007a7a7a00dddddd00d7d7d700d2d2d2006f6f6f007070700008080800bcbcbc00b7b7b7000000000000000000fbfbfb00fbfbfb00fbfbfb00bbbbbb000b0b0b0082828200e6e6e600e1e1e100dbdbdb007b7b7b000a0a0a0096969600c5c5c500c0c0c0000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00bbbbbb000a0a0a0000000000000000000000000009090900a3a3a300d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000c3c3c300c0c0c000bcbcbc00b9b9b900b5b5b500b2b2b200aeaeae00ababab00a8a8a800a4a4a400a1a1a1009d9d9d009a9a9a00979797004040400040404000c9c9c900c5c5c500c2c2c200bebebe00bbbbbb00b8b8b800b4b4b400b1b1b100adadad00aaaaaa0040404000a3a3a300a0a0a0009c9c9c004040400040404000cecece00cbcbcb00c8c8c800c4c4c400c1c1c100bdbdbd00bababa00b7b7b700b3b3b300b0b0b00040404000a9a9a900a6a6a600a2a2a2004040400040404000d4d4d400d1d1d100cdcdcd00cacaca00c7c7c700c3c3c300c0c0c000bcbcbc00b9b9b900b5b5b50040404000afafaf00ababab00a8a8a8004040400040404000dadada00d7d7d700d3d3d300d0d0d000cccccc00c9c9c900c5c5c500c2c2c200bfbfbf00bbbbbb0040404000b4b4b400b1b1b100aeaeae004040400040404000e0e0e000dcdcdc00d9d9d90085858500d2d2d200cfcfcf00cbcbcb00c8c8c800c4c4c400c1c1c1007f7f7f0079797900b7b7b700b3b3b3004040400040404000e5e5e500e2e2e200dfdfdf0040404000d5d5d500d4d4d400d1d1d100cecece00cacaca00c7c7c700c0c0c00040404000bdbdbd00b9b9b9004040400040404000ebebeb00e8e8e800e4e4e4004040400071717100d7d7d700d7d7d700d3d3d300d0d0d000cacaca006a6a6a0040404000c2c2c200bfbfbf004040400040404000f1f1f100eeeeee00eaeaea00404040007272720082828200dddddd00d9d9d900d6d6d6007c7c7c006c6c6c0040404000c8c8c800c5c5c5004040400040404000f7f7f700f3f3f300f0f0f00040404000e6e6e600d6d6d600e2e2e200dfdfdf00dbdbdb00c9c9c900d2d2d20040404000cecece00cacaca004040400040404000fbfbfb00f9f9f900f6f6f60046464600a2a2a2009c9c9c00e8e8e800e5e5e500e1e1e100959595009696960045454500d4d4d400d0d0d0004040400040404000fbfbfb00fbfbfb00fbfbfb00cccccc0048484800a3a3a300eeeeee00eaeaea00e7e7e7009e9e9e0047474700b5b5b500d9d9d900d6d6d6004040400040404000fbfbfb00fbfbfb00fbfbfb00fbfbfb00cbcbcb004747470040404000404040004040400046464600bcbcbc00e2e2e200dfdfdf00dcdcdc004040400040404000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f9f9f900f6f6f600f2f2f200efefef00ececec00e8e8e800e5e5e500e1e1e1004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000404040004040400040404000</ImageData>
 	</ImageDatas>
 	<Module Id="#x01010560" KeepUnrestoredLinks="2">
 		<Name>__FILENAME__</Name>
@@ -392,15 +484,29 @@
 			<Parameters>
 				<Group><![CDATA[General]]></Group>
 				<Group><![CDATA[Mover Detection]]></Group>
-				<Group><![CDATA[Mover ID Detection]]></Group>
 				<Group><![CDATA[Simulation]]></Group>
+				<Group><![CDATA[Mover ID Detection]]></Group>
 				<Group><![CDATA[Info]]></Group>
-				<Parameter Group="General">
+				<Parameter HideParameter="true" Group="General">
 					<Name>AdsPort</Name>
 					<Comment><![CDATA[Gets/sets the ads port. The port should be used to read/write parameters via ADS.]]></Comment>
 					<BitSize>16</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+					<Default>
+						<Value>0</Value>
+					</Default>
 					<PTCID>#x03002090</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter HideParameter="true" Group="General">
+					<Name>TaskOID</Name>
+					<Comment><![CDATA[Gets/Sets the XTS Task that is used for calculations for the XtsMover.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<Default>
+						<Value>#x00000000</Value>
+					</Default>
+					<PTCID>#x03002060</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="General">
@@ -413,7 +519,7 @@
 				</Parameter>
 				<Parameter HideParameter="true" Group="General">
 					<Name>IsCommutationInverted</Name>
-					<Comment><![CDATA[Attention! Parameter is only for tests - if the commutation is inverted and the magnet plate set does not match, the mover cannot be safely controlled!.]]></Comment>
+					<Comment><![CDATA[Attention! Parameter is only for tests - if the commutation is inverted and the magnet plate set does not match, the mover cannot be safely controlled!]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -423,11 +529,11 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="General">
-					<Name>TaskOID</Name>
-					<Comment><![CDATA[Gets/Sets the XTS Task that is used for calculations for the Mover.]]></Comment>
+					<Name>MoverController</Name>
+					<Comment><![CDATA[Get/set the the mover controller.]]></Comment>
 					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x03002060</PTCID>
+					<BaseType GUID="{01E5C78E-D451-4377-9F02-F3812CC92C14}" Namespace="XTS">XtsMoverControllerOTCID</BaseType>
+					<PTCID>#x0308050f</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="Mover Detection">
@@ -464,7 +570,7 @@
 				</Parameter>
 				<Parameter Group="Simulation">
 					<Name>SimulatedStartUpPosition</Name>
-					<Comment><![CDATA[Gets/sets the part's position on which the mover is detected during simulation.]]></Comment>
+					<Comment><![CDATA[Gets/sets the part on which the mover is detected during simulation.]]></Comment>
 					<BitSize>64</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 					<Unit><![CDATA[mm]]></Unit>
@@ -605,6 +711,38 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>MoverControllerError</Name>
+					<Comment><![CDATA[Returns the error code of the linked XTS Mover Controller.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x03080408</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>DriveStatus</Name>
+					<Comment><![CDATA[Returns the drive status of the mover.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{C3ADB195-DDF2-437F-AF8E-FB07C2F42281}" Namespace="XTS">DriveState</BaseType>
+					<PTCID>#x03080452</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>DriveStatusValue</Name>
+					<Comment><![CDATA[Returns the drive status value of the mover.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x03080453</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>DriveControlValue</Name>
+					<Comment><![CDATA[Returns the drive control value of the mover.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+					<PTCID>#x03080454</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
 					<Name>MasterNetId</Name>
 					<Comment><![CDATA[Returns the NetId of the EtherCAT master to which the drive/encoder belong to.]]></Comment>
 					<BitSize>48</BitSize>
@@ -620,10 +758,26 @@
 					<PTCID>#x03080289</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>VersionString</Name>
+					<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+					<BitSize>384</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+					<PTCID>#x03080287</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Version</Name>
+					<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+					<PTCID>#x03080510</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
 			</Parameters>
 			<DataAreas>
 				<DataArea>
-					<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+					<AreaNo AreaType="OutputSrc" CreateSymbols="true" OptionalArea="true">1</AreaNo>
 					<Name>Inputs</Name>
 					<Comment><![CDATA[Cyclic data structure for communication from Mover object to SoftDrive object of the axis.]]></Comment>
 					<ContextId>1</ContextId>
@@ -632,11 +786,12 @@
 						<Name>SoftDriveInput</Name>
 						<BitSize>832</BitSize>
 						<BaseType GUID="{C24B0647-3B21-49BD-B2D0-DEA43DE68F78}">XTS.SoftDriveInput</BaseType>
+						<PTCID>#x00001001</PTCID>
 						<BitOffs>0</BitOffs>
 					</Symbol>
 				</DataArea>
 				<DataArea>
-					<AreaNo AreaType="InputDst" CreateSymbols="true">2</AreaNo>
+					<AreaNo AreaType="InputDst" CreateSymbols="true" OptionalArea="true">2</AreaNo>
 					<Name>Outputs</Name>
 					<Comment><![CDATA[Cyclic data structure for communication from SoftDrive object to Mover object.]]></Comment>
 					<ContextId>1</ContextId>
@@ -645,15 +800,50 @@
 						<Name>SoftDriveOutput</Name>
 						<BitSize>768</BitSize>
 						<BaseType GUID="{9A1133A5-A1B4-42CA-A470-0B744A5D182F}">XTS.SoftDriveOutput</BaseType>
+						<PTCID>#x00002001</PTCID>
 						<BitOffs>0</BitOffs>
 					</Symbol>
 				</DataArea>
 			</DataAreas>
+			<Properties>
+				<Property>
+					<Name>Category</Name>
+					<Value>XTS</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>TcIoXts</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsMover</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsIoDriverChild</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsProcessingUnitChild</Value>
+				</Property>
+				<Property>
+					<Name>ChildCategory</Name>
+					<Value>XtsMoverChild</Value>
+				</Property>
+				<Property>
+					<Name>McAxisObject</Name>
+					<Value>TcCom_XtsMoverController</Value>
+				</Property>
+			</Properties>
 			<ParentOTCID>#x01010010</ParentOTCID>
 			<ParameterValues>
 				<Value>
 					<Name>AdsPort</Name>
 					<Value>350</Value>
+				</Value>
+				<Value>
+					<Name>TaskOID</Name>
+					<Value>33620000</Value>
 				</Value>
 				<Value>
 					<Name>ActiveTrackObjectId</Name>
@@ -664,8 +854,8 @@
 					<EnumText>FALSE</EnumText>
 				</Value>
 				<Value>
-					<Name>TaskOID</Name>
-					<Value>33620000</Value>
+					<Name>MoverController</Name>
+					<Value>0</Value>
 				</Value>
 				<Value>
 					<Name>ConfiguredDetectionTrackObjectId</Name>
@@ -756,11 +946,47 @@
 					<EnumText>FALSE</EnumText>
 				</Value>
 				<Value>
+					<Name>MoverControllerError</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveStatus</Name>
+					<EnumText>Unknown</EnumText>
+				</Value>
+				<Value>
+					<Name>DriveStatusValue</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>DriveControlValue</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
 					<Name>MasterNetId</Name>
 					<Data>000000000000</Data>
 				</Value>
 				<Value>
 					<Name>SoftDriveOid</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>VersionString</Name>
+					<String></String>
+				</Value>
+				<Value>
+					<Name>Version.Major</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Minor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Build</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Revision</Name>
 					<Value>0</Value>
 				</Value>
 			</ParameterValues>

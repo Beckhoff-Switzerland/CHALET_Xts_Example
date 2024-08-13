@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CTComObjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.55" ClassName="CTComObjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{C929B002-BF94-48A2-937B-5D20DED8EF3B}" Namespace="XTS">OperationMode</Name>
@@ -686,857 +686,920 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{5910D5F1-92F5-F7D1-C195-EFDEE3E37DD0}">XtsEventClass</Name>
+			<Name GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Major</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Minor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Build</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Revision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{665BAD9E-6191-FEB1-F9FA-D5AD80AC3506}">XtsEventClass</Name>
 			<DisplayName TxtId=""><![CDATA[XtsEventClass]]></DisplayName>
 			<EventId>
 				<Name Id="0">BuildInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Version {0} Build date: {1} Build time: {2}]]></DisplayName>
+				<DisplayName TxtId="0"><![CDATA[Version {0} Build date: {1} Build time: {2}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="1">ModuleCountInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} XTS module(s) are loaded.]]></DisplayName>
+				<DisplayName TxtId="1"><![CDATA[{0} XTS module(s) are loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="2">MoverCountInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} XTS mover(s) are loaded.]]></DisplayName>
+				<DisplayName TxtId="2"><![CDATA[{0} XTS mover(s) are loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="3">AllMoversAreDetectedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[All XTS mover(s) are detected.]]></DisplayName>
+				<DisplayName TxtId="3"><![CDATA[All XTS mover(s) are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="4">PathLengthInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path length is {0} mm.]]></DisplayName>
+				<DisplayName TxtId="4"><![CDATA[Path length is {0} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5">PathIsClosedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path is closed.]]></DisplayName>
+				<DisplayName TxtId="5"><![CDATA[Path is closed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="6">PathIsOpenInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path is open.]]></DisplayName>
+				<DisplayName TxtId="6"><![CDATA[Path is open.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="7">DetectionStartedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Searching of XTS mover(s) is started.]]></DisplayName>
+				<DisplayName TxtId="7"><![CDATA[Searching of XTS mover(s) is started.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="8">TeachingIsCompleteInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is complete.]]></DisplayName>
+				<DisplayName TxtId="8"><![CDATA[Teaching is complete.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9">TeachingIsStartedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is started on {0} modules.]]></DisplayName>
+				<DisplayName TxtId="9"><![CDATA[Teaching is started on {0} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="10">TeachingIsStoppedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is stopped on {0} modules.]]></DisplayName>
+				<DisplayName TxtId="10"><![CDATA[Teaching is stopped on {0} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="11">TeachingIsCreatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data is created at {0}.]]></DisplayName>
+				<DisplayName TxtId="11"><![CDATA[Teaching data is created at {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="12">TeachingIsLoadedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is loaded.]]></DisplayName>
+				<DisplayName TxtId="12"><![CDATA[Teaching '{0}' is loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="13">TeachingIsSavedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is saved.]]></DisplayName>
+				<DisplayName TxtId="13"><![CDATA[Teaching data {0} is saved.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="14">TeachingIsValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is valid.]]></DisplayName>
+				<DisplayName TxtId="14"><![CDATA[Teaching data {0} is valid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="15">TeachingAllModulesAreEnabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[All XTS modules are enabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="15"><![CDATA[All XTS modules are enabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="16">TeachingModuleIsEnabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[XTS module {0} is enabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="16"><![CDATA[XTS module {0} is enabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="17">TeachingModuleIsDisabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[XTS module {0} is disabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="17"><![CDATA[XTS module {0} is disabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="18">EtherCatIsReadyInfo</Name>
-				<DisplayName TxtId=""><![CDATA[IO Processing Unit (ID = {0}): EtherCAT is ready now ({1} device(s) are checked).]]></DisplayName>
+				<DisplayName TxtId="18"><![CDATA[IO Processing Unit (ID = {0}): EtherCAT is ready now ({1} device(s) are checked).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="19">WritingDumpInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Writing dump file {0}...]]></DisplayName>
+				<DisplayName TxtId="19"><![CDATA[Writing dump file {0}...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="20">MonitorEtherCatInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Start up of {0} (0x{1}) is monitored.]]></DisplayName>
+				<DisplayName TxtId="20"><![CDATA[Start up of {0} ({1}) is monitored.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="21">TeachingNoDefaultOneIsAvailableInfo</Name>
-				<DisplayName TxtId=""><![CDATA[No default teaching data is supplied by the hardware. Please teach the system using the TcIoXts driver.]]></DisplayName>
+				<DisplayName TxtId="21"><![CDATA[No default teaching data is supplied by the hardware. Please teach the system using the TcIoXts driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="22">MoverIdDetectionValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected.]]></DisplayName>
+				<DisplayName TxtId="22"><![CDATA[Mover ID is detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="23">MoverAbDetectionValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected. {0} mover(s) with ID '1' and {1} mover(s) with ID '-' are detected.]]></DisplayName>
+				<DisplayName TxtId="23"><![CDATA[Mover ID is detected. {0} mover(s) with ID '1' and {1} mover(s) with ID '-' are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="24">IdDetectionIsActivatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection mode '{0}' is activated.]]></DisplayName>
+				<DisplayName TxtId="24"><![CDATA[Mover ID detection mode '{0}' is activated.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="25">IdDetectionHasBeenTriggeredInfo</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection has been triggered.]]></DisplayName>
+				<DisplayName TxtId="25"><![CDATA[The Mover ID Detection has been triggered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="26">SynchronizationObjectCreatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Synchonization object is created for {0} tasks.]]></DisplayName>
+				<DisplayName TxtId="26"><![CDATA[Synchonization object is created for {0} tasks.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="27">TaskIsAddedToSynchronisationObjectInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Task (0x{0}) is added to barrier.]]></DisplayName>
+				<DisplayName TxtId="27"><![CDATA[Task ({0}) is added to barrier.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="28">IsRegisteredByAllTasksAsIODriverInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Is registered by all tasks as IO driver.]]></DisplayName>
+				<DisplayName TxtId="28"><![CDATA[Is registered by all tasks as IO driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="29">EnableTimeIsSetInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Enable time is set.]]></DisplayName>
+				<DisplayName TxtId="29"><![CDATA[Enable time is set.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="30">DisableTimeIsElapsedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Disable time is elapsed.]]></DisplayName>
+				<DisplayName TxtId="30"><![CDATA[Disable time is elapsed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="31">DataPointersAreInitializedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} DataPointers are initialized.]]></DisplayName>
+				<DisplayName TxtId="31"><![CDATA[{0} DataPointers are initialized.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="32">ModulesWillBeInitializedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} modules will be initialized...]]></DisplayName>
+				<DisplayName TxtId="32"><![CDATA[{0} modules will be initialized...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="33">RecordWillBeWrittenInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Record will be written. File: {0}]]></DisplayName>
+				<DisplayName TxtId="33"><![CDATA[Record will be written. File: {0}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="34">MoverIndexRangeIsSetToInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Index range = [{0}, {1}].]]></DisplayName>
+				<DisplayName TxtId="34"><![CDATA[Index range = [{0}, {1}].]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="35">TeachingModuleIdentityCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Module identity check for teaching is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="35"><![CDATA[Module identity check for teaching is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="36">TeachingPlausibilityCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="36"><![CDATA[Teaching plausibility check is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="37">TeachingCheckSumCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching checksum check is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="37"><![CDATA[Teaching checksum check is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="38">RedetectionIsTriggeredInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Redetection is triggered.]]></DisplayName>
+				<DisplayName TxtId="38"><![CDATA[Redetection is triggered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="39">MoverAbDetectionValidInfo2Info</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected. {0} mover(s) with ID '{1}' and {2} mover(s) with ID '{3}' are detected.]]></DisplayName>
+				<DisplayName TxtId="39"><![CDATA[Mover ID is detected. {0} mover(s) with ID '{1}' and {2} mover(s) with ID '{3}' are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="40">InputsCheckValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Inputs check is valid.]]></DisplayName>
+				<DisplayName TxtId="40"><![CDATA[Inputs check is valid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="41">TeachingFileFormatCanBeUpdatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file format can be updated. To do so, trigger corresponding XPU parameter.]]></DisplayName>
+				<DisplayName TxtId="41"><![CDATA[Teaching file format can be updated. To do so, trigger corresponding XPU parameter.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="42">DumpWriterEnteringRouterMemoryFallbackInfo</Name>
-				<DisplayName TxtId=""><![CDATA[DumpWriter entering fallback mode, using router memory.]]></DisplayName>
+				<DisplayName TxtId="42"><![CDATA[DumpWriter entering fallback mode, using router memory.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="43">TeachingIsLoadedWithWarningsInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is loaded with {1} warnings.]]></DisplayName>
+				<DisplayName TxtId="43"><![CDATA[Teaching '{0}' is loaded with {1} warnings.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="44">TeachingPlausibilityCheckSucceededWithWarningsInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></DisplayName>
+				<DisplayName TxtId="44"><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5000">CycleTimeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></DisplayName>
+				<DisplayName TxtId="5000"><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5001">DetectedTooFewMoversWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Too few movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
+				<DisplayName TxtId="5001"><![CDATA[Too few movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5002">DetectedTooManyMoversWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Too many movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
+				<DisplayName TxtId="5002"><![CDATA[Too many movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5003">TeachingDataIsMissingWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is missing.]]></DisplayName>
+				<DisplayName TxtId="5003"><![CDATA[Teaching data {0} is missing.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5004">TeachingDataOfModuleIsInvalidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
+				<DisplayName TxtId="5004"><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5005">TeachingOffsetsAreAllZeroWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are zero.]]></DisplayName>
+				<DisplayName TxtId="5005"><![CDATA[All teaching values of XTS module {0} are zero.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5006">TeachingOffsetsAreAllNegativeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are negative.]]></DisplayName>
+				<DisplayName TxtId="5006"><![CDATA[All teaching values of XTS module {0} are negative.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5007">TeachingOffsetsAreAllPositiveWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are positive.]]></DisplayName>
+				<DisplayName TxtId="5007"><![CDATA[All teaching values of XTS module {0} are positive.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5008">TeachingOffsetsAreNotInExpectedRangeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Abnormal behavior is detected. Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></DisplayName>
+				<DisplayName TxtId="5008"><![CDATA[Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5009">WaitForEtherCatWarning</Name>
-				<DisplayName TxtId=""><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} (0x{2}) to start up.]]></DisplayName>
+				<DisplayName TxtId="5009"><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} ({2}) to start up.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5010">MoverFrozenWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
+				<DisplayName TxtId="5010"><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5011">MoverIdDetectionHasBeenAlreadyStartedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection has already been started. Do not start it again.]]></DisplayName>
+				<DisplayName TxtId="5011"><![CDATA[The Mover ID Detection has already been started. Do not start it again.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5012">WaitForMoverDetectionBeforeStartingMoverIdDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Wait until the mover detection is finished before starting the mover ID detection.]]></DisplayName>
+				<DisplayName TxtId="5012"><![CDATA[Wait until the mover detection is finished before starting the mover ID detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5013">PendingMoverIdDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The system is waiting for triggering the Mover ID Detection (via PLC or manually).]]></DisplayName>
+				<DisplayName TxtId="5013"><![CDATA[The system is waiting for triggering the Mover ID Detection (via PLC or manually).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5014">FalseValueInDelayBetweenMoverPacksWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'DelayBetweenMoverPacks' should be between 0.001s and 1s.]]></DisplayName>
+				<DisplayName TxtId="5014"><![CDATA[The parameter 'DelayBetweenMoverPacks' should be between 0.001s and 1s.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5015">IgnoreChangesDelayBetweenMoverPacksWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'DelayBetweenMoverPacks' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5015"><![CDATA[Changes to parameter 'DelayBetweenMoverPacks' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5016">FalseValueInDelayBetweenMoversInPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'DelayBetweenMoversInPack' should be between 0.005s and 1s.]]></DisplayName>
+				<DisplayName TxtId="5016"><![CDATA[The parameter 'DelayBetweenMoversInPack' should be between 0.005s and 1s.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5017">IgnoreChangesDelayBetweenMoversInPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'DelayBetweenMoversInPack' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5017"><![CDATA[Changes to parameter 'DelayBetweenMoversInPack' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5018">FalseValueInGapToDefineMoverPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'GapToDefineMoverPack' should be between 49mm and 1000mm dependend on your mechanical tool.]]></DisplayName>
+				<DisplayName TxtId="5018"><![CDATA[The parameter 'GapToDefineMoverPack' should be between 49mm and 1000mm dependend on your mechanical tool.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5019">IgnoreChangesInGapToDefineMoverPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'GapToDefineMoverPack' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5019"><![CDATA[Changes to parameter 'GapToDefineMoverPack' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5020">IgnoreChangesInMoverIdPositionAssignmentWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'MoverIdPositionAssignment' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5020"><![CDATA[Changes to parameter 'MoverIdPositionAssignment' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5021">MoverIdHasAlreadyBeenDetectedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection is valid. Do not trigger the Mover ID Detection once again.]]></DisplayName>
+				<DisplayName TxtId="5021"><![CDATA[The Mover ID Detection is valid. Do not trigger the Mover ID Detection once again.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5022">TeachingDataOfModuleIsSkippedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data for module '{0}' is skipped because it is not found in the current teaching file.]]></DisplayName>
+				<DisplayName TxtId="5022"><![CDATA[Teaching data for module '{0}' is skipped because it is not found in the current teaching file.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5023">FileAccessServiceCouldNotBeInitializedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[File access service could not be intiailized. ({0} / Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="5023"><![CDATA[File access service could not be intiailized. ({0} / Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5024">ModuleCountOfPartIsZeroWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Module count of part is zero.]]></DisplayName>
+				<DisplayName TxtId="5024"><![CDATA[Module count of part is zero.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5025">StandStillTeachingNotAppropriateWarning</Name>
-				<DisplayName TxtId=""><![CDATA[StandStillTeaching is not appropriate for hygienic XTS.]]></DisplayName>
+				<DisplayName TxtId="5025"><![CDATA[StandStillTeaching is not appropriate for hygienic XTS.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5026">MovementTeachingNotAppropriateWarning</Name>
-				<DisplayName TxtId=""><![CDATA[MovementTeaching is only appropriate for hygienic XTS.]]></DisplayName>
+				<DisplayName TxtId="5026"><![CDATA[MovementTeaching is only appropriate for hygienic XTS.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5027">TeachingCheckSumDoesNotMatchWithTeachingFileWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The check sum does not match with the given teaching file! File is ignored and defaults will be used.]]></DisplayName>
+				<DisplayName TxtId="5027"><![CDATA[The check sum does not match with the given teaching file! File is ignored and defaults will be used.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5028">OnlineIdentitiesOfTeachingFileDoNotMatchWithModulesWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Online identities of teaching file do not match with online identities of modules.]]></DisplayName>
+				<DisplayName TxtId="5028"><![CDATA[Online identities of teaching file do not match with online identities of modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5029">TeachingFileCannotBeUsedUseDefaultTeachingInsteadWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file will be ignored because of inconsistencies. Default teaching is used instead.]]></DisplayName>
+				<DisplayName TxtId="5029"><![CDATA[Teaching file will be ignored because of inconsistencies. Default teaching is used instead.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5030">TeachingOffsetsAreAllOneWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are one.]]></DisplayName>
+				<DisplayName TxtId="5030"><![CDATA[All teaching values of XTS module {0} are one.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5031">TeachingNoDataForModuleWithOidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module with object ID '0x{0}'.]]></DisplayName>
+				<DisplayName TxtId="5031"><![CDATA[No teaching data is found for module with object ID '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5032">CycleTimeWithInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The XTS is designed to run with a cycle time of 250 us but task '{0}' has a cycle time of {1} us. Use other cycle times with care.]]></DisplayName>
+				<DisplayName TxtId="5032"><![CDATA[The XTS is designed to run with a cycle time of 250 us but task '{0}' has a cycle time of {1} us. Use other cycle times with care.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5033">MoverFrozenWithTrackInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = 0x{2}).]]></DisplayName>
+				<DisplayName TxtId="5033"><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5034">InputsExceedMaxLimitWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input channel(s) '{1}' exceed the min/max limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
+				<DisplayName TxtId="5034"><![CDATA[On '{0}' the input channel(s) '{1}' exceed the min/max limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5035">NoTracksAreIncludedInDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No tracks are included in detection. Include track to be able to start detection.]]></DisplayName>
+				<DisplayName TxtId="5035"><![CDATA[No tracks are included in detection. Include track to be able to start detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5036">InputsExceedNoiseLimitWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input channel(s) '{1}' exceed the noise limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
+				<DisplayName TxtId="5036"><![CDATA[On '{0}' the input channel(s) '{1}' exceed the noise limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5037">MountingOffsetNotValidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'MountingOffset' is greater than the max supported value of 3.0mm. Please adapt this value!]]></DisplayName>
+				<DisplayName TxtId="5037"><![CDATA[The parameter 'MountingOffset' is greater than the max supported value of 3.0mm. Please adapt this value!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5038">UserLengthNotValidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'UserLength' is greater than 3.0mm of hardware length. Please adapt this value!]]></DisplayName>
+				<DisplayName TxtId="5038"><![CDATA[The parameter 'UserLength' is greater than 3.0mm of hardware length. Please adapt this value!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5039">InputsFrozenWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input Channel(s) '{1}' are frozen! Please check a hardware fault.]]></DisplayName>
+				<DisplayName TxtId="5039"><![CDATA[On '{0}' the input Channel(s) '{1}' are frozen! Please check a hardware fault.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5040">TeachingNoDataForModuleWithBtnWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module with btn '{0}'.]]></DisplayName>
+				<DisplayName TxtId="5040"><![CDATA[No teaching data is found for module with btn '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5041">DumpBufferMemoryWasNotSufficientWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Dump writing failed due to insufficient buffer memory. Trying to enter DumpWriterFallbackMode, if enabled...]]></DisplayName>
+				<DisplayName TxtId="5041"><![CDATA[Dump writing failed due to insufficient buffer memory. Trying to enter DumpWriterFallbackMode, if enabled...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5042">TeachingDataForNotFoundModuleWithBtnWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file contains data for module with btn '{0}' but module cound not be found.]]></DisplayName>
+				<DisplayName TxtId="5042"><![CDATA[Teaching file contains data for module with btn '{0}' but module cound not be found.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5043">TeachingDataForNotFoundModuleWithOidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file contains data for module with object ID '0x{0}' but module cound not be found.]]></DisplayName>
+				<DisplayName TxtId="5043"><![CDATA[Teaching file contains data for module with object ID '0x{0}' but module cound not be found.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5044">TeachingDriveIdentitiesMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Drive identity mismatch for module '{0} (0x{1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5044"><![CDATA[Drive identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5045">TeachingEncoderIdentitiesMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Encoder identity mismatch for module '{0} (0x{1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5045"><![CDATA[Encoder identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5046">TeachingModuleTypeMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Module type for module '{0} (0x{1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5046"><![CDATA[Module type for module '{0} ({1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5047">TeachingNotAvailableWarning</Name>
-				<DisplayName TxtId=""><![CDATA[{0} module(s) have no teaching data available. Please teach them in order to start up.]]></DisplayName>
+				<DisplayName TxtId="5047"><![CDATA[{0} module(s) have no teaching data available. Please teach them in order to start up.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5048">TeachingNoDataForModuleWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module '{0} (0x{1})'.]]></DisplayName>
+				<DisplayName TxtId="5048"><![CDATA[No teaching data is found for module '{0} ({1})'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5049">TeachingNoDataForModule2Warning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module '{0} (0x{1})' with btn '{0}'.]]></DisplayName>
+				<DisplayName TxtId="5049"><![CDATA[No teaching data is found for module '{0} ({1})' with btn '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5050">TeachingOldWithNewExchangeDetectedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data for module '{0} (0x{1})' is old. The teaching does not contain a btn but the module defines one.]]></DisplayName>
+				<DisplayName TxtId="5050"><![CDATA[Teaching data for module '{0} ({1})' is old. The teaching does not contain a btn but the module defines one.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5051">MoverTaskOrderWarning</Name>
+				<DisplayName TxtId="5051"><![CDATA[Performance is decreased. Tasks of movers should be assigned in order.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9000">CannotAcccessXtsTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[XTS task cannot be accessed. Is the context of the TcIoXts driver set correctly?]]></DisplayName>
+				<DisplayName TxtId="9000"><![CDATA[XTS task cannot be accessed. Is the context of the TcIoXts driver set correctly?]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9001">CycleTimeNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Cycle time {0} us of XTS task is not supported! Set cycle time to 250 us.]]></DisplayName>
+				<DisplayName TxtId="9001"><![CDATA[Cycle time {0} us of XTS task is not supported! Set cycle time to 250 us.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9002">LostMoverError</Name>
-				<DisplayName TxtId=""><![CDATA[A XTS mover is lost at {0} mm. Please restart TwinCAT to perform a new detection.]]></DisplayName>
+				<DisplayName TxtId="9002"><![CDATA[A XTS mover is lost at {0} mm. Please perform a new detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9003">MotorError</Name>
-				<DisplayName TxtId=""><![CDATA[The module '{0}' with drive terminal '{1}' has an error.]]></DisplayName>
+				<DisplayName TxtId="9003"><![CDATA[The module '{0}' with drive terminal '{1}' has an error.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9004">MoverCountNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Out of memory. XTS mover count is not supported.]]></DisplayName>
+				<DisplayName TxtId="9004"><![CDATA[Out of memory. XTS mover count is not supported.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9005">StartUpError</Name>
-				<DisplayName TxtId=""><![CDATA[TcIoXts driver has failed to start up. Please check the configuration and bootdata files!]]></DisplayName>
+				<DisplayName TxtId="9005"><![CDATA[TcIoXts driver has failed to start up. Please check the configuration and bootdata files!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9006">TeachingDataInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data is invalid. {0}]]></DisplayName>
+				<DisplayName TxtId="9006"><![CDATA[Teaching data is invalid. {0}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9007">TeachingDataCorruptedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file '{0}' is corrupted.]]></DisplayName>
+				<DisplayName TxtId="9007"><![CDATA[Teaching file '{0}' is corrupted.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9008">TeachingDataOfModuleInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
+				<DisplayName TxtId="9008"><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9009">TeachingDataSaveError</Name>
-				<DisplayName TxtId=""><![CDATA[Saving of teaching data {0} has failed.]]></DisplayName>
+				<DisplayName TxtId="9009"><![CDATA[Saving of teaching data {0} has failed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9010">MoverFrozenError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
+				<DisplayName TxtId="9010"><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9011">FileNotFoundError</Name>
-				<DisplayName TxtId=""><![CDATA[File '{0}' cannot be loaded. Please check that the installation is correct.]]></DisplayName>
+				<DisplayName TxtId="9011"><![CDATA[File '{0}' cannot be loaded. Please check that the installation is correct.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9012">MoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID Detection failed. A general error occurs on '{0}' with the number '{1}'.]]></DisplayName>
+				<DisplayName TxtId="9012"><![CDATA[Mover ID Detection failed. A general error occurs on '{0}' with the number '{1}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9013">SoftDriveNotRespondingDuringIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[The SoftDrive '{0}' of the mover '{1}' is not responding. Please check the axis configuration and the SoftDrive version.]]></DisplayName>
+				<DisplayName TxtId="9013"><![CDATA[The SoftDrive '{0}' of the mover '{1}' is not responding. Please check the axis configuration and the SoftDrive version.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9014">NoMoverIdDetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[No Mover ID has been detected! Check if there is a mover with a special magnet plate set on the system and restart the ID Detection.]]></DisplayName>
+				<DisplayName TxtId="9014"><![CDATA[No Mover ID has been detected! Check if there is a mover with a special magnet plate set on the system and restart the ID Detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9015">TooManyMoverIdsDetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many ({0}) mover IDs has been detected! Make sure that there is only one Mover 1 - with special magnet plate - installed on the system.]]></DisplayName>
+				<DisplayName TxtId="9015"><![CDATA[Too many ({0}) mover IDs has been detected! Make sure that there is only one Mover 1 - with special magnet plate - installed on the system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9016">AxisEnabledBeforeMoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[The axis {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></DisplayName>
+				<DisplayName TxtId="9016"><![CDATA[The mover {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9017">MoverIdDetectionInterruptedError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID Detection was interrupted by changing the 'MoverIdDetectionMode'.]]></DisplayName>
+				<DisplayName TxtId="9017"><![CDATA[Mover ID Detection was interrupted by changing the 'MoverIdDetectionMode'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9018">NoTrackDefinedForMoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection cannot start because no track is defined to run the detection.]]></DisplayName>
+				<DisplayName TxtId="9018"><![CDATA[Mover ID detection cannot start because no track is defined to run the detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9019">NoMoverIdDetectionOnDetectionModeStandardError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection is disabled in 'Standard' mode.]]></DisplayName>
+				<DisplayName TxtId="9019"><![CDATA[Mover ID detection is disabled in 'Standard' mode.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9020">TeachingInvalidSelectionStringError</Name>
-				<DisplayName TxtId=""><![CDATA[Start teaching command is invalid. Please check the selection string if it contains only valid numbers and/or ranges (Example: 1, 2, 5 - 10).]]></DisplayName>
+				<DisplayName TxtId="9020"><![CDATA[Start teaching command is invalid. Please check the selection string if it contains only valid numbers and/or ranges (Example: 1, 2, 5 - 10).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9021">IdDetectionMode1IsNotSupportedForMultipleTracksError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection mode 'Mover1' is only supported for systems consisting of one track.]]></DisplayName>
+				<DisplayName TxtId="9021"><![CDATA[Mover ID detection mode 'Mover1' is only supported for systems consisting of one track.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9022">TooManyMoverADetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
+				<DisplayName TxtId="9022"><![CDATA[Too many Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9023">TeachingDataFileVersionNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Version of teaching data file '{0}' (Version {1}) is not supported. Please create a new teaching file (Version {2}) with the current driver.]]></DisplayName>
+				<DisplayName TxtId="9023"><![CDATA[Version of teaching data file '{0}' is not supported. Please create a new teaching file with the current driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9024">TooFewMoverADetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too few Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
+				<DisplayName TxtId="9024"><![CDATA[Too few Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9025">TooManyMoverAExpectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many Mover 1 expected. Expected = {0}, Total mover count = {1}.]]></DisplayName>
+				<DisplayName TxtId="9025"><![CDATA[Too many Mover 1 expected. Expected = {0}, Total mover count = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9026">IdDetectionExpectationsDoesNotMatchCountOfIncludedMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Configuration of expected mover IDs does not match the count of included movers.]]></DisplayName>
+				<DisplayName TxtId="9026"><![CDATA[Configuration of expected mover IDs does not match the count of included movers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9027">IdDetectionDetectedIdsDoesNotMatchExpectationsError</Name>
-				<DisplayName TxtId=""><![CDATA[ID detection has failed - expected ID '{0}' count is {1} but {2} have been detected.]]></DisplayName>
+				<DisplayName TxtId="9027"><![CDATA[ID detection has failed - expected ID '{0}' count is {1} but {2} have been detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9028">IdDetectionExpectationsHasInvalidNotationError</Name>
-				<DisplayName TxtId=""><![CDATA[Configuration of expected mover IDs has invalid notation.]]></DisplayName>
+				<DisplayName TxtId="9028"><![CDATA[Configuration of expected mover IDs has invalid notation.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9029">CouldNotRegisterByError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not register by {0}.]]></DisplayName>
+				<DisplayName TxtId="9029"><![CDATA[Could not register by {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9030">CouldNotInitializeError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0}.]]></DisplayName>
+				<DisplayName TxtId="9030"><![CDATA[Could not initialize {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9031">CouldNotSetToPreOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in PRE-OP state.]]></DisplayName>
+				<DisplayName TxtId="9031"><![CDATA[Could not set '{0}' in PRE-OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9032">CouldNotSetToSafeOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in SAFE-OP state.]]></DisplayName>
+				<DisplayName TxtId="9032"><![CDATA[Could not set '{0}' in SAFE-OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9033">CouldNotSetToOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in OP state.]]></DisplayName>
+				<DisplayName TxtId="9033"><![CDATA[Could not set '{0}' in OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9034">GeneralRegistrationFailedError</Name>
-				<DisplayName TxtId=""><![CDATA[Registration of {0} has failed. Error = {1}.]]></DisplayName>
+				<DisplayName TxtId="9034"><![CDATA[Registration of {0} has failed. Error = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9035">ModulePositionIndicesInconsistentError</Name>
-				<DisplayName TxtId=""><![CDATA[List of modules in part {0} are not consistent regarding the module's PositionIndex parameters.]]></DisplayName>
+				<DisplayName TxtId="9035"><![CDATA[List of modules in part {0} are not consistent regarding the module's PositionIndex parameters.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9036">CouldNotRegisterAsIODriverByTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not register as IO driver by Task (0x{0}).]]></DisplayName>
+				<DisplayName TxtId="9036"><![CDATA[Could not register as IO driver by Task ({0}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9037">TaskCouldNotBeAddedToSynchonizationObjectError</Name>
-				<DisplayName TxtId=""><![CDATA[Task (0x{0}) could not be added to barrier.]]></DisplayName>
+				<DisplayName TxtId="9037"><![CDATA[Task ({0}) could not be added to barrier.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9038">NoLicenseServerAvailableError</Name>
-				<DisplayName TxtId=""><![CDATA[No license server available. Start up is aborted.]]></DisplayName>
+				<DisplayName TxtId="9038"><![CDATA[No license server available. Start up is aborted.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9039">NotAllModulesOfPartCouldBeAddedError</Name>
-				<DisplayName TxtId=""><![CDATA[Not all modules of part could be added! (Added {0} from {1}).]]></DisplayName>
+				<DisplayName TxtId="9039"><![CDATA[Not all modules of part could be added! (Added {0} from {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9040">CouldNotLoadCurrentTableError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not load current table.]]></DisplayName>
+				<DisplayName TxtId="9040"><![CDATA[Could not load current table.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9041">CouldNotGetInterfaceOfTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not get interface of task (Object ID = 0x{0}, Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9041"><![CDATA[Could not get interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9042">CouldNotGetRTInterfaceOfTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not get RT-interface of task (Object ID = 0x{0}, Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9042"><![CDATA[Could not get RT-interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9043">EtherCATInfoServiceCouldNotBeInitializedError</Name>
-				<DisplayName TxtId=""><![CDATA[EtherCAT info service could not be initialized. ERROR = {0}.]]></DisplayName>
+				<DisplayName TxtId="9043"><![CDATA[EtherCAT info service could not be initialized. ERROR = {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9044">CouldNotInitializeAllDataPointersError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0} DataPointers.]]></DisplayName>
+				<DisplayName TxtId="9044"><![CDATA[Could not initialize {0} DataPointers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9045">NoModulesHaveBeenRegistreredError</Name>
-				<DisplayName TxtId=""><![CDATA[No modules have been registered.]]></DisplayName>
+				<DisplayName TxtId="9045"><![CDATA[No modules have been registered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9046">CannotAccesPartWithOidError</Name>
-				<DisplayName TxtId=""><![CDATA[Cannot access part with object ID 0x{0}.]]></DisplayName>
+				<DisplayName TxtId="9046"><![CDATA[Cannot access part with object ID {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9047">CyleTimeNotEqualError</Name>
-				<DisplayName TxtId=""><![CDATA[The cylce time of {0} us of task '{1}' does not match the cylce time of task '{2}' which uses {3} us. Ensure that each task used by the processing unit executes with the same cycle time.]]></DisplayName>
+				<DisplayName TxtId="9047"><![CDATA[The cylce time of {0} us of task '{1}' does not match the cylce time of task '{2}' which uses {3} us. Ensure that each task used by the processing unit executes with the same cycle time.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9048">CpuIsUsedMultipleTimesError</Name>
-				<DisplayName TxtId=""><![CDATA[The CPU with ID {0} is used by {1} tasks. Ensure that each task used by the processing unit has its own cpu.]]></DisplayName>
+				<DisplayName TxtId="9048"><![CDATA[The CPU with ID {0} is used by {1} tasks. Ensure that each task used by the processing unit has its own cpu.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9049">MoverFrozenWithTrackInfoError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = 0x{2}).]]></DisplayName>
+				<DisplayName TxtId="9049"><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9050">TeachingFileNumberAlreadyUsedError</Name>
-				<DisplayName TxtId=""><![CDATA[The teaching file number '{0}' is already used by '{1}'. Please choose a different one for either instance.]]></DisplayName>
+				<DisplayName TxtId="9050"><![CDATA[The teaching file number '{0}' is already used by '{1}'. Please choose a different one for either instance.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9051">PartHasNoModulesError</Name>
-				<DisplayName TxtId=""><![CDATA[The part '{0}' (0x{1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></DisplayName>
+				<DisplayName TxtId="9051"><![CDATA[The part '{0}' ({1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9052">ParameterIsNotSetToValidValueError</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter '{0}' is not set to a valid value ({1}).]]></DisplayName>
+				<DisplayName TxtId="9052"><![CDATA[The parameter '{0}' is not set to a valid value ({1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9053">RequiredDataPointersAreNotSetError</Name>
-				<DisplayName TxtId=""><![CDATA[Cannot start up, because required data pointers of '{0}' are not valid. Please check Data Pointer links and IO Devices.]]></DisplayName>
+				<DisplayName TxtId="9053"><![CDATA[Cannot start up, because required data pointers of '{0}' are not valid. Please check Data Pointer links and IO Devices.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9054">DumpCouldNotBeWrittenError</Name>
-				<DisplayName TxtId=""><![CDATA[DumpWriter could not enter fallback mode, so dump could not be written. Please enable DumpWriterFallbackMode.]]></DisplayName>
+				<DisplayName TxtId="9054"><![CDATA[DumpWriter could not enter fallback mode, so dump could not be written. Please enable DumpWriterFallbackMode.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9055">DumpBufferSizeEstimationWasWrongError</Name>
-				<DisplayName TxtId=""><![CDATA[The needed buffer size of dumpWriter was greater than worst case estimation used for initialization! Estimation was {0} bytes, buffer had a size of {1} bytes (10 percent extra safety margin to estimation) and dumpWriter needed {2} bytes.]]></DisplayName>
+				<DisplayName TxtId="9055"><![CDATA[The needed buffer size of dumpWriter was greater than worst case estimation used for initialization! Estimation was {0} bytes, buffer had a size of {1} bytes (10 percent extra safety margin to estimation) and dumpWriter needed {2} bytes.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9056">TeachingDataModuleCountMismatchError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data cannot be loaded. It contains data for {0} modules but the current system has {1} modules.]]></DisplayName>
+				<DisplayName TxtId="9056"><![CDATA[Teaching data cannot be loaded. It contains data for {0} modules but the current system has {1} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9057">TeachingErrorsStartUpAbortedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is not loaded through {1} error(s). Start up process is aborted. Deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9057"><![CDATA[Teaching '{0}' is not loaded through {1} error(s). Start up process is aborted. Deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9058">TeachingWarningsStartUpAbortedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is not loaded through {1} warning(s). Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9058"><![CDATA[Teaching '{0}' is not loaded through {1} warning(s). Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9059">TeachingTypeNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA['{0}' teaching is not supported by module '{1} (0x{2})'.]]></DisplayName>
+				<DisplayName TxtId="9059"><![CDATA['{0}' teaching is not supported by module '{1} ({2})'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9060">TeachingChecksumMismatchError</Name>
-				<DisplayName TxtId=""><![CDATA[Startup is aborted. Checksum of the teaching file does not match with the project. Please check your teaching.]]></DisplayName>
+				<DisplayName TxtId="9060"><![CDATA[Startup is aborted. Checksum of the teaching file does not match with the project. Please check your teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9061">TeachingPlausibilityCheckFailedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check has failed for {0} out of {1} modules. Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9061"><![CDATA[Teaching plausibility check has failed for {0} out of {1} modules. Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9062">DetectionAbortedDueToEnabledMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection is aborted due to {0} enabled movers.]]></DisplayName>
+				<DisplayName TxtId="9062"><![CDATA[Detection is aborted due to {0} enabled movers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9063">DetectionAbortedDueToNotEnoughMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection on {0} included tracks is aborted because there are not enough movers available. Total available are {1} where {2} are already on included tracks but {3} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9063"><![CDATA[Detection on {0} included tracks is aborted because there are not enough movers available. Total available are {1} where {2} are already on included tracks but {3} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9064">DetectionAbortedDueTooManyMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection on {0} included tracks is aborted because there are already too many included movers ({1}) on track but only {2} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9064"><![CDATA[Detection on {0} included tracks is aborted because there are already too many included movers ({1}) on track but only {2} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9065">CouldNotInitialize2Error</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0} (Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9065"><![CDATA[Could not initialize {0} (Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9066">AuxTaskMustBeUsedAloneError</Name>
-				<DisplayName TxtId=""><![CDATA[Aux task cannot be used to calculate the update of modules or movers but it has been used for {0} module(s) and {1} mover(s).]]></DisplayName>
+				<DisplayName TxtId="9066"><![CDATA[Aux task cannot be used to calculate the update of modules or movers but it has been used for {0} module(s) and {1} mover(s).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9067">PartResetIgnoredError</Name>
-				<DisplayName TxtId=""><![CDATA[Part reset is not done. Activate part based handling on the Prcoessing Unit first in order to use it.]]></DisplayName>
+				<DisplayName TxtId="9067"><![CDATA[Part reset is not done. Activate part based handling on the Prcoessing Unit first in order to use it.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9068">DetectionAbortedNoTracksIncludedError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover detection is aborted. No tracks are included in detection.]]></DisplayName>
+				<DisplayName TxtId="9068"><![CDATA[Mover detection is aborted. No tracks are included in detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9069">DetectionAbortedExpectedMoversNotFoundError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover detection is aborted after {0} cycles. {1} movers are detected but {2} are expected.]]></DisplayName>
+				<DisplayName TxtId="9069"><![CDATA[Mover detection is aborted after {0} cycles. {1} movers are detected but {2} are expected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9070">ArriveAbortedTrackIsInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover arrive is aborted. Track (0x{0}) is invalid - configure the track for arrive on the mover.]]></DisplayName>
+				<DisplayName TxtId="9070"><![CDATA[Mover arrive is aborted. Track ({0}) is invalid - configure the track for arrive on the mover.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9071">MoverDriveSummaryError</Name>
-				<DisplayName TxtId=""><![CDATA[Additional module(s) with a drive error have been detected.]]></DisplayName>
+				<DisplayName TxtId="9071"><![CDATA[Additional module(s) with a drive error have been detected.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9072">LostMover2Error</Name>
+				<DisplayName TxtId="9072"><![CDATA[Mover '{0}' ({1}) of '{2}' ({3}) is lost at part '{4}' ({5}) - {6} mm. Please perform a new detection.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9073">TaskMustNotBeUsedAloneError</Name>
+				<DisplayName TxtId="9073"><![CDATA[The used task '{0}' is not used by any mover or module. Ensure that the task is used by at least one mover or module.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9074">DifferentObjectVersionsError</Name>
+				<DisplayName TxtId="9074"><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9075">NoParameterSetConfiguredError</Name>
+				<DisplayName TxtId="9075"><![CDATA[{0}: No parameter set is configured.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9076">GetParameterSetFailedError</Name>
+				<DisplayName TxtId="9076"><![CDATA[{0}: Failed to get parameter set with OTCID {1}. Please make sure the object {1} is a XTS Controller Parameter Set.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9077">CantConnectToControllerError</Name>
+				<DisplayName TxtId="9077"><![CDATA[{0}: Failed to get Mover Controller interface with OTCID {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="15000">MessageDebug</Name>
-				<DisplayName TxtId=""><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></DisplayName>
+				<DisplayName TxtId="15000"><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 		</DataType>
 	</DataTypes>
 	<ImageDatas>
-		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000d70d0000d70d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab009e9e9e003d3d3d00111111000a0a0a000a0a0a000a0a0a00121212002f2f2f0070707000757575006f6f6f006a6a6a00646464000000000000000000b4b4b400414141004e4e4e00a8a8a800b0b0b000b0b0b000b0b0b000aaaaaa005c5c5c002a2a2a007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd0014141400a7a7a700bcbcbc00bcbcbc00bcbcbc00bcbcbc00bcbcbc00b7b7b7000606060086868600828282007c7c7c00777777000000000000000000c6c6c6003b3b3b0062626200bababa00bcbcbc00bcbcbc00bcbcbc00bbbbbb00727272001d1d1d00575757007e7e7e0085858500808080000000000000000000d0d0d000b7b7b7002f2f2f000d0d0d000909090006060600070707000c0c0c00131313002a2a2a00242424000c0c0c0065656500898989000000000000000000d9d9d900d3d3d300cecece00c1c1c10018181800646464007f7f7f0081818100878787008787870087878700666666001a1a1a00929292000000000000000000e2e2e200dcdcdc00d7d7d700d1d1d1000f0f0f007b7b7b00878787008787870087878700878787008787870077777700111111009b9b9b000000000000000000ebebeb00d7d7d7003f3f3f000b0b0b000b0b0b001c1c1c004b4b4b005656560056565600565656004a4a4a001e1e1e0054545400a5a5a5000000000000000000f4f4f4004646460034343400696969006d6d6d004747470024242400272727001a1a1a00111111003939390078787800b3b3b300aeaeae000000000000000000fbfbfb0018181800606060006d6d6d006d6d6d006d6d6d006d6d6d006d6d6d006b6b6b0005050500c4c4c400c2c2c200bcbcbc00b7b7b7000000000000000000fbfbfb004c4c4c0032323200686868006c6c6c006c6c6c006c6c6c006a6a6a003d3d3d0027272700d0d0d000cbcbcb00c5c5c500c0c0c0000000000000000000fbfbfb00ebebeb00444444000e0e0e000101010001010100010101001111110036363600c7c7c700d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab009e9e9e003d3d3d00111111000a0a0a000a0a0a000a0a0a00121212002f2f2f0070707000757575006f6f6f006a6a6a00646464000000000000000000b4b4b400414141004e4e4e00a8a8a800b0b0b000b0b0b000b0b0b000aaaaaa005c5c5c002a2a2a007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd0014141400a7a7a700bcbcbc00bcbcbc00bcbcbc00bcbcbc00bcbcbc00b7b7b7000606060086868600828282007c7c7c00777777000000000000000000c6c6c6003b3b3b0062626200bababa00bcbcbc00bcbcbc00bcbcbc00bbbbbb00727272001d1d1d00575757007e7e7e0085858500808080000000000000000000d0d0d000b7b7b7002f2f2f000d0d0d000909090006060600070707000c0c0c00131313002a2a2a00242424000c0c0c0065656500898989000000000000000000d9d9d900d3d3d300cecece00c1c1c10018181800646464007f7f7f0081818100878787008787870087878700666666001a1a1a00929292000000000000000000e2e2e200dcdcdc00d7d7d700d1d1d1000f0f0f007b7b7b00878787008787870087878700878787008787870077777700111111009b9b9b000000000000000000ebebeb00d7d7d7003f3f3f000b0b0b000b0b0b001c1c1c004b4b4b005656560056565600565656004a4a4a001e1e1e0054545400a5a5a5000000000000000000f4f4f4004646460034343400696969006d6d6d004747470024242400272727001a1a1a00111111003939390078787800b3b3b300aeaeae000000000000000000fbfbfb0018181800606060006d6d6d006d6d6d006d6d6d006d6d6d006d6d6d006b6b6b0005050500c4c4c400c2c2c200bcbcbc00b7b7b7000000000000000000fbfbfb004c4c4c0032323200686868006c6c6c006c6c6c006c6c6c006a6a6a003d3d3d0027272700d0d0d000cbcbcb00c5c5c500c0c0c0000000000000000000fbfbfb00ebebeb00444444000e0e0e000101010001010100010101001111110036363600c7c7c700d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
 	</ImageDatas>
 	<Module Id="#x01010010" KeepUnrestoredLinks="2">
 		<Name>__FILENAME__</Name>
@@ -1573,9 +1636,6 @@
 				<Interface>
 					<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 				</Interface>
-				<Interface>
-					<Type GUID="{B0344A1F-A86D-44DF-A36B-908A0A75EFC5}">IXtsProcessingUnit</Type>
-				</Interface>
 			</Interfaces>
 			<Parameters>
 				<Group><![CDATA[General]]></Group>
@@ -1584,23 +1644,30 @@
 				<Group><![CDATA[Mover ID Detection]]></Group>
 				<Group Collapsed="true"><![CDATA[Teaching]]></Group>
 				<Group Collapsed="true"><![CDATA[Diagnostics]]></Group>
+				<Group><![CDATA[Development]]></Group>
 				<Group Collapsed="true"><![CDATA[Advanced]]></Group>
 				<Group Collapsed="true"><![CDATA[Simulation]]></Group>
-				<Group><![CDATA[Info]]></Group>
 				<Group Collapsed="true"><![CDATA[Structure]]></Group>
+				<Group><![CDATA[Info]]></Group>
 				<Parameter HideParameter="true" Group="General">
 					<Name>AdsPort</Name>
 					<Comment><![CDATA[Gets/sets the ads port. The port should be used to read/write parameters via ADS.]]></Comment>
 					<BitSize>16</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+					<Default>
+						<Value>0</Value>
+					</Default>
 					<PTCID>#x03002090</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter HideParameter="true" Group="General">
 					<Name>TaskOID</Name>
-					<Comment><![CDATA[Gets/Sets the object id of the XTS Task that is used for calculations for the module.]]></Comment>
+					<Comment><![CDATA[Gets/Sets the XTS Task that is used for calculations for the XtsProcessingUnit.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<Default>
+						<Value>#x00000000</Value>
+					</Default>
 					<PTCID>#x03002060</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
@@ -1621,7 +1688,7 @@
 					<BitSize>32</BitSize>
 					<BaseType GUID="{A69DD36A-7294-45AB-8104-2F1B69CD0767}" Namespace="XTS">MoverType</BaseType>
 					<Default>
-						<EnumText>AT9011_0050</EnumText>
+						<EnumText>AT9014_0055</EnumText>
 					</Default>
 					<PTCID>#x00000090</PTCID>
 					<ContextId>1</ContextId>
@@ -1771,7 +1838,7 @@
 					<PTCID>#x03080249</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter Group="Mover ID Detection">
+				<Parameter ShowSubItems="true" Group="Mover ID Detection">
 					<Name>ExpectedMoverIds</Name>
 					<Comment><![CDATA[Configure the expected mover IDs for ID detection mode MultipleMover1.]]></Comment>
 					<BitSize>128</BitSize>
@@ -1824,7 +1891,7 @@
 					<PTCID>#x030802e0</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter Group="Teaching">
+				<Parameter ShowSubItems="true" Group="Teaching">
 					<Name>StartStandStillTeaching</Name>
 					<Comment><![CDATA[On download the teaching is started on the specified modules and will be stopped automatically.]]></Comment>
 					<BitSize>8224</BitSize>
@@ -1846,7 +1913,7 @@
 					<PTCID>#x03080228</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter Group="Teaching">
+				<Parameter ShowSubItems="true" Group="Teaching">
 					<Name>StartMovementTeaching</Name>
 					<Comment><![CDATA[On download the teaching is started. Then move movers over every module.]]></Comment>
 					<BitSize>8224</BitSize>
@@ -1904,7 +1971,7 @@
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
-						<EnumText>TRUE</EnumText>
+						<EnumText>FALSE</EnumText>
 					</Default>
 					<PTCID>#x030802e3</PTCID>
 					<ContextId>1</ContextId>
@@ -1932,7 +1999,7 @@
 					<PTCID>#x0308028c</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter DisableCodeGeneration="true" Group="Teaching">
+				<Parameter Group="Teaching">
 					<Name>TriggerTeachingFileFormatUpdate</Name>
 					<Comment><![CDATA[Triggers the system to update the teaching file format of the given teaching file on changing back to config mode (overwrites the old file).]]></Comment>
 					<BitSize>0</BitSize>
@@ -1964,7 +2031,7 @@
 				</Parameter>
 				<Parameter Group="Diagnostics">
 					<Name>AutoDumpWritingTriggerOnMoverDetection</Name>
-					<Comment><![CDATA[If enabled then on mover detection dump file(s) are written automatically. ]]></Comment>
+					<Comment><![CDATA[If enabled then on mover detection dump file(s) are written automatically.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -1975,7 +2042,7 @@
 				</Parameter>
 				<Parameter Group="Diagnostics">
 					<Name>AutoDumpWritingTriggerOnMoverLost</Name>
-					<Comment><![CDATA[If enabled then in case of a lost mover a dump file is written automatically. ]]></Comment>
+					<Comment><![CDATA[If enabled then in case of a lost mover a dump file is written automatically.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -1986,7 +2053,7 @@
 				</Parameter>
 				<Parameter Group="Diagnostics">
 					<Name>AutoDumpWritingTriggerOnFailingMoverIdDetection</Name>
-					<Comment><![CDATA[If enabled then in case of a failing mover id detection a dump file is written automatically. ]]></Comment>
+					<Comment><![CDATA[If enabled then in case of a failing mover id detection a dump file is written automatically.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -1997,7 +2064,7 @@
 				</Parameter>
 				<Parameter Group="Diagnostics">
 					<Name>AutoDumpWritingTriggerOnModuleError</Name>
-					<Comment><![CDATA[If enabled then in case of a rising module error a dump file is written automatically. ]]></Comment>
+					<Comment><![CDATA[If enabled then in case of a rising module error a dump file is written automatically.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -2008,7 +2075,7 @@
 				</Parameter>
 				<Parameter Group="Diagnostics">
 					<Name>AutoDumpWritingTriggerOnModuleWarning</Name>
-					<Comment><![CDATA[If enabled then in case of a rising module warning a dump file is written automatically. ]]></Comment>
+					<Comment><![CDATA[If enabled then in case of a rising module warning a dump file is written automatically.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -2017,7 +2084,7 @@
 					<PTCID>#x03080336</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter DisableCodeGeneration="true" Group="Diagnostics">
+				<Parameter Group="Diagnostics">
 					<Name>WriteDump</Name>
 					<Comment><![CDATA[If downloaded manually then the driver writes a dump file.]]></Comment>
 					<BitSize>0</BitSize>
@@ -2025,7 +2092,7 @@
 					<PTCID>#x00000044</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter DisableCodeGeneration="true" Group="Diagnostics">
+				<Parameter Group="Diagnostics">
 					<Name>IsInputCheckEnabled</Name>
 					<Comment><![CDATA[Enables the plausibility check of all input channels on the system.]]></Comment>
 					<BitSize>8</BitSize>
@@ -2036,18 +2103,18 @@
 					<PTCID>#x03080283</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter DisableCodeGeneration="true" Group="Diagnostics">
+				<Parameter Group="Diagnostics">
 					<Name>UsedEventLogger</Name>
 					<Comment><![CDATA[Specifies how events/messages are reported by the driver.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{B056843B-A521-409D-92A1-7D085AC95ADC}" Namespace="XTS">EventMessenger</BaseType>
 					<Default>
-						<EnumText>EventLogger</EnumText>
+						<EnumText>TC3EventLogger</EnumText>
 					</Default>
 					<PTCID>#x03080292</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter HideParameter="true" DisableCodeGeneration="true" Group="Diagnostics">
+				<Parameter Group="Diagnostics">
 					<Name>DumpWriterFallbackMode</Name>
 					<Comment><![CDATA[Gets/sets the mode which specifies if extra memory can be used to write a dump file or not. This may be used if the normal buffer for the dump is too small.]]></Comment>
 					<BitSize>32</BitSize>
@@ -2063,6 +2130,9 @@
 					<Comment><![CDATA[Set the sync mode which is used for the aux task - either it processes all sync points or only the first.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{A2B80E85-6E09-4321-A638-246C62BA33D4}" Namespace="XTS">AuxTaskSyncMode</BaseType>
+					<Default>
+						<EnumText>Normal</EnumText>
+					</Default>
 					<PTCID>#x030802b3</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
@@ -2071,12 +2141,15 @@
 					<Comment><![CDATA[Suggested when using the 16 port EtherCAT network card. Set the object ID of the task which is responsible for triggering the EtherCAT master which is set to independent DC time.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<Default>
+						<Value>0</Value>
+					</Default>
 					<PTCID>#x03080233</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="Advanced">
 					<Name>IsCycleTimeWarningSuppressed</Name>
-					<Comment><![CDATA[If enabled then the warning that the driver does not run at 250 us is disabled.]]></Comment>
+					<Comment><![CDATA[If enabled then the warning that the driver does not run at 250 μs is disabled.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<Default>
@@ -2119,6 +2192,17 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="Advanced">
+					<Name>IsSymbolAccessEnabled</Name>
+					<Comment><![CDATA[If enabled then the parameters can be accessed safely through symbols. It requires additional memory and slows down the system.]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<Default>
+						<EnumText>FALSE</EnumText>
+					</Default>
+					<PTCID>#x0308033d</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="Advanced">
 					<Name>Optimization</Name>
 					<Comment><![CDATA[Choose between available optimizations or disable them all.]]></Comment>
 					<BitSize>32</BitSize>
@@ -2127,6 +2211,17 @@
 						<EnumText>MaximizePositionAccuracyOP1</EnumText>
 					</Default>
 					<PTCID>#x00000047</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter Group="Advanced">
+					<Name>ForceCompensation</Name>
+					<Comment><![CDATA[If enabled then the current-force ratio will be constant across the module(s).]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<Default>
+						<EnumText>TRUE</EnumText>
+					</Default>
+					<PTCID>#x03080399</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter HideParameter="true" Group="Advanced">
@@ -2161,9 +2256,20 @@
 					<Unit><![CDATA[s]]></Unit>
 					<Default>
 						<Min>1</Min>
-						<Value>10</Value>
+						<Value>10.0</Value>
 					</Default>
 					<PTCID>#x030802f2</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter HideParameter="true" ReadOnly="true" Group="Simulation">
+					<Name>IsSystemManagerSimulationModeActive</Name>
+					<Comment><![CDATA[Simulation mode by System Manager (TwinCAT 4026 only).]]></Comment>
+					<BitSize>8</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+					<Default>
+						<EnumText>FALSE</EnumText>
+					</Default>
+					<PTCID>#x03002108</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter Group="Simulation">
@@ -2289,7 +2395,7 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
-					<Name>MoverObjectIDs</Name>
+					<Name>MoverObjectIds</Name>
 					<Comment><![CDATA[Returns an array containing the object IDs of all movers.]]></Comment>
 					<BitSize>3200</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2309,7 +2415,7 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
-					<Name>PartObjectIDs</Name>
+					<Name>PartObjectIds</Name>
 					<Comment><![CDATA[Returns an array containing the object IDs of all parts.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2329,7 +2435,7 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
-					<Name>PeerObjectIDs</Name>
+					<Name>PeerObjectIds</Name>
 					<Comment><![CDATA[Returns an array containing the object IDs of all peers.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2349,7 +2455,7 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
-					<Name>TaskObjectIDs</Name>
+					<Name>TaskObjectIds</Name>
 					<Comment><![CDATA[Returns an array with the task object IDs.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2369,7 +2475,7 @@
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
-					<Name>TrackObjectIDs</Name>
+					<Name>TrackObjectIds</Name>
 					<Comment><![CDATA[Returns an array containing the object IDs of all tracks.]]></Comment>
 					<BitSize>32</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2406,7 +2512,7 @@
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Teaching">
 					<Name>IsTeachingFileFormatUpToDate</Name>
-					<Comment><![CDATA[Returns true if the teaching file uses the latest format definition.]]></Comment>
+					<Comment><![CDATA[Returns true if the teaching is valid.]]></Comment>
 					<BitSize>8</BitSize>
 					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 					<PTCID>#x03080290</PTCID>
@@ -2458,6 +2564,14 @@
 					<BitSize>32</BitSize>
 					<BaseType GUID="{FC1DDBC1-E5FC-4E17-A5DE-ABA50BC9F4FB}" Namespace="XTS">DetectionStateEnum</BaseType>
 					<PTCID>#x030802ed</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Mover Detection">
+					<Name>DetectedMoverCountTotal</Name>
+					<Comment><![CDATA[Returns the number of detected movers currently in the system.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+					<PTCID>#x0308033e</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Mover Detection">
@@ -2532,7 +2646,7 @@
 					<PTCID>#x0308027c</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
 					<Name>AdsServicePort</Name>
 					<Comment><![CDATA[Gets the port number which can be used to consume additional ADS services of the processing unit.]]></Comment>
 					<BitSize>16</BitSize>
@@ -2563,9 +2677,17 @@
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
 					<Name>VersionString</Name>
 					<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00010000001F}">STRING(31)</BaseType>
+					<BitSize>384</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
 					<PTCID>#x03080287</PTCID>
+					<ContextId>1</ContextId>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+					<Name>Version</Name>
+					<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+					<BitSize>128</BitSize>
+					<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+					<PTCID>#x03080510</PTCID>
 					<ContextId>1</ContextId>
 				</Parameter>
 				<Parameter OnlineParameter="true" ReadOnly="true" Group="Diagnostics">
@@ -2668,7 +2790,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>20</Id>
-					<Message><![CDATA[Start up of {0} (0x{1}) is monitored.]]></Message>
+					<Message><![CDATA[Start up of {0} ({1}) is monitored.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>21</Id>
@@ -2696,7 +2818,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>27</Id>
-					<Message><![CDATA[Task (0x{0}) is added to barrier.]]></Message>
+					<Message><![CDATA[Task ({0}) is added to barrier.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>28</Id>
@@ -2788,23 +2910,23 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>5005</Id>
-					<Message><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are zero.]]></Message>
+					<Message><![CDATA[All teaching values of XTS module {0} are zero.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5006</Id>
-					<Message><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are negative.]]></Message>
+					<Message><![CDATA[All teaching values of XTS module {0} are negative.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5007</Id>
-					<Message><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are positive.]]></Message>
+					<Message><![CDATA[All teaching values of XTS module {0} are positive.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5008</Id>
-					<Message><![CDATA[Abnormal behavior is detected. Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></Message>
+					<Message><![CDATA[Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5009</Id>
-					<Message><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} (0x{2}) to start up.]]></Message>
+					<Message><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} ({2}) to start up.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5010</Id>
@@ -2888,11 +3010,11 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>5030</Id>
-					<Message><![CDATA[Abnormal behavior is detected. All teaching values of XTS module {0} are one.]]></Message>
+					<Message><![CDATA[All teaching values of XTS module {0} are one.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5031</Id>
-					<Message><![CDATA[No teaching data is found for module with object ID '0x{0}'.]]></Message>
+					<Message><![CDATA[No teaching data is found for module with object ID '{0}'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5032</Id>
@@ -2900,7 +3022,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>5033</Id>
-					<Message><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = 0x{2}).]]></Message>
+					<Message><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = {2}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5034</Id>
@@ -2944,15 +3066,15 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>5044</Id>
-					<Message><![CDATA[Drive identity mismatch for module '{0} (0x{1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></Message>
+					<Message><![CDATA[Drive identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5045</Id>
-					<Message><![CDATA[Encoder identity mismatch for module '{0} (0x{1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></Message>
+					<Message><![CDATA[Encoder identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5046</Id>
-					<Message><![CDATA[Module type for module '{0} (0x{1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></Message>
+					<Message><![CDATA[Module type for module '{0} ({1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5047</Id>
@@ -2960,15 +3082,19 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>5048</Id>
-					<Message><![CDATA[No teaching data is found for module '{0} (0x{1})'.]]></Message>
+					<Message><![CDATA[No teaching data is found for module '{0} ({1})'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5049</Id>
-					<Message><![CDATA[No teaching data is found for module '{0} (0x{1})' with btn '{0}'.]]></Message>
+					<Message><![CDATA[No teaching data is found for module '{0} ({1})' with btn '{0}'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>5050</Id>
-					<Message><![CDATA[Teaching data for module '{0} (0x{1})' is old. The teaching does not contain a btn but the module defines one.]]></Message>
+					<Message><![CDATA[Teaching data for module '{0} ({1})' is old. The teaching does not contain a btn but the module defines one.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>5051</Id>
+					<Message><![CDATA[Performance is decreased. Tasks of movers should be assigned in order.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9000</Id>
@@ -2980,7 +3106,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9002</Id>
-					<Message><![CDATA[A XTS mover is lost at {0} mm. Please restart TwinCAT to perform a new detection.]]></Message>
+					<Message><![CDATA[A XTS mover is lost at {0} mm. Please perform a new detection.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9003</Id>
@@ -3036,7 +3162,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9016</Id>
-					<Message><![CDATA[The axis {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></Message>
+					<Message><![CDATA[The mover {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9017</Id>
@@ -3064,7 +3190,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9023</Id>
-					<Message><![CDATA[Version of teaching data file '{0}' (Version {1}) is not supported. Please create a new teaching file (Version {2}) with the current driver.]]></Message>
+					<Message><![CDATA[Version of teaching data file '{0}' is not supported. Please create a new teaching file with the current driver.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9024</Id>
@@ -3116,11 +3242,11 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9036</Id>
-					<Message><![CDATA[Could not register as IO driver by Task (0x{0}).]]></Message>
+					<Message><![CDATA[Could not register as IO driver by Task ({0}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9037</Id>
-					<Message><![CDATA[Task (0x{0}) could not be added to barrier.]]></Message>
+					<Message><![CDATA[Task ({0}) could not be added to barrier.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9038</Id>
@@ -3136,11 +3262,11 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9041</Id>
-					<Message><![CDATA[Could not get interface of task (Object ID = 0x{0}, Error = {1}).]]></Message>
+					<Message><![CDATA[Could not get interface of task (Object ID = {0}, Error = {1}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9042</Id>
-					<Message><![CDATA[Could not get RT-interface of task (Object ID = 0x{0}, Error = {1}).]]></Message>
+					<Message><![CDATA[Could not get RT-interface of task (Object ID = {0}, Error = {1}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9043</Id>
@@ -3156,7 +3282,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9046</Id>
-					<Message><![CDATA[Cannot access part with object ID 0x{0}.]]></Message>
+					<Message><![CDATA[Cannot access part with object ID {0}.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9047</Id>
@@ -3168,7 +3294,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9049</Id>
-					<Message><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = 0x{2}).]]></Message>
+					<Message><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = {2}).]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9050</Id>
@@ -3176,7 +3302,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9051</Id>
-					<Message><![CDATA[The part '{0}' (0x{1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></Message>
+					<Message><![CDATA[The part '{0}' ({1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9052</Id>
@@ -3208,7 +3334,7 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9059</Id>
-					<Message><![CDATA['{0}' teaching is not supported by module '{1} (0x{2})'.]]></Message>
+					<Message><![CDATA['{0}' teaching is not supported by module '{1} ({2})'.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9060</Id>
@@ -3252,11 +3378,35 @@
 				</EventMessage>
 				<EventMessage>
 					<Id>9070</Id>
-					<Message><![CDATA[Mover arrive is aborted. Track (0x{0}) is invalid - configure the track for arrive on the mover.]]></Message>
+					<Message><![CDATA[Mover arrive is aborted. Track ({0}) is invalid - configure the track for arrive on the mover.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>9071</Id>
 					<Message><![CDATA[Additional module(s) with a drive error have been detected.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9072</Id>
+					<Message><![CDATA[Mover '{0}' ({1}) of '{2}' ({3}) is lost at part '{4}' ({5}) - {6} mm. Please perform a new detection.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9073</Id>
+					<Message><![CDATA[The used task '{0}' is not used by any mover or module. Ensure that the task is used by at least one mover or module.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9074</Id>
+					<Message><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9075</Id>
+					<Message><![CDATA[{0}: No parameter set is configured.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9076</Id>
+					<Message><![CDATA[{0}: Failed to get parameter set with OTCID {1}. Please make sure the object {1} is a XTS Controller Parameter Set.]]></Message>
+				</EventMessage>
+				<EventMessage>
+					<Id>9077</Id>
+					<Message><![CDATA[{0}: Failed to get Mover Controller interface with OTCID {1}.]]></Message>
 				</EventMessage>
 				<EventMessage>
 					<Id>15000</Id>
@@ -3265,9 +3415,27 @@
 			</EventMessages>
 			<EventClasses>
 				<EventClass>
-					<Type GUID="{5910D5F1-92F5-F7D1-C195-EFDEE3E37DD0}">XtsEventClass</Type>
+					<Type GUID="{665BAD9E-6191-FEB1-F9FA-D5AD80AC3506}">XtsEventClass</Type>
 				</EventClass>
 			</EventClasses>
+			<Properties>
+				<Property>
+					<Name>Category</Name>
+					<Value>XTS</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>TcIoXts</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>XtsProcessingUnit</Value>
+				</Property>
+				<Property>
+					<Name>ChildCategory</Name>
+					<Value>XtsProcessingUnitChild</Value>
+				</Property>
+			</Properties>
 			<ParameterValues>
 				<Value>
 					<Name>AdsPort</Name>
@@ -3499,7 +3667,7 @@
 				</Value>
 				<Value>
 					<Name>UsedEventLogger</Name>
-					<EnumText>EventLogger</EnumText>
+					<EnumText>TC3EventLogger</EnumText>
 				</Value>
 				<Value>
 					<Name>DumpWriterFallbackMode</Name>
@@ -3530,8 +3698,16 @@
 					<EnumText>FALSE</EnumText>
 				</Value>
 				<Value>
+					<Name>IsSymbolAccessEnabled</Name>
+					<EnumText>FALSE</EnumText>
+				</Value>
+				<Value>
 					<Name>Optimization</Name>
 					<EnumText>MaximizePositionAccuracyOP1</EnumText>
+				</Value>
+				<Value>
+					<Name>ForceCompensation</Name>
+					<EnumText>TRUE</EnumText>
 				</Value>
 				<Value>
 					<Name>IncludedTrackCheckTimeout</Name>
@@ -3544,6 +3720,10 @@
 				<Value>
 					<Name>StartupDeviceWarningDelay</Name>
 					<Value>10</Value>
+				</Value>
+				<Value>
+					<Name>IsSystemManagerSimulationModeActive</Name>
+					<EnumText>FALSE</EnumText>
 				</Value>
 				<Value>
 					<Name>IsPositionNoiseEnabled</Name>
@@ -3590,403 +3770,403 @@
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[0]</Name>
+					<Name>MoverObjectIds[0]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[1]</Name>
+					<Name>MoverObjectIds[1]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[2]</Name>
+					<Name>MoverObjectIds[2]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[3]</Name>
+					<Name>MoverObjectIds[3]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[4]</Name>
+					<Name>MoverObjectIds[4]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[5]</Name>
+					<Name>MoverObjectIds[5]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[6]</Name>
+					<Name>MoverObjectIds[6]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[7]</Name>
+					<Name>MoverObjectIds[7]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[8]</Name>
+					<Name>MoverObjectIds[8]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[9]</Name>
+					<Name>MoverObjectIds[9]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[10]</Name>
+					<Name>MoverObjectIds[10]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[11]</Name>
+					<Name>MoverObjectIds[11]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[12]</Name>
+					<Name>MoverObjectIds[12]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[13]</Name>
+					<Name>MoverObjectIds[13]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[14]</Name>
+					<Name>MoverObjectIds[14]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[15]</Name>
+					<Name>MoverObjectIds[15]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[16]</Name>
+					<Name>MoverObjectIds[16]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[17]</Name>
+					<Name>MoverObjectIds[17]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[18]</Name>
+					<Name>MoverObjectIds[18]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[19]</Name>
+					<Name>MoverObjectIds[19]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[20]</Name>
+					<Name>MoverObjectIds[20]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[21]</Name>
+					<Name>MoverObjectIds[21]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[22]</Name>
+					<Name>MoverObjectIds[22]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[23]</Name>
+					<Name>MoverObjectIds[23]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[24]</Name>
+					<Name>MoverObjectIds[24]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[25]</Name>
+					<Name>MoverObjectIds[25]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[26]</Name>
+					<Name>MoverObjectIds[26]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[27]</Name>
+					<Name>MoverObjectIds[27]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[28]</Name>
+					<Name>MoverObjectIds[28]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[29]</Name>
+					<Name>MoverObjectIds[29]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[30]</Name>
+					<Name>MoverObjectIds[30]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[31]</Name>
+					<Name>MoverObjectIds[31]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[32]</Name>
+					<Name>MoverObjectIds[32]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[33]</Name>
+					<Name>MoverObjectIds[33]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[34]</Name>
+					<Name>MoverObjectIds[34]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[35]</Name>
+					<Name>MoverObjectIds[35]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[36]</Name>
+					<Name>MoverObjectIds[36]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[37]</Name>
+					<Name>MoverObjectIds[37]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[38]</Name>
+					<Name>MoverObjectIds[38]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[39]</Name>
+					<Name>MoverObjectIds[39]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[40]</Name>
+					<Name>MoverObjectIds[40]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[41]</Name>
+					<Name>MoverObjectIds[41]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[42]</Name>
+					<Name>MoverObjectIds[42]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[43]</Name>
+					<Name>MoverObjectIds[43]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[44]</Name>
+					<Name>MoverObjectIds[44]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[45]</Name>
+					<Name>MoverObjectIds[45]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[46]</Name>
+					<Name>MoverObjectIds[46]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[47]</Name>
+					<Name>MoverObjectIds[47]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[48]</Name>
+					<Name>MoverObjectIds[48]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[49]</Name>
+					<Name>MoverObjectIds[49]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[50]</Name>
+					<Name>MoverObjectIds[50]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[51]</Name>
+					<Name>MoverObjectIds[51]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[52]</Name>
+					<Name>MoverObjectIds[52]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[53]</Name>
+					<Name>MoverObjectIds[53]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[54]</Name>
+					<Name>MoverObjectIds[54]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[55]</Name>
+					<Name>MoverObjectIds[55]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[56]</Name>
+					<Name>MoverObjectIds[56]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[57]</Name>
+					<Name>MoverObjectIds[57]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[58]</Name>
+					<Name>MoverObjectIds[58]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[59]</Name>
+					<Name>MoverObjectIds[59]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[60]</Name>
+					<Name>MoverObjectIds[60]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[61]</Name>
+					<Name>MoverObjectIds[61]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[62]</Name>
+					<Name>MoverObjectIds[62]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[63]</Name>
+					<Name>MoverObjectIds[63]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[64]</Name>
+					<Name>MoverObjectIds[64]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[65]</Name>
+					<Name>MoverObjectIds[65]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[66]</Name>
+					<Name>MoverObjectIds[66]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[67]</Name>
+					<Name>MoverObjectIds[67]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[68]</Name>
+					<Name>MoverObjectIds[68]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[69]</Name>
+					<Name>MoverObjectIds[69]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[70]</Name>
+					<Name>MoverObjectIds[70]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[71]</Name>
+					<Name>MoverObjectIds[71]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[72]</Name>
+					<Name>MoverObjectIds[72]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[73]</Name>
+					<Name>MoverObjectIds[73]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[74]</Name>
+					<Name>MoverObjectIds[74]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[75]</Name>
+					<Name>MoverObjectIds[75]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[76]</Name>
+					<Name>MoverObjectIds[76]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[77]</Name>
+					<Name>MoverObjectIds[77]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[78]</Name>
+					<Name>MoverObjectIds[78]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[79]</Name>
+					<Name>MoverObjectIds[79]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[80]</Name>
+					<Name>MoverObjectIds[80]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[81]</Name>
+					<Name>MoverObjectIds[81]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[82]</Name>
+					<Name>MoverObjectIds[82]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[83]</Name>
+					<Name>MoverObjectIds[83]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[84]</Name>
+					<Name>MoverObjectIds[84]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[85]</Name>
+					<Name>MoverObjectIds[85]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[86]</Name>
+					<Name>MoverObjectIds[86]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[87]</Name>
+					<Name>MoverObjectIds[87]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[88]</Name>
+					<Name>MoverObjectIds[88]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[89]</Name>
+					<Name>MoverObjectIds[89]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[90]</Name>
+					<Name>MoverObjectIds[90]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[91]</Name>
+					<Name>MoverObjectIds[91]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[92]</Name>
+					<Name>MoverObjectIds[92]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[93]</Name>
+					<Name>MoverObjectIds[93]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[94]</Name>
+					<Name>MoverObjectIds[94]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[95]</Name>
+					<Name>MoverObjectIds[95]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[96]</Name>
+					<Name>MoverObjectIds[96]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[97]</Name>
+					<Name>MoverObjectIds[97]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[98]</Name>
+					<Name>MoverObjectIds[98]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>MoverObjectIDs[99]</Name>
+					<Name>MoverObjectIds[99]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
@@ -3994,7 +4174,7 @@
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>PartObjectIDs[0]</Name>
+					<Name>PartObjectIds[0]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
@@ -4002,7 +4182,7 @@
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>PeerObjectIDs[0]</Name>
+					<Name>PeerObjectIds[0]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
@@ -4010,7 +4190,7 @@
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>TaskObjectIDs[0]</Name>
+					<Name>TaskObjectIds[0]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
@@ -4018,7 +4198,7 @@
 					<Value>0</Value>
 				</Value>
 				<Value>
-					<Name>TrackObjectIDs[0]</Name>
+					<Name>TrackObjectIds[0]</Name>
 					<Value>0</Value>
 				</Value>
 				<Value>
@@ -4060,6 +4240,10 @@
 				<Value>
 					<Name>DetectionState</Name>
 					<EnumText>NotStarted</EnumText>
+				</Value>
+				<Value>
+					<Name>DetectedMoverCountTotal</Name>
+					<Value>0</Value>
 				</Value>
 				<Value>
 					<Name>DetectedMoverCount</Name>
@@ -5708,6 +5892,22 @@
 				<Value>
 					<Name>VersionString</Name>
 					<String></String>
+				</Value>
+				<Value>
+					<Name>Version.Major</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Minor</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Build</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Version.Revision</Name>
+					<Value>0</Value>
 				</Value>
 				<Value>
 					<Name>HasInputCheckError</Name>

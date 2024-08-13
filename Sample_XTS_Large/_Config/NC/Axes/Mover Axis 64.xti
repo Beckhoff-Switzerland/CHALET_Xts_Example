@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CNcAxisDef" SubType="1">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.55" ClassName="CNcAxisDef" SubType="1">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1568,6 +1568,34 @@ External Setpoint Generation:
 			</EnumInfo>
 		</DataType>
 		<DataType>
+			<Name GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Major</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Minor</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Build</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Revision</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{C24B0647-3B21-49BD-B2D0-DEA43DE68F78}" Namespace="XTS">SoftDriveInput</Name>
 			<BitSize>832</BitSize>
 			<SubItem>
@@ -1840,6 +1868,325 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
+			<Name GUID="{557F00A9-CD3F-4C60-40D3-89615F586D30}">SoftDriveEventClass</Name>
+			<DisplayName TxtId=""><![CDATA[SoftDriveEventClass]]></DisplayName>
+			<EventId>
+				<Name Id="0">BuildInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Version {0} Build date: {1} Build time: {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="1">TuningAssistNumberOfMaximaInfo</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Number of maxima found in the current spectrum = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="2">TuningAssistRuleInfo</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Calc with rule {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">Mover1FoundInfo</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Mover 1 found]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="4">StandardMoverFoundInfo</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Standard mover found]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5">TuningAssistAccelPeakPuls1Info</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: AccelPeakPuls1 [m/s²] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="6">TuningAssistForceConstantInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: ForceConstant [N/A] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="7">TuningAssistTotalMassCalcInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: Tuning Assist Debug: TotalMassCalc [kg] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="8">TuningAssistSuggestedFrictionCompInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: SuggestedFrictionComp [A] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9">TuningAssistFrequencyMaxFFTAmplitudeInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: FrequencyMaxFFTAmplitude [Hz] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="10">TuningAssistMaxFFTAmplitudeInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: MaxFFTAmplitude [inc] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="11">TuningAssistSumFFTAmplitudeInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: SumFFTAmplitude [inc] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="12">TuningAssistPulsTimeInfo</Name>
+				<DisplayName TxtId=""><![CDATA[Tuning Assist Debug: PulsTime [s] = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="13">ManagerContextInfo</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Context (Task = {1}, Motor.Type = {2}, Motor.Poles = {3}, ...]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5000">GetParentNameWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0} (OID={1}): Get parent name returned error: {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5001">InvalidParameterValue_MinMax_UInt32Warning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3}/max={4})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5002">InvalidSDParameterValue_MinMax_UInt32Warning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Invalid {1} parameter value (min={2}/max={3})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5003">InvalidParameterValue_MinMax_FloatWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3}/max={4})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5004">InvalidParameterValue_Min_UInt32Warning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5005">InvalidSDParameterValue_Min_UInt32Warning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Invalid {1} parameter value (min={2})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5006">TuningAssistErrorInLowPassWarning</Name>
+				<DisplayName TxtId=""><![CDATA[TuningAssist: Error in LowPass2 calc with LowPassfreqeuncy = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5007">TuningAssistErrorInBiquadLowPassWarning</Name>
+				<DisplayName TxtId=""><![CDATA[TuningAssist: Error in Bi_Quad calc with LowPassfreqeuncy = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5008">TuningAssistErrorInBiquadHighPassWarning</Name>
+				<DisplayName TxtId=""><![CDATA[TuningAssist: Error in Bi_Quad calc with HighPassfreqeuncy = {0}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5009">TuningAssistMovementWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Probably no enough movement during spectrum measure]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5010">TuningAssistInvalidMaximaWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Invalid number of maxima found in the current spectrum]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5011">TuningAssistTooManyMaximaWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Too many maxima found in the current spectrum]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5012">TuningAssistNoMaximaFoundWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: No maxima found in the current spectrum]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5013">TuningAssistNoFilterSuggestionWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: No filter suggestion could be calculated - please evaluate the spectrum manually]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5014">TuningAssistNoFrictionCompensationSuggestionParaWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: No friction compensation suggestion could be calculated - due to wrong parameter {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5015">Mover1DetectionWhileAxisEnabledWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: error - new mover 1 detection while axis is enabled]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5016">Mover1HWErrorWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: error - HW error occur after mover 1 detection is started]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5017">Mover1MovementErrorWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: error - both movements while mover 1 detection do not fit together]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5018">Mover1TimeoutWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: error - timeout while mover 1 detection is running]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5019">Mover1HwNotReadyWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: HW not ready - e.g. power is missing or HW has an error]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5020">Mover1VeloErrorWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Last state - min velocity could not reached long enough]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5021">Mover1MinMovementErrorWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Last state - min movement could not reached with the actual current]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5022">NoWriteAccessInOPWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: No write access in TCom state OP for {2}]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5023">BandwidthIsLimitedWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}.Observer: Bandwidth is limited by cycle time (limited Bandwidth ={1})]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5024">InputPointerNotSetWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Input pointer to IO driver not set.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5025">OutputPointerNotSetWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Output pointer to IO driver not set.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5026">VeloDiffToBigForEmergencyRampWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: velocity difference to big for emergency ramp down.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5027">TooMuchControlAreasWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Too much ControlAreas {1}.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5028">AreaStartPositionMustSmallerWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: AreaStartPosition[{1}] must be smaller then AreaEndPosition.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5029">AreaStartPositionMustGreaterWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: AreaStartPosition[{1}] must be greater or equal then Zero.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5030">AreaStartPositionMustSmallerHardwareModuloWarning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: AreaStartPosition[{1}] must be smaller or equal then HardwareModulo.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9000">CouldNotRegisterByError</Name>
+				<DisplayName TxtId=""><![CDATA[Could not register {0} ('{1}') by {2}.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9001">DifferentObjectVersionsError</Name>
+				<DisplayName TxtId=""><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9002">VelocityFollowingErrorError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}.{1}: Velocity following error - check setpoint generation & commutation (actual velcoity != command velocity).]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9003">ResortWhileAxisEnabledError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: error - new mover re-sort while axis is enabled.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9004">WrongSDTaskConfigError</Name>
+				<DisplayName TxtId=""><![CDATA[The task of {0} ({1}) is not the same as the task of {2} ({3}). Ensure that the SoftDrive and the corresponding mover object are called by the same task.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9005">TaskMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Task is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9006">InterpolatorMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Interpolator object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9007">PositionCtrlMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: PositionCtrl object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9008">VelocityCtrlMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: VelocityCtrl object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9009">EncoderMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Encoder object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9010">FilterMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Filter object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9011">FeedforwardMissingError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Feedforward object is missing.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9012">SetOwnerInOpError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Could not set owner in OP. HR = {1}.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9013">AreaOwnerNotInSafeopError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Area owner not in SAFEOP. HR = {1}.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9014">GetOwnerStateError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: Could not get object state of owner. HR = {1}.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9015">GetImagePointerError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: GetImagePtr - PTR FAILED.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9016">EmergencyRampTooLongError</Name>
+				<DisplayName TxtId=""><![CDATA[{0}: emergency ramp take too long.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="15000">MessageDebug</Name>
+				<DisplayName TxtId=""><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+		</DataType>
+		<DataType>
 			<Name GUID="{1C5D4F98-DF41-4B1D-B313-DFFFC47E3F1E}">TcSdInterpolatorType</Name>
 			<BitSize>16</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
@@ -2075,6 +2422,15 @@ External Setpoint Generation:
 			</EnumInfo>
 		</DataType>
 	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b0095959500909090008a8a8a0085858500808080007a7a7a00004dff006f6f6f006a6a6a00646464000000000000000000b4b4b400afafaf00a9a9a900a4a4a4009e9e9e0099999900949494008e8e8e008989890083838300004dff0078787800737373006e6e6e000000000000000000bdbdbd00b8b8b800b2b2b200adadad00a8a8a800a2a2a2009d9d9d0097979700929292008c8c8c00004dff00828282007c7c7c00777777000000000000000000c6c6c600c1c1c100bcbcbc00b6b6b600b1b1b100ababab00a6a6a600a0a0a0009b9b9b0096969600004dff008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c5005982e100bababa00b4b4b400afafaf00aaaaaa00a4a4a4009f9f9f004c73cc00456ecd008e8e8e00898989000000000000000000d9d9d900d3d3d300cecece00004dff00bec0c400bebebe00b8b8b800b3b3b300adadad00a8a8a8009fa1a500004dff0098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700004dff003f74ef00c2c4c800c1c1c100bcbcbc00b7b7b700adafb300356ae500004dff00a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000004dff004277f2005683eb00cbcbcb00c5c5c500c0c0c0004d7ae200386de800004dff00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900004dff00dadce000c3cbdd00d4d4d400cecece00c9c9c900afb7c900babcc000004dff00b3b3b300aeaeae000000000000000000fbfbfb00f8f8f800f3f3f3000953fe0082a4f2007a9def00dddddd00d7d7d700d2d2d2006f92e4007091e0000852fd00bcbcbc00b7b7b7000000000000000000fbfbfb00fbfbfb00fbfbfb00bbcdf8000b54fe0082a4f400e6e6e600e1e1e100dbdbdb007b9be8000a53fd0096aad800c5c5c500c0c0c0000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00bbcefb000a54ff00004dff00004dff00004dff000953fe00a3b6e300d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1001">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b0095959500909090008a8a8a0085858500808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000b4b4b400afafaf00a9a9a900a4a4a4009e9e9e0099999900949494008e8e8e0089898900838383007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd00000000002b66ed005e81d3009ea3ad00a2a2a2009d9d9d0097979700929292008c8c8c0087878700828282007c7c7c00777777000000000000000000c6c6c600b2b8c6008da0cd004374e4000f56f900718bc700a6a6a600a0a0a0009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000cacaca00c5c5c500bfbfbf0097a5c700195bf40000000000aaaaaa00a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900d3d3d300cecece00c8c8c800c3c3c300adb4c400175af6007a92cb00adadad00a8a8a800a3a3a3009d9d9d0098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700d2d2d200cccccc00c7c7c70098a8ce001257f800aaafbc00b1b1b100acacac00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e000dbdbdb00d5d5d500d0d0d000cbcbcb005681e6004275ea00bababa00b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900e4e4e400dfdfdf00d9d9d900d4d4d400c8cad0002a67f400668be000bebebe00b9b9b900b3b3b300aeaeae000000000000000000fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e2e2e200dddddd00d7d7d700000000002262f7004477ec0097a8cf00b4b7bf00b7b7b7000000000000000000fbfbfb00fbfbfb00fbfbfb00f6f6f600f1f1f100ebebeb00e6e6e600e1e1e100dbdbdb00ced1d8006f93e6002765f50000000000c0c0c0000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00f5f5f500efefef00eaeaea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1002">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b009595950090909000004dff0085858500808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000b4b4b400afafaf00a9a9a900a4a4a4009e9e9e0099999900004dff008e8e8e0089898900838383007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd000000000000000000adadad00a8a8a80000000000004dff0000000000000000008c8c8c00878787000000000000000000777777000000000000000000c6c6c600c1c1c10000000000b6b6b600b1b1b10000000000004dff00a0a0a0000000000096969600909090000000000085858500808080000000000000000000d0d0d000cacaca0000000000000000000000000000000000004dff00aaaaaa00000000000000000000000000000000008e8e8e00898989000000000000000000d9d9d900d3d3d300cecece00c8c8c800c3c3c300bebebe00004dff00b3b3b300adadad00a8a8a800a3a3a3009d9d9d0098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700d2d2d200cccccc00c7c7c700004dff00bcbcbc00b7b7b700b1b1b100acacac00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb0000000000000000000000000000000000d0d0d000004dff0000000000000000000000000000000000afafaf00aaaaaa00a5a5a5000000000000000000f4f4f40000000000e9e9e900e4e4e40000000000d9d9d900004dff0000000000c9c9c900c3c3c30000000000b9b9b900b3b3b300aeaeae000000000000000000fbfbfb0000000000f3f3f300ededed000000000000000000004dff0000000000d2d2d200cdcdcd00000000000000000000000000b7b7b7000000000000000000fbfbfb00fbfbfb00fbfbfb00f6f6f600f1f1f100ebebeb00004dff00e1e1e100dbdbdb00d6d6d600d0d0d000cbcbcb00c5c5c500c0c0c0000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00f5f5f500004dff00eaeaea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1003">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000646464000000000000000000b4b4b400000000009aa1b100a3a3a3006767670049494900515151008585850089898900838383007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd00000000008498c600a8a8a80065656500969696007e7e7e0037373700929292008c8c8c0087878700828282007c7c7c00777777000000000000000000c6c6c600000000006488db00b6b6b600b0b0b000898989005c5c5c00393939009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000000000003f74ed00bfbfbf0037373700585858007e7e7e00a9a9a900a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900000000001459fa00c8c8c80035353500b6b6b600afafaf008c8c8c00adadad00a8a8a800a3a3a3009d9d9d0098989800929292000000000000000000e2e2e20000000000185dfb00b3bed900a2a2a20053535300525252008e8e8e009ba7c2006284d4008999bd00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb00000000005a88f3007b9deb00d5d5d500d0d0d000cbcbcb00a8b3ce001258f900527de0001257f7008497c300aaaaaa00a5a5a5000000000000000000f4f4f400000000007187ba00225eea009999990096969600949494002f63db004d70c1008b8b8b006178ac001455ec0080828500aeaeae000000000000000000fbfbfb0000000000a1a2a4001357f3007d8db2009b9b9b007788ae001155f3008e919700909090008d8d8d00285fde004b6ebe00b7b7b7000000000000000000fbfbfb0000000000fbfbfb009ab7f900316efc00d2daed00336ff9008ba8ec00dbdbdb00d6d6d600d0d0d000afbad2002060f500c0c0c0000000000000000000fbfbfb0000000000fbfbfb00fbfbfb006a96fd00165cfe006893f800e8e9ea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1004">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000646464000000000000000000b4b4b400000000009aa1b100a4a4a4009e9e9e0069696900797979008e8e8e0089898900838383007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd00000000008498c600adadad00a5a5a500313131003d3d3d0097979700929292008c8c8c0087878700828282007c7c7c00777777000000000000000000c6c6c600000000006488db00b6b6b6007c7c7c006969690042424200969696009b9b9b0096969600909090008b8b8b0085858500808080000000000000000000d0d0d000000000003f74ed00bfbfbf0044444400a9a9a9007e7e7e0068686800a4a4a4009f9f9f0099999900949494008e8e8e00898989000000000000000000d9d9d900000000001459fa00bcbcbc0046464600bebebe00b6b6b6003d3d3d00adadad00a8a8a800a3a3a3009d9d9d0098989800929292000000000000000000e2e2e20000000000185dfb00969fb500a0a0a000c7c7c700c1c1c1007c7c7c0097a3bd006284d4008999bd00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb00000000005a88f3007b9deb00d5d5d500d0d0d000cbcbcb00a8b3ce001258f900527de0001257f7008497c300aaaaaa00a5a5a5000000000000000000f4f4f400000000007187ba00225eea009999990096969600949494002f63db004d70c1008b8b8b006178ac001455ec0080828500aeaeae000000000000000000fbfbfb0000000000a1a2a4001357f3007d8db2009b9b9b007788ae001155f3008e919700909090008d8d8d00285fde004b6ebe00b7b7b7000000000000000000fbfbfb0000000000fbfbfb009ab7f900316efc00d2daed00336ff9008ba8ec00dbdbdb00d6d6d600d0d0d000afbad2002060f500c0c0c0000000000000000000fbfbfb0000000000fbfbfb00fbfbfb006a96fd00165cfe006893f800e8e9ea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1005">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000646464000000000000000000b4b4b40000000000a9a9a900a4a4a4009e9e9e0099999900949494008e8e8e0089898900838383007e7e7e0078787800737373006e6e6e000000000000000000bdbdbd0000000000b2b2b200adadad00a8a8a800a2a2a2009d9d9d0097979700929292008c8c8c0087878700828282007c7c7c00777777000000000000000000c6c6c60000000000bcbcbc00b6b6b600b1b1b100ababab00a6a6a600a0a0a0009b9b9b009696960090909000838892003162d200747b8b000000000000000000d0d0d00000000000c5c5c500bfbfbf00bababa00b4b4b400afafaf00aaaaaa00a4a4a4009f9f9f00848fa7001858ed003967d20086888b000000000000000000d9d9d90000000000cecece00c8c8c800c3c3c300bebebe00b8b8b800b3b3b300adadad008092bc001055f6005b7cc70098989800929292000000000000000000e2e2e20000000000d7d7d700d2d2d200cccccc00c7c7c700c1c1c100bcbcbc006f8dd3001157f8007f93c100a6a6a600a1a1a1009b9b9b000000000000000000ebebeb0000000000e0e0e000dbdbdb00d5d5d500d0d0d000c9cacc005c85e4001c5ef6009eaac500b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f40000000000004dff00004dff00004dff00004dff00004dff00174fcf004e535d0053535300535353005353530053535300aeaeae000000000000000000fbfbfb0000000000f3f3f300ededed00e8e8e800e2e2e200dddddd00d7d7d700d2d2d200cdcdcd00c7c7c700c2c2c200bcbcbc00b7b7b7000000000000000000fbfbfb0000000000fbfbfb00f6f6f600f1f1f100ebebeb00e6e6e600e1e1e100dbdbdb00d6d6d600d0d0d000cbcbcb00c5c5c500c0c0c0000000000000000000fbfbfb0000000000fbfbfb00fbfbfb00fafafa00f5f5f500efefef00eaeaea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+		<ImageData Id="1006">424d360400000000000036000000280000001000000010000000010020000000000000000000c30e0000c30e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a2a2a2009c9c9c0097979700929292008c8c8c0087878700818181007c7c7c0076767600717171006c6c6c0066666600616161005b5b5b000000000000000000ababab00a6a6a600a0a0a0009b9b9b0095959500909090008a8a8a0085858500808080007a7a7a00757575006f6f6f006a6a6a00646464000000000000000000b4b4b400afafaf00a9a9a900a4a4a4009e9e9e0099999900949494008e8e8e00898989006d6d6d006f6f6f0078787800737373006e6e6e000000000000000000bdbdbd00b8b8b800b2b2b200adadad004e77d7000650fb004c74d0009797970092929200828282005a5a5a00666666007b7b7b00777777000000000000000000c6c6c6008a8a8a005353530053535300034df800004dff00054df50053535300535353005353530053535300535353006d6d6d00808080000000000000000000d0d0d000cacaca00c5c5c500bfbfbf005880de000952fb00567dd700aaaaaa00a4a4a400919191005c5c5c006d6d6d008d8d8d00898989000000000000000000d9d9d900d3d3d300cecece00c8c8c800c0c1c300466cc300b5b6b800b3b3b300adadad0081818100878787009d9d9d0098989800929292000000000000000000e2e2e200dcdcdc00d7d7d700d2d2d200406aca00004dff003d67c700bcbcbc00b7b7b700b1b1b100acacac00a6a6a600a1a1a1009b9b9b000000000000000000ebebeb00e6e6e600e0e0e0007790c9000d50ec00004dff000e50ea006782bf00c0c0c000bababa00b5b5b500afafaf00aaaaaa00a5a5a5000000000000000000f4f4f400efefef00e9e9e900577acc00a1afd000004dff0099a7c8005174c600c9c9c900c3c3c300bebebe00b9b9b900b3b3b300aeaeae000000000000000000fbfbfb00f8f8f800f3f3f300ededed00e8e8e800004dff00dddddd00d7d7d700d2d2d200cdcdcd00c7c7c700c2c2c200bcbcbc00b7b7b7000000000000000000fbfbfb00fbfbfb00fbfbfb00f6f6f600f1f1f100004dff00e6e6e600e1e1e100dbdbdb00d6d6d600d0d0d000cbcbcb00c5c5c500c0c0c0000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fafafa00004dff00efefef00eaeaea00e4e4e400dfdfdf00d9d9d900d4d4d400cfcfcf00c9c9c9000000000000000000fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00fbfbfb00f8f8f800f3f3f300ededed00e8e8e800e3e3e300dddddd00d8d8d800d2d2d2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ImageData>
+	</ImageDatas>
 	<Axis Id="64" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
@@ -2222,6 +2578,7 @@ External Setpoint Generation:
 		</Vars>
 		<Module Id="#x01012750" KeepUnrestoredLinks="2">
 			<Name>SoftDrive 64</Name>
+			<ImageId>1000</ImageId>
 			<TmcDesc GUID="{272A98C0-4C87-4243-BED6-3BB69E29F02C}">
 				<Name>CTcSoftDrive</Name>
 				<CLSID ClassFactory="TcSoftDrive">{272A98C0-4C87-4243-BED6-3BB69E29F02C}</CLSID>
@@ -2237,19 +2594,19 @@ External Setpoint Generation:
 					</Context>
 				</Contexts>
 				<Interfaces>
-					<Interface DisableCodeGeneration="true">
+					<Interface>
 						<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 					</Interface>
 					<Interface>
 						<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 					</Interface>
-					<Interface DisableCodeGeneration="true">
+					<Interface>
 						<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 					</Interface>
-					<Interface DisableCodeGeneration="true">
+					<Interface>
 						<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 					</Interface>
-					<Interface DisableCodeGeneration="true">
+					<Interface>
 						<Type GUID="{05100010-0000-0000-E000-000000000064}">ITcSoftDrive</Type>
 					</Interface>
 					<Interface>
@@ -2258,9 +2615,11 @@ External Setpoint Generation:
 				</Interfaces>
 				<Parameters>
 					<Group><![CDATA[General]]></Group>
-					<Group Collapsed="true"><![CDATA[ControlAreas]]></Group>
-					<Group Collapsed="true"><![CDATA[ExternalIO]]></Group>
+					<Group Collapsed="true"><![CDATA[Control Areas]]></Group>
+					<Group Collapsed="true"><![CDATA[External IO]]></Group>
+					<Group><![CDATA[Structure]]></Group>
 					<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+					<Group><![CDATA[Info]]></Group>
 					<Parameter DisableCodeGeneration="true" Group="General">
 						<Name>AdsPort</Name>
 						<Comment><![CDATA[Gets/sets the ads port. The port should be used to read/write parameters via ADS.]]></Comment>
@@ -2314,7 +2673,7 @@ External Setpoint Generation:
 						<Comment><![CDATA[emergency deceleration ramp used e.g. in case of an error]]></Comment>
 						<BitSize>64</BitSize>
 						<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-						<Unit><![CDATA[mm/s^2]]></Unit>
+						<Unit><![CDATA[mm/s²]]></Unit>
 						<Default>
 							<Min>0</Min>
 							<Max>150000</Max>
@@ -2364,7 +2723,7 @@ External Setpoint Generation:
 						<PTCID>#x0510015a</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter DisableCodeGeneration="true" Group="ControlAreas">
+					<Parameter DisableCodeGeneration="true" Group="Control Areas">
 						<Name>ControlAreas</Name>
 						<Comment><![CDATA[setup the number of control areas [1...32]]]></Comment>
 						<BitSize>8192</BitSize>
@@ -2376,7 +2735,7 @@ External Setpoint Generation:
 						<PTCID>#x05100119</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter HideParameter="true" DisableCodeGeneration="true" Group="ExternalIO">
+					<Parameter HideParameter="true" DisableCodeGeneration="true" Group="External IO">
 						<Name>SoftDriveExternalEncoder</Name>
 						<BitSize>192</BitSize>
 						<SubItem>
@@ -2433,7 +2792,7 @@ External Setpoint Generation:
 						<PTCID>#x05100110</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter HideParameter="true" DisableCodeGeneration="true" Group="ExternalIO">
+					<Parameter HideParameter="true" DisableCodeGeneration="true" Group="External IO">
 						<Name>SoftDriveExternalDriveScaling</Name>
 						<Comment><![CDATA[scaling of current command output if an external drive HW is used (default 1000 means mA scaling)]]></Comment>
 						<BitSize>64</BitSize>
@@ -2445,7 +2804,28 @@ External Setpoint Generation:
 						<PTCID>#x05100111</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter ReadOnly="true" Group="ExternalIO">
+					<Parameter HideParameter="true" DisableCodeGeneration="true" Group="External IO">
+						<Name>SoftDriveInvertCurrentCmd</Name>
+						<Comment><![CDATA[invert the external current command]]></Comment>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+						<EnumInfo>
+							<Text><![CDATA[OFF]]></Text>
+							<Enum>0</Enum>
+							<Comment><![CDATA[Invert external current command is OFF]]></Comment>
+						</EnumInfo>
+						<EnumInfo>
+							<Text><![CDATA[ON]]></Text>
+							<Enum>1</Enum>
+							<Comment><![CDATA[Invert external current command is ON]]></Comment>
+						</EnumInfo>
+						<Default>
+							<Value>0</Value>
+						</Default>
+						<PTCID>#x05100244</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter ReadOnly="true" Group="External IO">
 						<Name>IoChildAreaLocation</Name>
 						<BitSize>256</BitSize>
 						<BaseType GUID="{C5711B60-10CA-42F2-8DE1-6039CB261CCF}" Namespace="IO">TcIoChildAreaLocation</BaseType>
@@ -2456,7 +2836,7 @@ External Setpoint Generation:
 						<PTCID>#x03000029</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter Group="ExternalIO">
+					<Parameter Group="External IO">
 						<Name>AreaOwner</Name>
 						<BitSize>32</BitSize>
 						<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
@@ -2598,9 +2978,9 @@ External Setpoint Generation:
 						<PTCID>#x05100165</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
-						<Name>TcNc3ActData</Name>
-						<Comment><![CDATA[Gets the actual data for the cyclic NC 3 call]]></Comment>
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
+						<Name>TcMc3ActData</Name>
+						<Comment><![CDATA[Gets the actual data for the cyclic MC3 call]]></Comment>
 						<BitSize>384</BitSize>
 						<SubItem>
 							<Name>ActDCTimeStamp</Name>
@@ -2647,7 +3027,7 @@ External Setpoint Generation:
 						<PTCID>#x050300af</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>SoftDriveOid</Name>
 						<Comment><![CDATA[Gets the object ID of the SoftDrive itself.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2655,7 +3035,7 @@ External Setpoint Generation:
 						<PTCID>#x05100400</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>InterpolatorOid</Name>
 						<Comment><![CDATA[Gets the object ID of the interpolator object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2663,7 +3043,7 @@ External Setpoint Generation:
 						<PTCID>#x05100401</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>EncoderOid</Name>
 						<Comment><![CDATA[Gets the object ID of the encoder object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2671,7 +3051,7 @@ External Setpoint Generation:
 						<PTCID>#x05100402</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>PositionControllerOid</Name>
 						<Comment><![CDATA[Gets the object ID of the position controller object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2679,7 +3059,7 @@ External Setpoint Generation:
 						<PTCID>#x05100403</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>VelocityControllerOid</Name>
 						<Comment><![CDATA[Gets the object ID of the velocity controller object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2687,7 +3067,7 @@ External Setpoint Generation:
 						<PTCID>#x05100404</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>Filter1Oid</Name>
 						<Comment><![CDATA[Gets the object ID of the first filter object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2695,7 +3075,7 @@ External Setpoint Generation:
 						<PTCID>#x05100405</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>FeedForwardOid</Name>
 						<Comment><![CDATA[Gets the object ID of the feed forward object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2703,7 +3083,7 @@ External Setpoint Generation:
 						<PTCID>#x05100406</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>Filter2Oid</Name>
 						<Comment><![CDATA[Gets the object ID of the second filter object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2711,7 +3091,7 @@ External Setpoint Generation:
 						<PTCID>#x05100407</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>MoverOid</Name>
 						<Comment><![CDATA[Gets the object ID of the connected mover object.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2719,7 +3099,7 @@ External Setpoint Generation:
 						<PTCID>#x05100408</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
 						<Name>TuningAssistOid</Name>
 						<Comment><![CDATA[Gets the object ID of the tuning assist object beneath the SoftDrive.]]></Comment>
 						<BitSize>32</BitSize>
@@ -2727,12 +3107,28 @@ External Setpoint Generation:
 						<PTCID>#x05100409</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
-					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true">
-						<Name>NC3Diagnostic</Name>
-						<Comment><![CDATA[Gets the actual NC3 diagnosis the SoftDrive is connected with]]></Comment>
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" ReadOnly="true" Group="Structure">
+						<Name>MC3Diagnostic</Name>
+						<Comment><![CDATA[Gets the actual MC3 diagnosis the SoftDrive is connected with]]></Comment>
 						<BitSize>32</BitSize>
 						<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 						<PTCID>#x05100166</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+						<Name>VersionString</Name>
+						<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+						<BitSize>384</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+						<PTCID>#x05100243</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+						<Name>Version</Name>
+						<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+						<BitSize>128</BitSize>
+						<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+						<PTCID>#x05100245</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
 				</Parameters>
@@ -2827,7 +3223,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[setpoint acceleration from interpolator]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[mm/s^2]]></Unit>
+							<Unit><![CDATA[mm/s²]]></Unit>
 							<BitOffs>640</BitOffs>
 						</Symbol>
 						<Symbol CreateSymbol="true">
@@ -3032,16 +3428,297 @@ External Setpoint Generation:
 					<DataPointer>
 						<PTCID>#x00000001</PTCID>
 						<Name>InputPointer1</Name>
-						<Type>XTS.SoftDriveInput</Type>
+						<Type GUID="{C24B0647-3B21-49BD-B2D0-DEA43DE68F78}" Namespace="XTS">SoftDriveInput</Type>
 						<ContextId>1</ContextId>
 					</DataPointer>
 					<DataPointer>
 						<PTCID>#x00000002</PTCID>
 						<Name>OutputPointer1</Name>
-						<Type>XTS.SoftDriveOutput</Type>
+						<Type GUID="{9A1133A5-A1B4-42CA-A470-0B744A5D182F}" Namespace="XTS">SoftDriveOutput</Type>
 						<ContextId>1</ContextId>
 					</DataPointer>
 				</DataPointers>
+				<EventMessages>
+					<EventMessage>
+						<Id>0</Id>
+						<Message><![CDATA[Version {0} Build date: {1} Build time: {2}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>1</Id>
+						<Message><![CDATA[{0}.{1}: Number of maxima found in the current spectrum = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>2</Id>
+						<Message><![CDATA[{0}.{1}: Calc with rule {2}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>3</Id>
+						<Message><![CDATA[{0}: Mover 1 found]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>4</Id>
+						<Message><![CDATA[{0}: Standard mover found]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5</Id>
+						<Message><![CDATA[Tuning Assist Debug: AccelPeakPuls1 [m/s²] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>6</Id>
+						<Message><![CDATA[Tuning Assist Debug: ForceConstant [N/A] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>7</Id>
+						<Message><![CDATA[Tuning Assist Debug: Tuning Assist Debug: TotalMassCalc [kg] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>8</Id>
+						<Message><![CDATA[Tuning Assist Debug: SuggestedFrictionComp [A] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9</Id>
+						<Message><![CDATA[Tuning Assist Debug: FrequencyMaxFFTAmplitude [Hz] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>10</Id>
+						<Message><![CDATA[Tuning Assist Debug: MaxFFTAmplitude [inc] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>11</Id>
+						<Message><![CDATA[Tuning Assist Debug: SumFFTAmplitude [inc] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>12</Id>
+						<Message><![CDATA[Tuning Assist Debug: PulsTime [s] = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>13</Id>
+						<Message><![CDATA[{0}: Context (Task = {1}, Motor.Type = {2}, Motor.Poles = {3}, ...]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5000</Id>
+						<Message><![CDATA[{0} (OID={1}): Get parent name returned error: {2}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5001</Id>
+						<Message><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3}/max={4})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5002</Id>
+						<Message><![CDATA[{0}: Invalid {1} parameter value (min={2}/max={3})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5003</Id>
+						<Message><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3}/max={4})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5004</Id>
+						<Message><![CDATA[{0}.{1}: Invalid {2} parameter value (min={3})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5005</Id>
+						<Message><![CDATA[{0}: Invalid {1} parameter value (min={2})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5006</Id>
+						<Message><![CDATA[TuningAssist: Error in LowPass2 calc with LowPassfreqeuncy = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5007</Id>
+						<Message><![CDATA[TuningAssist: Error in Bi_Quad calc with LowPassfreqeuncy = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5008</Id>
+						<Message><![CDATA[TuningAssist: Error in Bi_Quad calc with HighPassfreqeuncy = {0}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5009</Id>
+						<Message><![CDATA[{0}.{1}: Probably no enough movement during spectrum measure]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5010</Id>
+						<Message><![CDATA[{0}.{1}: Invalid number of maxima found in the current spectrum]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5011</Id>
+						<Message><![CDATA[{0}.{1}: Too many maxima found in the current spectrum]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5012</Id>
+						<Message><![CDATA[{0}.{1}: No maxima found in the current spectrum]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5013</Id>
+						<Message><![CDATA[{0}.{1}: No filter suggestion could be calculated - please evaluate the spectrum manually]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5014</Id>
+						<Message><![CDATA[{0}.{1}: No friction compensation suggestion could be calculated - due to wrong parameter {2}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5015</Id>
+						<Message><![CDATA[{0}: error - new mover 1 detection while axis is enabled]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5016</Id>
+						<Message><![CDATA[{0}: error - HW error occur after mover 1 detection is started]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5017</Id>
+						<Message><![CDATA[{0}: error - both movements while mover 1 detection do not fit together]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5018</Id>
+						<Message><![CDATA[{0}: error - timeout while mover 1 detection is running]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5019</Id>
+						<Message><![CDATA[{0}: HW not ready - e.g. power is missing or HW has an error]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5020</Id>
+						<Message><![CDATA[{0}: Last state - min velocity could not reached long enough]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5021</Id>
+						<Message><![CDATA[{0}: Last state - min movement could not reached with the actual current]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5022</Id>
+						<Message><![CDATA[{0}.{1}: No write access in TCom state OP for {2}]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5023</Id>
+						<Message><![CDATA[{0}.{1}.Observer: Bandwidth is limited by cycle time (limited Bandwidth ={1})]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5024</Id>
+						<Message><![CDATA[{0}: Input pointer to IO driver not set.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5025</Id>
+						<Message><![CDATA[{0}: Output pointer to IO driver not set.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5026</Id>
+						<Message><![CDATA[{0}: velocity difference to big for emergency ramp down.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5027</Id>
+						<Message><![CDATA[{0}: Too much ControlAreas {1}.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5028</Id>
+						<Message><![CDATA[{0}: AreaStartPosition[{1}] must be smaller then AreaEndPosition.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5029</Id>
+						<Message><![CDATA[{0}: AreaStartPosition[{1}] must be greater or equal then Zero.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>5030</Id>
+						<Message><![CDATA[{0}: AreaStartPosition[{1}] must be smaller or equal then HardwareModulo.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9000</Id>
+						<Message><![CDATA[Could not register {0} ('{1}') by {2}.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9001</Id>
+						<Message><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9002</Id>
+						<Message><![CDATA[{0}.{1}: Velocity following error - check setpoint generation & commutation (actual velcoity != command velocity).]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9003</Id>
+						<Message><![CDATA[{0}: error - new mover re-sort while axis is enabled.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9004</Id>
+						<Message><![CDATA[The task of {0} ({1}) is not the same as the task of {2} ({3}). Ensure that the SoftDrive and the corresponding mover object are called by the same task.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9005</Id>
+						<Message><![CDATA[{0}: Task is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9006</Id>
+						<Message><![CDATA[{0}: Interpolator object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9007</Id>
+						<Message><![CDATA[{0}: PositionCtrl object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9008</Id>
+						<Message><![CDATA[{0}: VelocityCtrl object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9009</Id>
+						<Message><![CDATA[{0}: Encoder object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9010</Id>
+						<Message><![CDATA[{0}: Filter object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9011</Id>
+						<Message><![CDATA[{0}: Feedforward object is missing.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9012</Id>
+						<Message><![CDATA[{0}: Could not set owner in OP. HR = {1}.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9013</Id>
+						<Message><![CDATA[{0}: Area owner not in SAFEOP. HR = {1}.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9014</Id>
+						<Message><![CDATA[{0}: Could not get object state of owner. HR = {1}.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9015</Id>
+						<Message><![CDATA[{0}: GetImagePtr - PTR FAILED.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>9016</Id>
+						<Message><![CDATA[{0}: emergency ramp take too long.]]></Message>
+					</EventMessage>
+					<EventMessage>
+						<Id>15000</Id>
+						<Message><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></Message>
+					</EventMessage>
+				</EventMessages>
+				<EventClasses>
+					<EventClass>
+						<Type GUID="{557F00A9-CD3F-4C60-40D3-89615F586D30}">SoftDriveEventClass</Type>
+					</EventClass>
+				</EventClasses>
+				<Properties>
+					<Property>
+						<Name>Category</Name>
+						<Value>XTS</Value>
+					</Property>
+					<Property>
+						<Name>Category</Name>
+						<Value>TcSoftDrive</Value>
+					</Property>
+					<Property>
+						<Name>Category</Name>
+						<Value>Axis Child</Value>
+					</Property>
+					<Property>
+						<Name>ChildCategory</Name>
+						<Value>TcSoftDriveChild</Value>
+					</Property>
+					<Property>
+						<Name>McAxisIoType</Name>
+						<Value>TcCom</Value>
+					</Property>
+				</Properties>
 				<ParentOTCID>#x05010400</ParentOTCID>
 				<ParameterValues>
 					<Value>
@@ -3737,6 +4414,10 @@ External Setpoint Generation:
 						<Value>1000</Value>
 					</Value>
 					<Value>
+						<Name>SoftDriveInvertCurrentCmd</Name>
+						<EnumText>OFF</EnumText>
+					</Value>
+					<Value>
 						<Name>IoChildAreaLocation[0].oid</Name>
 						<Value>0</Value>
 					</Value>
@@ -3821,31 +4502,31 @@ External Setpoint Generation:
 						<EnumText>ON</EnumText>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActDCTimeStamp</Name>
+						<Name>TcMc3ActData.ActDCTimeStamp</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActHWPosition</Name>
+						<Name>TcMc3ActData.ActHWPosition</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActVelocity</Name>
+						<Name>TcMc3ActData.ActVelocity</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActAcceleration</Name>
+						<Name>TcMc3ActData.ActAcceleration</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActForce</Name>
+						<Name>TcMc3ActData.ActForce</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.ActPartObjectId</Name>
+						<Name>TcMc3ActData.ActPartObjectId</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>TcNc3ActData.Reserved</Name>
+						<Name>TcMc3ActData.Reserved</Name>
 						<Value>0</Value>
 					</Value>
 					<Value>
@@ -3889,7 +4570,27 @@ External Setpoint Generation:
 						<Value>0</Value>
 					</Value>
 					<Value>
-						<Name>NC3Diagnostic</Name>
+						<Name>MC3Diagnostic</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>VersionString</Name>
+						<String></String>
+					</Value>
+					<Value>
+						<Name>Version.Major</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>Version.Minor</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>Version.Build</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>Version.Revision</Name>
 						<Value>0</Value>
 					</Value>
 				</ParameterValues>
@@ -3918,6 +4619,7 @@ External Setpoint Generation:
 			</TmcDesc>
 			<Module Id="#x010127b0" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 Interpolator</Name>
+				<ImageId>1001</ImageId>
 				<TmcDesc GUID="{13ED0DF8-3244-45E9-B3BA-89C339E4DFF3}">
 					<Name>CTcSdInterpolator</Name>
 					<CLSID ClassFactory="TcSoftDrive">{13ED0DF8-3244-45E9-B3BA-89C339E4DFF3}</CLSID>
@@ -3928,19 +4630,20 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000030-0000-0000-E000-000000000064}">ITcDcTimeData</Type>
 						</Interface>
 					</Interfaces>
 					<Parameters>
 						<Group><![CDATA[General]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>InterpolatorType</Name>
 							<Comment><![CDATA[set the type of the interpolator calculation]]></Comment>
@@ -3962,7 +4665,45 @@ External Setpoint Generation:
 							<PTCID>#x03002103</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdInterpolator</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcInterpolatorChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -3973,11 +4714,32 @@ External Setpoint Generation:
 							<Name>TraceLevelMax</Name>
 							<EnumText>tlAlways</EnumText>
 						</Value>
+						<Value>
+							<Name>VersionString</Name>
+							<String></String>
+						</Value>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
 					</ParameterValues>
 				</TmcDesc>
 			</Module>
 			<Module Id="#x010127a0" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 Encoder</Name>
+				<ImageId>1002</ImageId>
 				<TmcDesc GUID="{8D695A14-7DB9-4D35-A64A-30D334B5E2D3}">
 					<Name>CTcSdEncoder</Name>
 					<CLSID ClassFactory="TcSoftDrive">{8D695A14-7DB9-4D35-A64A-30D334B5E2D3}</CLSID>
@@ -3988,22 +4750,23 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
 						<Interface>
 							<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
 					</Interfaces>
 					<Parameters>
 						<Group><![CDATA[General]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>VelocityFeedbackMode</Name>
 							<Comment><![CDATA[define the mode of the actual velocity calculation]]></Comment>
@@ -4117,6 +4880,22 @@ External Setpoint Generation:
 							<PTCID>#x05100139</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
 					<InterfacePointers>
 						<InterfacePointer>
@@ -4125,6 +4904,28 @@ External Setpoint Generation:
 							<Type GUID="{0300001E-0000-0000-E000-000000000064}"></Type>
 						</InterfacePointer>
 					</InterfacePointers>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdEncoder</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcEncoderChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -4163,6 +4964,26 @@ External Setpoint Generation:
 							<Name>CommutationErrorVelocity</Name>
 							<Value>1000</Value>
 						</Value>
+						<Value>
+							<Name>VersionString</Name>
+							<String></String>
+						</Value>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
 					</ParameterValues>
 					<InterfacePointerValues>
 						<Value>
@@ -4174,6 +4995,7 @@ External Setpoint Generation:
 			</Module>
 			<Module Id="#x01012790" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 PositionControl</Name>
+				<ImageId>1003</ImageId>
 				<TmcDesc GUID="{1A7898EF-F86A-4B73-8DF4-2E8199B711BA}">
 					<Name>CTcSdPositionControl</Name>
 					<CLSID ClassFactory="TcSoftDrive">{1A7898EF-F86A-4B73-8DF4-2E8199B711BA}</CLSID>
@@ -4184,16 +5006,16 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
 						<Interface>
 							<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
 					</Interfaces>
@@ -4201,6 +5023,7 @@ External Setpoint Generation:
 						<Group><![CDATA[General]]></Group>
 						<Group Collapsed="true"><![CDATA[Precise Standstill]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>PositionLoopType</Name>
 							<Comment><![CDATA[define the type of the position control]]></Comment>
@@ -4275,7 +5098,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[integral gain of the precise standstill control]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[1/s^2]]></Unit>
+							<Unit><![CDATA[1/s²]]></Unit>
 							<Default>
 								<Min>0</Min>
 								<Max>1</Max>
@@ -4390,6 +5213,22 @@ External Setpoint Generation:
 							<PTCID>#x0510013a</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
 					<InterfacePointers>
 						<InterfacePointer>
@@ -4398,6 +5237,28 @@ External Setpoint Generation:
 							<Type GUID="{0300001E-0000-0000-E000-000000000064}"></Type>
 						</InterfacePointer>
 					</InterfacePointers>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdPositionControl</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcPositionControlChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -4456,6 +5317,26 @@ External Setpoint Generation:
 							<Name>InpositionTn</Name>
 							<Value>0.05</Value>
 						</Value>
+						<Value>
+							<Name>VersionString</Name>
+							<String></String>
+						</Value>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
 					</ParameterValues>
 					<InterfacePointerValues>
 						<Value>
@@ -4467,6 +5348,7 @@ External Setpoint Generation:
 			</Module>
 			<Module Id="#x01012780" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 VelocityControl</Name>
+				<ImageId>1004</ImageId>
 				<TmcDesc GUID="{CCE414CE-CCCB-4126-B90C-5D2688AF5025}">
 					<Name>CTcSdVelocityControl</Name>
 					<CLSID ClassFactory="TcSoftDrive">{CCE414CE-CCCB-4126-B90C-5D2688AF5025}</CLSID>
@@ -4477,16 +5359,16 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
 						<Interface>
 							<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
 					</Interfaces>
@@ -4494,6 +5376,7 @@ External Setpoint Generation:
 						<Group><![CDATA[General]]></Group>
 						<Group Collapsed="true"><![CDATA[Optimization]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>VelocityLoopType</Name>
 							<Comment><![CDATA[define the type of the velocity control]]></Comment>
@@ -4624,7 +5507,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[differential gain of velocity control]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/m]]></Unit>
+							<Unit><![CDATA[As²/m]]></Unit>
 							<Default>
 								<Min>0.0</Min>
 								<Max>0.5</Max>
@@ -4638,7 +5521,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[differential gain at standstill of velocity control]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/m]]></Unit>
+							<Unit><![CDATA[As²/m]]></Unit>
 							<Default>
 								<Min>0.0</Min>
 								<Max>0.5</Max>
@@ -4652,7 +5535,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[differential gain in set area of velocity control]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/m]]></Unit>
+							<Unit><![CDATA[As²/m]]></Unit>
 							<Default>
 								<Min>0.0</Min>
 								<Max>0.5</Max>
@@ -4666,7 +5549,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[differential gain in set area and at standstill of velocity control]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/m]]></Unit>
+							<Unit><![CDATA[As²/m]]></Unit>
 							<Default>
 								<Min>0.0</Min>
 								<Max>0.5</Max>
@@ -4736,6 +5619,22 @@ External Setpoint Generation:
 							<PTCID>#x05100131</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
 					<InterfacePointers>
 						<InterfacePointer>
@@ -4744,6 +5643,28 @@ External Setpoint Generation:
 							<Type GUID="{0300001E-0000-0000-E000-000000000064}"></Type>
 						</InterfacePointer>
 					</InterfacePointers>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdVelocityControl</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcVelocityControlChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -4818,6 +5739,26 @@ External Setpoint Generation:
 							<Name>MaxVelocity</Name>
 							<Value>4200</Value>
 						</Value>
+						<Value>
+							<Name>VersionString</Name>
+							<String></String>
+						</Value>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
 					</ParameterValues>
 					<InterfacePointerValues>
 						<Value>
@@ -4829,6 +5770,7 @@ External Setpoint Generation:
 			</Module>
 			<Module Id="#x01012770" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 Filter</Name>
+				<ImageId>1005</ImageId>
 				<TmcDesc GUID="{3B51FB30-AC26-40E9-AFB9-E5ADED4491AC}">
 					<Name>CTcSdFilter</Name>
 					<CLSID ClassFactory="TcSoftDrive">{3B51FB30-AC26-40E9-AFB9-E5ADED4491AC}</CLSID>
@@ -4839,22 +5781,23 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
 						<Interface>
 							<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
 					</Interfaces>
 					<Parameters>
 						<Group><![CDATA[General]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>ConfigurationFilter</Name>
 							<BitSize>320</BitSize>
@@ -4984,6 +5927,22 @@ External Setpoint Generation:
 							<PTCID>#x03002103</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
 					<InterfacePointers>
 						<InterfacePointer>
@@ -4992,6 +5951,28 @@ External Setpoint Generation:
 							<Type GUID="{0300001E-0000-0000-E000-000000000064}"></Type>
 						</InterfacePointer>
 					</InterfacePointers>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdFilter</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcFilterChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -5022,6 +6003,26 @@ External Setpoint Generation:
 							<Name>TraceLevelMax</Name>
 							<EnumText>tlAlways</EnumText>
 						</Value>
+						<Value>
+							<Name>VersionString</Name>
+							<String></String>
+						</Value>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
 					</ParameterValues>
 					<InterfacePointerValues>
 						<Value>
@@ -5033,6 +6034,7 @@ External Setpoint Generation:
 			</Module>
 			<Module Id="#x01012760" KeepUnrestoredLinks="2">
 				<Name>SoftDrive 64 FeedForward</Name>
+				<ImageId>1006</ImageId>
 				<TmcDesc GUID="{68AA515C-6BA6-4D3E-86A0-1A3EB553CF37}">
 					<Name>CTcSdFeedForward</Name>
 					<CLSID ClassFactory="TcSoftDrive">{68AA515C-6BA6-4D3E-86A0-1A3EB553CF37}</CLSID>
@@ -5043,24 +6045,25 @@ External Setpoint Generation:
 						</Context>
 					</Contexts>
 					<Interfaces>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
 						</Interface>
 						<Interface>
 							<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
 						</Interface>
-						<Interface DisableCodeGeneration="true">
+						<Interface>
 							<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 						</Interface>
 					</Interfaces>
 					<Parameters>
 						<Group><![CDATA[General]]></Group>
-						<Group Collapsed="true"><![CDATA[MoverIdDetection]]></Group>
+						<Group Collapsed="true"><![CDATA[Mover ID Detection]]></Group>
 						<Group Collapsed="true"><![CDATA[Optimization]]></Group>
 						<Group Collapsed="true"><![CDATA[Advanced]]></Group>
+						<Group><![CDATA[Info]]></Group>
 						<Parameter DisableCodeGeneration="true" Group="General">
 							<Name>FeedforwardType</Name>
 							<Comment><![CDATA[define the type of the velocity control]]></Comment>
@@ -5079,7 +6082,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[acceleration feed forward gain]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/mm]]></Unit>
+							<Unit><![CDATA[As²/mm]]></Unit>
 							<Default>
 								<Min>0</Min>
 								<Value>1.0</Value>
@@ -5092,7 +6095,7 @@ External Setpoint Generation:
 							<Comment><![CDATA[acceleration feed forward gain in set area if active within type setting otherwise normal KpAccFFT is used]]></Comment>
 							<BitSize>64</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-							<Unit><![CDATA[As^2/mm]]></Unit>
+							<Unit><![CDATA[As²/mm]]></Unit>
 							<Default>
 								<Min>0.0</Min>
 								<Value>1.0</Value>
@@ -5142,7 +6145,7 @@ External Setpoint Generation:
 							<PTCID>#x0510010f</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionMinMovement</Name>
 							<Comment><![CDATA[Min movement for the mover 1 detection phases]]></Comment>
 							<BitSize>64</BitSize>
@@ -5156,7 +6159,7 @@ External Setpoint Generation:
 							<PTCID>#x05100150</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionFilter</Name>
 							<Comment><![CDATA[low pass filter for the current ramp of mover 1 detection (0 = off)]]></Comment>
 							<BitSize>64</BitSize>
@@ -5170,7 +6173,7 @@ External Setpoint Generation:
 							<PTCID>#x05100156</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionCurrentRamp</Name>
 							<Comment><![CDATA[current ramp to increase the used current for the mover 1 detection]]></Comment>
 							<BitSize>64</BitSize>
@@ -5184,7 +6187,7 @@ External Setpoint Generation:
 							<PTCID>#x05100151</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionMaxCurrent</Name>
 							<Comment><![CDATA[maximum current for the mover 1 detection]]></Comment>
 							<BitSize>64</BitSize>
@@ -5198,7 +6201,7 @@ External Setpoint Generation:
 							<PTCID>#x05100152</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionStandstillVelocityLimit</Name>
 							<Comment><![CDATA[maximum velocity before starting a new mover 1 detection phase]]></Comment>
 							<BitSize>64</BitSize>
@@ -5212,7 +6215,7 @@ External Setpoint Generation:
 							<PTCID>#x05100153</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionStandstillSwitchTime</Name>
 							<Comment><![CDATA[minimum time to wait between a new mover 1 detection phase]]></Comment>
 							<BitSize>64</BitSize>
@@ -5226,7 +6229,7 @@ External Setpoint Generation:
 							<PTCID>#x05100154</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionTimeOut</Name>
 							<Comment><![CDATA[time out time for a mover 1 detection]]></Comment>
 							<BitSize>64</BitSize>
@@ -5240,9 +6243,9 @@ External Setpoint Generation:
 							<PTCID>#x05100155</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
-						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="MoverIdDetection">
+						<Parameter HideParameter="true" DisableCodeGeneration="true" Group="Mover ID Detection">
 							<Name>DetectionInfoMessage</Name>
-							<Comment><![CDATA[enable a debug message which mover was found]]></Comment>
+							<Comment><![CDATA[enable an info message which mover was found]]></Comment>
 							<BitSize>32</BitSize>
 							<BaseType GUID="{9060AE9D-214D-4685-A4C0-CD1082626764}">BOOL32</BaseType>
 							<PTCID>#x05100159</PTCID>
@@ -5272,7 +6275,7 @@ External Setpoint Generation:
 								<Comment><![CDATA[DRE optimization is OFF]]></Comment>
 							</EnumInfo>
 							<EnumInfo>
-								<Text><![CDATA[ON]]></Text>
+								<Text><![CDATA[ON_POS]]></Text>
 								<Enum>1</Enum>
 								<Comment><![CDATA[DRE optimization is ON]]></Comment>
 							</EnumInfo>
@@ -5314,7 +6317,7 @@ External Setpoint Generation:
 							<Unit><![CDATA[elec.degree]]></Unit>
 							<Default>
 								<Min>0</Min>
-								<Max>45</Max>
+								<Max>60</Max>
 								<Value>36</Value>
 							</Default>
 							<PTCID>#x05100136</PTCID>
@@ -5376,14 +6379,45 @@ External Setpoint Generation:
 							<PTCID>#x05100157</PTCID>
 							<ContextId>1</ContextId>
 						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>VersionString</Name>
+							<Comment><![CDATA[Returns the version string of the driver.]]></Comment>
+							<BitSize>384</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00010000002F}">STRING(47)</BaseType>
+							<PTCID>#x05100243</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
+						<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+							<Name>Version</Name>
+							<Comment><![CDATA[Returns the version of the driver.]]></Comment>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{C8A3EBBF-E67F-491F-AAC6-16D5D5E9699B}" Namespace="XTS">TcVersion</BaseType>
+							<PTCID>#x05100245</PTCID>
+							<ContextId>1</ContextId>
+						</Parameter>
 					</Parameters>
-					<InterfacePointers>
-						<InterfacePointer>
-							<PTCID>#x03002060</PTCID>
-							<Name>CyclicCaller</Name>
-							<Type GUID="{0300001E-0000-0000-E000-000000000064}"></Type>
-						</InterfacePointer>
-					</InterfacePointers>
+					<Properties>
+						<Property>
+							<Name>Category</Name>
+							<Value>XTS</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDrive</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSdFeedForward</Value>
+						</Property>
+						<Property>
+							<Name>Category</Name>
+							<Value>TcSoftDriveChild</Value>
+						</Property>
+						<Property>
+							<Name>ChildCategory</Name>
+							<Value>TcFeedForwardChild</Value>
+						</Property>
+					</Properties>
 					<ParentOTCID>#x01012750</ParentOTCID>
 					<ParameterValues>
 						<Value>
@@ -5474,13 +6508,27 @@ External Setpoint Generation:
 							<Name>DetectionStatus</Name>
 							<EnumText>OFF</EnumText>
 						</Value>
-					</ParameterValues>
-					<InterfacePointerValues>
 						<Value>
-							<Name>CyclicCaller</Name>
-							<OTCID>#x00000000</OTCID>
+							<Name>VersionString</Name>
+							<String></String>
 						</Value>
-					</InterfacePointerValues>
+						<Value>
+							<Name>Version.Major</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Minor</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Build</Name>
+							<Value>0</Value>
+						</Value>
+						<Value>
+							<Name>Version.Revision</Name>
+							<Value>0</Value>
+						</Value>
+					</ParameterValues>
 				</TmcDesc>
 			</Module>
 		</Module>

@@ -9,6 +9,7 @@ The main features of this example application are :
 - The 'external' process at each station can access each mover in the station to e.g. read/write product data and decide where the mover should go next.
 - Easily configurable simulation mode to simulate a process and detect bottlenecks at an early stage without hardware
 - Changing the mover dynamics on different sections of the track
+- Example of how the process steps of a station can be programmed, using a station in which the mover moves backwards
 
 
 ### There are three types of stations that can be freely placed:<br>
